@@ -1,0 +1,322 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | E-commerce Industry{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+  }
+</style>
+<style> /* main front */
+  .main-front-outerdiv {
+    /* background-image: url("imgs/doc_bg.webp"); */
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 50px 80px 80px;
+    /* background-size: cover; */
+  }
+  .main-front-bg {
+    opacity: 0.2;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+  .main-front-innerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  .main-front-para {
+    color: black;
+    max-width: 750px;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+  .gradint-text {
+    font-size: calc(60 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: none;
+    line-height: normal;
+    background: linear-gradient(
+      91.18deg,
+      #d8d5d199 0%,
+      #f1f0eeff 30%,
+      #f1f0eeff 69%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .heading-blueis {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+    color: #1a9fe2ff;
+  }
+
+  .white_line {
+    height: 0;
+    display: block;
+    width: 80%;
+    margin: 50px 0;
+    border: 1px white solid;
+  }
+</style>
+<style> /* our-trusted */
+  .outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    line-height: 0px;
+  }
+  .header-span1 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      103.37deg,
+      #d8d5d199 0%,
+      #f1f0eeff 43%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  .seo-card {
+    width: 75%;
+    background: #FAFBFC;
+    box-shadow: 0px 9px 23px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin: 0 auto 20px;
+    color: black;
+    display: flex;
+    padding-bottom: 20px;
+  }
+</style>
+
+{% comment %} {% include "nav_policy.html" %} {% endcomment %}
+
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <img src="{% static "files2/edu_main_bg.webp" %}" alt="" class="main-front-bg" />
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 style="display: inline" class="gradint-text">E-commerce </h2>
+        <h1 style="display: inline" class="heading-blueis">Industry</h1>
+      </div>
+      <div class="main-front-para">
+        <p>
+          Elevating E-commerce with MultiLipi
+          <br>
+          In the fast-paced world of e-commerce, effective communication and accessibility are crucial for success. MultiLipi's multilingual SEO and document translation services can significantly enhance e-commerce businesses' ability to reach and serve a global customer base, ensuring customer satisfaction and competitive advantage.
+        </p>
+      </div>
+      <div>
+        <div>
+          <a class="main-front-btn" href="">Get started for free</a>
+          {% comment %} <a class="main-front-btn" href="">Try now free</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div>
+      <img style="width: 525px" src="{% static "files2/edu_main_img.webp" %}"
+      alt="" />
+    </div>
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- features 1 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal"
+      >Multilingual SEO for E-commerce Platforms</span
+    >
+    {% comment %} <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span> {% endcomment %}
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\Enhancing_gov__seo_incl_comms.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Inclusive Communication</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          E-commerce platforms cater to customers from various linguistic backgrounds. Ensuring websites and product listings are accessible in multiple languages helps in delivering critical information to all customers, fostering inclusivity and better engagement.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\enhancing_gov_seo_outreach_2.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Global Reach</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          By optimizing content for different languages, e-commerce businesses can attract international customers. Multilingual SEO enhances the global visibility of products and services, driving more traffic and sales.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Banking\SEO\Education_SEO_Experience.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Enhanced Customer Experience</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Providing information in multiple languages, including product descriptions, reviews, and customer support, improves the overall shopping experience. It helps customers make informed decisions and feel more connected to the brand.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- features 1 end -->
+
+
+<!-- features 2 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal"
+      >Document Translation for E-commerce Businesses</span
+    >
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Ecommerce\Document Translation\Gov_doctrans.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Product Listings</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating product listings, descriptions, and specifications ensures that non-native speakers can fully understand the products they are interested in. It supports better shopping outcomes and reduces returns.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Ecommerce\Document Translation\education_doc_support.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Accessible Customer Support</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          Translating customer support materials, including FAQs, return policies, and help guides, makes it easier for international customers to get the help they need. It reduces barriers and enhances customer satisfaction.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Ecommerce\Document Translation\Ecommerce_doctrans.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Marketing Campaigns</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          E-commerce businesses run various marketing campaigns, including emails, ads, and social media posts. Translating these materials ensures the message reaches a broader audience, increasing engagement and conversion rates.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Enhancing_gov__doc_trans_compliance.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Compliance with Regional Regulations</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Many regions have language policies and regulations that e-commerce businesses must comply with. MultiLipi ensures compliance with these regulations, helping businesses avoid potential penalties and maintain their reputation.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Education_Doc_community.webp" %}" alt="">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Improved Customer Engagement</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating communications for customers, including newsletters, alerts, and promotional materials, fosters better engagement and participation in e-commerce activities. It strengthens the relationship between the business and its customers.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- features 2 end -->
+
+
+<div style="background-color: #000922; margin-bottom: 0;" class="outerdiv">
+  <div class="our-trusted-innerdiv-header" style="margin: 100px 0 0;">
+    <span class="header-span1" style="line-height: normal; font-size: calc(48 * var(--ratio));"
+    >Multilingual SEO for Government Websites</span>
+  </div>
+  <img src="{% static "files2\edu_NNTST.webp" %}" style="width: 100%; padding: 0 50px;" alt="">
+</div>
+
+<div style="background-image: url({% static "imgs\book_bg.webp" %}); background-size: cover;">
+  <div style="display: flex; align-items: center; padding: 80px;">
+    <div style="margin: 0 auto 0 20px;">
+    <h1 style="font-size: 40px; font-weight: 700;">Schedule a demo with</h1>
+    <h1 style="font-size: 40px; font-weight: 700;">our experts</h1>
+    </div>
+    <a style=" 
+        font-weight: 300;
+        color: black;
+        padding: 15px;
+        background: #0B3FC4;
+        border-radius: 5px;"
+      href="">Get a deom</a>
+  </div>
+</div>
+
+
+
+
+{% endblock content %}

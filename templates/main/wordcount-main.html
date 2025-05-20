@@ -1,0 +1,205 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | Word Count{% endblock title %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+{% endblock css %}
+
+{% block content %}
+
+<style>
+  body {
+    background-color: #fbfdff;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  </style>
+{% comment %} main front start  {% endcomment %}
+
+<div class="container mx-auto max-w-4xl py-8 px-4">
+    <h1 class="text-4xl font-bold text-center mb-8">
+        <span class="text-blue-500">Website word count</span> <span class="text-gray-800">tool</span>
+    </h1>
+    
+    <div class="flex flex-col md:flex-row gap-4 mb-6">
+        <div class="flex-grow">
+            <input type="text" value="www.multilpi.com" class="w-full border border-gray-300 rounded px-3 py-2 text-gray-700" placeholder="Enter website URL">
+        </div>
+        <div>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded">
+                Analyse Website &gt;
+            </button>
+        </div>
+    </div>
+    
+    <div class="flex flex-col md:flex-row gap-6">
+        <div class="bg-white border border-blue-200 rounded p-4 flex-grow">
+            <div class="border border-gray-200 border-dashed rounded p-3">
+                <h2 class="text-gray-700 font-medium mb-2">Words by Page</h2>
+                
+                <div class="space-y-2">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/</span>
+                        <span class="text-gray-800 font-medium">16538</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/Multilingual%20SEO</span>
+                        <span class="text-gray-800 font-medium">16422</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/blog/article/22</span>
+                        <span class="text-gray-800 font-medium">1162</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/contact_us</span>
+                        <span class="text-gray-800 font-medium">147</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/E_commerce</span>
+                        <span class="text-gray-800 font-medium">469</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/pricing</span>
+                        <span class="text-gray-800 font-medium">605</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/government</span>
+                        <span class="text-gray-800 font-medium">496</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/edu</span>
+                        <span class="text-gray-800 font-medium">469</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-600">https://www.multilpi.com/banking</span>
+                        <span class="text-gray-800 font-medium">452</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex-shrink-0 md:w-80">
+            <div class="bg-white border border-gray-200 rounded p-6 mb-4">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold text-gray-800">47,566</h2>
+                    <p class="text-gray-700 font-medium mt-1">Unique Words</p>
+                    <p class="text-sm text-gray-500 mt-1">(in a total of 116,020 words)</p>
+                    <p class="text-xs text-gray-500 mt-1">This count is an estimate</p>
+                </div>
+                
+                <div class="mt-4 space-y-1">
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Getting to all public URLs</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Counting words in all your HTML</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Success</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded p-6">
+                <div class="text-center mb-4">
+                    <h2 class="text-4xl font-bold text-gray-800">$59 <span class="text-sm text-gray-500 font-normal">/month</span></h2>
+                    <p class="text-xs text-gray-500 mt-1">for 3 translated language(s)</p>
+                </div>
+                
+                <div class="flex justify-between space-x-2 mb-4">
+                    <div class="border border-gray-200 rounded text-center p-2 flex-1">
+                        <p class="text-blue-500 font-bold">$119</p>
+                        <p class="text-xs text-gray-500">/month</p>
+                    </div>
+                    <div class="border border-gray-200 rounded text-center p-2 flex-1">
+                        <p class="text-blue-500 font-bold">$199</p>
+                        <p class="text-xs text-gray-500">/month</p>
+                    </div>
+                    <div class="border border-gray-200 rounded text-center p-2 flex-1">
+                        <p class="text-blue-500">Custom</p>
+                        <p class="text-xs text-gray-500">Contact</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-1 mb-4">
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Basic support</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Access to pro translators</span>
+                    </div>
+                    <div class="flex items-center text-sm">
+                        <svg class="h-4 w-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700">Visitor language redirection</span>
+                    </div>
+                </div>
+                
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded w-full">
+                    Start For Free
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock content %}

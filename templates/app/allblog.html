@@ -1,0 +1,563 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load custom_filters %}
+
+{% block css %}
+{% comment %} <link rel="stylesheet" href="{% static 'css/allblog.css' %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- Meta tags for SEO -->
+<meta charset="UTF-8">
+<meta name="title" content="Latest Updates on Website Translation & Multilingual SEO | MultiLipi Blog">
+<meta name="description" content="Stay informed with the latest news, expert tips, and product updates on website translation, multilingual SEO, and international marketing — straight from the MultiLipi team.">
+{% endblock %}
+{% block content %}
+{% comment %} {% include "nav_indus.html" %} {% endcomment %}
+
+<style> /* blog */
+  .blog-outer-div{
+    background-color: #e1f7ff;
+    padding: 0 50px 50px 50px;
+    margin: 100px 0px 0px 0px;
+  }
+    .blog-cards{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      gap: 30px;
+      color: black;
+    }
+
+    span i{
+      color: black;
+    }
+  
+    @media (max-width: 320px) {
+      .blog-card-outer-div{
+        width: 300px;
+      }
+    }
+  
+    .blog-card-img-div{
+      position: relative;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .blog-card-img-div > img{
+      height: 100%;
+      max-width: none;
+      min-width: 100%;
+    }
+    .author-band{
+      height: 50px;
+      background: #121C27;
+      align-content: center;
+      padding: 0 40px;
+    }
+    .author-band p{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #848B94;
+    }
+    .blog-content-outer-div{
+      box-sizing: border-box;
+      padding: 35px 30px;
+    }
+    .blog-content-header{
+      border-bottom: 0.8px solid #D7D7D7;
+      overflow: hidden;
+      height: 75px;
+    }
+    .blog-content-header h1{
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 33px;
+      display: flex;
+      align-items: center;
+      text-transform: capitalize;
+      color: #0A1119;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      text-align: left;
+      overflow: hidden;
+    }
+  
+    .small-line{
+      width: 60px;
+      height: 1px;
+      background: #121C27;
+      margin-top: 40px;
+    }
+    span i{
+        color black;
+      }
+
+      .blog-card-outer-div{
+        box-sizing: border-box;
+        border: 1px solid #48636e;
+        border-radius: 10px;
+        background-color: #fff;
+      }
+
+      .blog-card-img-div{
+        position: relative;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .blog-card-img-div > img{
+        height: 100%;
+        max-width: none;
+        min-width: 100%;
+      }
+
+      .author-band{
+        height: 35px;
+        background: #0688E5;
+        align-content: center;
+        padding: 0 40px;
+      }
+
+      .author-band p{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .blog-content-outer-div{
+        box-sizing: border-box;
+        padding: 35px 30px;
+        width: 320px;
+      }
+      .blog-content-header{
+        border-bottom: 0.8px solid #D7D7D7;
+        overflow: hidden;
+        height: 75px;
+      }
+      .blog-content-header h1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 33px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        color: #0A1119;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        text-align: left;
+        overflow: hidden;
+      }
+    
+      .small-line{
+        width: 60px;
+        height: 1px;
+        background: #121C27;
+        margin-top: 40px;
+      }
+      .blog-content-para {
+        text-transform: capitalize;
+        color: #4B535D;
+      }
+    
+      .blog-content-para p{
+        width: fit-content;
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 25px;
+        color: black;
+        margin: 20px 0;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+  
+      }  
+      .continue-reading-btn{
+        gap: 7px;
+        margin: 20px 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16.3359px;
+        line-height: 20px;
+        display: flex;
+        align-items: end;
+        letter-spacing: 0.16px;
+        text-transform: capitalize;
+        color: #0A1119;
+      }
+      
+      .img-date-overlay{
+        position: absolute;
+        width: 71px;
+        height: 80px;
+        right: 19px;
+        bottom: 16px;
+        background: rgba(6, 136, 229, 0.6);
+        backdrop-filter: blur(5px);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .overlay-date{
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 33px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+      }
+
+      .overlay-month{
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 20px;
+        line-height: 30px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+      }
+
+      .blog-header{
+        text-align: center;
+        margin: 30px auto 30px;
+        position: relative;
+        border-bottom: 2px solid #D8D9DA;
+        width: fit-content;
+        padding: 30px;
+      }
+
+      .blog-header h1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 52px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #0A1119;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 320px) {
+        .blog-card-outer-div{
+          width: 300px;
+        }
+        .blog-outer-div{
+          margin: 100px 10px;
+        }
+        .blog-content-outer-div{
+            width: 300px;
+        }
+      }
+</style>
+  
+<style>
+  .scroll-btn-left{
+    position: absolute; 
+    top: 50%; 
+    transform: translate(0,-50%); 
+    font-size: 50px;
+    left: 0;
+  }
+  .scroll-btn-right{
+    position: absolute; 
+    top: 50%; 
+    transform: translate(0,-50%); 
+    font-size: 50px;
+    right: 0;
+  }
+
+  .scroll-btn-outerdiv{
+    display: none;
+    justify-content: center;
+    gap: 30px;
+    font-size: 10px;
+  }
+
+  .blog-cards-outerdiv{
+    position: relative; 
+    padding: 0 50px;
+  }
+
+  @media (max-width: 480px) {
+    .scroll-btn-left{
+      display: none;
+
+    }
+    .scroll-btn-right{
+      display: none;
+    }
+    .scroll-btn-outerdiv{
+      display: flex;
+    }
+    .blog-cards-outerdiv{
+      padding: 0;
+    }
+  }  
+</style>
+
+<style> /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 30px;
+  }
+  .pagination a, .pagination span {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #0688E5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color .3s;
+  }
+  .pagination a:hover {
+    background-color: #f0f0f0;
+  }
+  .pagination .current-page {
+    background-color: #0688E5;
+    color: white;
+    border: 1px solid #0688E5;
+  }
+  .pagination .disabled {
+    color: #ccc;
+    pointer-events: none;
+    border-color: #eee;
+  }
+</style>
+
+<div class="main-front-outerdiv">
+  <div class="main-front-innerdiv" style="padding: 0 80px;">
+    <div data-aos="fade-up" style="width: 50%;">
+      <div class="main-integration-badge"> 
+        <p>MultiLipi Blogs</p>
+      </div>
+      <div>
+        <h1 class="main-front-header-text" style="font-size: 60px;">Explore the Latest in Website Translation & Multilingual SEO</h1>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600" style="font-size:20px;">
+        <p>
+          Welcome to the MultiLipi Blog — your source for insights on website translation, multilingual SEO, and global digital marketing strategies. Discover industry trends, real-world use cases, feature updates, product announcements, and tips to help you grow your multilingual presence at scale.
+        </p>
+      </div>
+    </div>
+    <div style="margin: 0 auto;" data-aos="fade-down">
+      <img class="main-front-img" alt="MultiLipi blog updates with website translation tips and multilingual SEO news" src="{% static "cards_imgs/blog.svg" %}" style="height: auto;"/>
+    </div>
+  </div>
+</div>
+
+    {% comment %} <div class = "parent" style="margin: 100px 0px; height: fit-content;">
+    {% for post in posts %} 
+
+            <div class="post-item">
+                {% with post.body|first_img as img_src %}
+                {% if img_src %}
+                
+                    <a href ="{% url 'Detail-Article' post.pk %}">
+
+                        <img id = "blog-img" src="{{ img_src }}" alt="{{ post.title }}" width="100%" height="70%"  style="padding-top: 5px;
+                        overflow: hidden;
+                        object-fit: cover;
+                        padding-bottom : 5px" />
+                
+                    </a>
+                    
+                {% endif %}
+                 {% endwith %}
+
+                <div class = "tags-readtime">
+                    <div class = "tags" style="display:flex; max-width: 220px; height: fit-content;">
+                        {% for tag in post.tags.all %} 
+                        <div class = "item-tag">
+                            <h1 style="margin:auto 10px ;
+                                font-weight: 500;
+                                color: #1A9FE2;
+                                text-align: center;">
+                            {{ tag }}
+
+                            </h1>
+                            </div>   
+                        {% endfor%}
+                    </div>
+                    <div class = "calendar-time">
+                        <i class="fa-regular fa-clock display"></i>
+                        <p>{{ post.readtime }} read</p>
+                    </div>
+                
+
+                </div>
+                    
+                <div class="blog-title">
+                    <a href ="{% url 'Detail-Article' post.pk %}">
+                        <h1  class = "decoration font-color" href ="{% url 'Detail-Article' post.pk %}" style="text-align: left;">{{post.title}}</h1>
+                    </a>
+                </div>
+                <div class="author">
+                    <div class = "author-pic">
+                        <img src="{{ post.author_profile_image.url }}" />
+                     <p> {{ post.author_name}}</p>
+                        </div>
+
+                     <div class = "calendar-time">
+                        <i class="fa-regular fa-calendar display"></i>
+                        <p >{{ post.formatted_updated_at }}</p>  
+                     </div>
+                </div>
+            </div>
+    {% endfor%} 
+</div> {% endcomment %}
+
+
+<div class="blog-outer-div">
+    <div class="blog-header">
+      <h1>Read Our Blogs</h1>
+    </div>
+    <div class="blog-cards">
+        {% for post in posts %}
+            <div class="blog-card-outer-div">
+                <div class="blog-card-img-div">
+                    {% with post.body|first_img as img_src %}
+                        {% if img_src %}
+                            <img src="{{ img_src }}" alt="" srcset="" style="border-radius: 10px;"/>
+                        {% endif %}
+                    {% endwith %}
+                    {% if post.updated_at %}
+                        <div class="img-date-overlay">
+                            <p class="overlay-date">{{ post.updated_at|date:"j" }}</p>
+                            <p class="overlay-month">{{ post.updated_at|date:"M" }}</p>
+                        </div>
+                    {% endif %}
+            
+                </div>
+                <div class="author-band">
+                    <p>by {{ post.author_name }}</p>
+                </div>
+                <div class="blog-content-outer-div">
+                <div class="blog-content-header">
+                    <h1>{{ post.title|striptags|safe }}</h1>
+                    <div class="small-line"></div>
+                </div>
+                <div class="blog-content-para">
+                    <div style=" overflow: hidden; height:150px">
+                      <p class="post_body">{{ post.body|striptags|safe }}</p>
+                    </div>
+                    <a class="continue-reading-btn" href="{% url 'Detail-Article' post.pk %}">Continue Reading <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          
+        {% endfor %}
+    </div>
+
+    {% if posts.has_other_pages %}
+    <div class="pagination">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">&laquo; Previous</a>
+        {% else %}
+            <span class="disabled">&laquo; Previous</span>
+        {% endif %}
+
+        {% for i in posts.paginator.page_range %}
+            {% if posts.number == i %}
+                <span class="current-page">{{ i }}</span>
+            {% else %}
+                <a href="?page={{ i }}">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Next &raquo;</a>
+        {% else %}
+            <span class="disabled">Next &raquo;</span>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+
+<script>
+
+</script>
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        const posts = document.querySelectorAll('.post-item'); // Select all post-item divs
+
+        posts.forEach(post => {
+            const tagsContainer = post.querySelector('.tags'); // Select the tags container within each post-item
+            const tags = Array.from(tagsContainer.children); // Get all child .item-tag elements as an array
+            let currentWidth = 0;  // Initialize current width counter
+            const parentWidth = tagsContainer.clientWidth;  // Get the width of the parent .post-item
+
+            // Loop through each tag to calculate total width
+            tags.forEach(tag => {
+                currentWidth += tag.offsetWidth;  // Add the width of the current tag to the total width
+
+                // If the current width exceeds the parent's width, hide this and all subsequent tags
+                if (currentWidth > parentWidth) {
+                    tag.style.width = '0px';
+                    tag.style.height = '0px';
+                    tag.style.overflow = 'hidden';  
+                }
+            });
+        });
+
+    });
+
+    
+    window.addEventListener('load', () => {
+        hideOverflowingElements('.parent');
+    });
+
+</script>
+
+{% endblock %}
+

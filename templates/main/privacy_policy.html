@@ -1,0 +1,171 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Privacy Policy{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background: #161616;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .policy p,
+  .policy li {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .policy ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .policy ul li::before {
+    content: "• ";
+    color: #0056b3;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+</style>
+
+{% comment %} {% include "nav_policy.html" %} {% endcomment %}
+
+<div class="policy" style="display: flex; justify-content: center; margin: 100px auto 50px">
+  <div class="container text-justify">
+    <h1 class="font-bold text-3xl md:text-4xl mb-8">Privacy Policy</h1>
+    <p class="text-xs mb-2">Last updated on Feb 15th 2025</p>
+
+    <!-- 1. Introduction -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">1. Introduction</h2>
+    <p>
+      MULTILIPI TECHNOLOGIES PRIVATE LIMITED ("we," "us," or "our") is deeply committed to safeguarding personal data and ensuring compliance with the General Data Protection Regulation (GDPR) and other applicable privacy laws. This Privacy Policy details the categories of personal data we collect, the purposes for which such data is processed, the legal foundations underpinning such processing, and the security mechanisms in place to protect the confidentiality and integrity of user information.
+    </p>
+    <p>
+      By accessing our website and utilizing our services, you acknowledge and consent to the collection, use, and disclosure of your personal data as described in this Privacy Policy. We strongly encourage users to read this policy carefully to understand how we handle their personal information.
+    </p>
+
+    <!-- 2. Data Controller Information -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">2. Data Controller Information</h2>
+    <p>
+      MULTILIPI TECHNOLOGIES PRIVATE LIMITED serves as the data controller responsible for determining the purposes and means of processing personal data. Should you have any inquiries regarding data protection or privacy rights, please contact:
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Email: <a href="mailto:support@multilipi.com">support@multilipi.com</a></li>
+      <li>Address: 75/17, Tagore Lane, Mansarovar, Jaipur 302020</li>
+    </ul>
+
+    <!-- 3. Categories of Personal Data Collected -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">3. Categories of Personal Data Collected</h2>
+    <p>
+      We collect, store, and process various types of personal data, including but not limited to:
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Identity Data: Full name, job title, company affiliation</li>
+      <li>Contact Data: Email address, phone number, mailing address</li>
+      <li>Demographic Data: Postal code, preferences, interests, age range</li>
+      <li>Technical Data: IP address, browser type, device type, operating system, login timestamps</li>
+      <li>Usage Data: Website navigation behavior, session duration, interaction with services</li>
+      <li>Marketing Preferences: Subscription preferences, communication history</li>
+    </ul>
+    <p>
+      We do not collect or process sensitive personal data unless explicitly required by applicable law.
+    </p>
+
+    <!-- 4. Legal Basis for Data Processing -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">4. Legal Basis for Data Processing</h2>
+    <p>
+      Our processing of personal data is conducted in accordance with GDPR’s legal bases, including but not limited to:
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Consent: Explicit user consent obtained for specific processing activities.</li>
+      <li>Contractual Necessity: Processing required to fulfill contractual obligations.</li>
+      <li>Legitimate Interests: Processing necessary for our business interests, provided these do not override data subject rights.</li>
+      <li>Legal Obligation: Compliance with statutory and regulatory requirements.</li>
+    </ul>
+
+    <!-- 5. Purpose of Data Processing -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">5. Purpose of Data Processing</h2>
+    <p>
+      We use personal data for the following lawful purposes:
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>To provide, manage, and improve our services</li>
+      <li>To maintain internal records and ensure operational efficiency</li>
+      <li>To send marketing communications and promotional offers (subject to consent)</li>
+      <li>To conduct market research and analyze user engagement</li>
+      <li>To personalize website content and optimize user experience</li>
+      <li>To fulfill our legal and regulatory obligations</li>
+    </ul>
+
+    <!-- 6. Data Retention Policy -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">6. Data Retention Policy</h2>
+    <p>
+      Personal data is retained only for as long as necessary to fulfill the purposes outlined in this policy. Upon expiration of the retention period, data is securely deleted, anonymized, or archived in accordance with applicable legal requirements.
+    </p>
+
+    <!-- 7. Data Security Measures -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">7. Data Security Measures</h2>
+    <p>
+      We implement robust technical and organizational security measures to ensure the protection of personal data from unauthorized access, modification, disclosure, or destruction. These measures include encryption protocols, access control systems, and periodic security audits.
+    </p>
+
+    <!-- 8. Cookies and Tracking Technologies -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">8. Cookies and Tracking Technologies</h2>
+    <p>
+      Our website utilizes cookies and tracking technologies to enhance user experience and improve website performance.
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Types of Cookies: Essential, performance, functional, analytics, and marketing cookies.</li>
+      <li>Legal Basis: Non-essential cookies are processed based on user consent.</li>
+      <li>User Control: Users can manage cookie settings via browser configurations.</li>
+      <li>Third-Party Tracking: Analytical tools such as Google Analytics may be used to monitor website traffic.</li>
+      <li>Retention Policy: Cookies are stored for predefined periods and automatically deleted upon expiration.</li>
+    </ul>
+    <p>
+      For additional information, please refer to our Cookies Policy.
+    </p>
+
+    <!-- 9. Data Sharing and Third-Party Disclosures -->
+    <h2 class="font-bold text-2xl mt-6 mb-4">9. Data Sharing and Third-Party Disclosures</h2>
+    <p>
+      We do not sell, lease, or trade personal data. However, data may be shared with:
+    </p>
+    <ul class="list-disc ml-8 mb-4">
+      <li>Service Providers: External vendors assisting with business operations.</li>
+      <li>Legal Authorities: When required by applicable laws or regulations.</li>
+      <li>Business Transfers: In the event of mergers, acquisitions, or company restructuring.</li>
+    </ul>
+    <p>
+      All data-sharing activities are conducted with appropriate safeguards to ensure user data protection.
+    </p>
+  </div>
+</div>
+
+{% endblock content %}

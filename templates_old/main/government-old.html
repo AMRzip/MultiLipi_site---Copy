@@ -1,0 +1,248 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Government{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #161616ff;
+  }
+</style>
+<style> /* our-trusted */
+  .outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    line-height: 0px;
+  }
+  .header-span1 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      103.37deg,
+      #d8d5d199 0%,
+      #f1f0eeff 43%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  .seo-card {
+    width: 75%;
+    background: #FAFBFC;
+    box-shadow: 0px 9px 23px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin: 0 auto 20px;
+    color: black;
+    display: flex;
+    padding-bottom: 20px;
+  }
+</style>
+
+{% include "nav_indus.html" %}
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <img src="{% static "files2/gov_main_bg.webp" %}" alt="website localization" class="main-front-bg" />
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 style="display: block" class="gradint-text">Enhancing Government</h2>
+        <h1 style="display: inline" class="heading-blueis">Services with MultiLipi</h1>
+      </div>
+      <div class="main-front-para">
+        <p>
+          We get your content and your local audience. We translate your content
+          to resonate from their perspective while preserving your brand's
+          message, style, and context for local authenticity.
+        </p>
+      </div>
+      <div>
+        <div>
+          <a class="main-front-btn" href="#requesting-demo">Get started for free</a>
+          {% comment %} <a class="main-front-btn" href="">Try now free</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    {% comment %} <div>
+      <img style="width: 525px" src="{% static "files2/gov_main_img.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- features 1 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Multilingual SEO for Government Websites</span
+    >
+    {% comment %} <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span> {% endcomment %}
+  </div>
+  <h1 style="height: 0; overflow: hidden;">Multilingual SEO for Government Websites</h1>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\SEO\Enhancing_gov__seo_incl_comms.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Inclusive Communication</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Government websites are primary sources of information for citizens. Ensuring that these websites are accessible in multiple languages helps in disseminating information to non-native speakers, ensuring inclusivity and better public engagement.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\SEO\enhancing_gov_seo_outreach_2.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Improved Outreach</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          By optimizing web content for various languages, government agencies can improve their search engine rankings across different linguistic demographics. This ensures that critical information and services are more easily discoverable by all citizens, regardless of their language preference.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\SEO\Enhancing_gov_seo_transperency-nobg.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Increased Transparency</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Providing translated content helps in maintaining transparency. Citizens can access official documents, public notices, and other essential information in their preferred language, fostering trust and accountability.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- features 1 end -->
+
+
+<!-- features 2 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Document Translation for Government Agencies</span
+    >
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\Document Translation\Enhancing_gov__seo_incl_comms.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Efficient Multilingual Communication</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Government websites are primary sources of information for citizens. Ensuring that these websites are accessible in multiple languages helps in disseminating information to non-native speakers, ensuring inclusivity and better public engagement.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\Document Translation\Enhancing_gov_doc_trans_delivery.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Enhanced Public Service Delivery</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          Translating service applications, educational materials, health advisories, and other public service documents helps in better service delivery. Citizens can understand and access services without language barriers, leading to increased satisfaction and participation.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\Document Translation\Gov_doctrans.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Support for Multilingual Education and Outreach</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Government initiatives often involve educational campaigns and outreach programs. Providing materials in multiple languages ensures that the message reaches a broader audience, including minority and immigrant populations.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\Document Translation\Enhancing_gov__doc_trans_compliance_nobg.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Compliance with Language Policies</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Many governments have policies mandating the use of multiple languages in official communications. MultiLipi ensures compliance with these policies, helping agencies to meet legal requirements and avoid potential penalties.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- features 2 end -->
+
+
+{% comment %} <div style="background-color: #000922; margin-bottom: 0;" class="outerdiv">
+  <div class="our-trusted-innerdiv-header" style="margin: 100px 0 0;">
+    <span class="header-span1" style="line-height: normal; font-size: calc(48 * var(--ratio));"
+    >Multilingual SEO for Government Websites</span>
+  </div>
+  <img src="{% static "files2\edu_NNTST.webp" %}" style="width: 100%; padding: 0 50px;" alt="">
+</div>
+
+<div style="background-image: url({% static "imgs\book_bg.webp" %}); background-size: cover;">
+  <div style="display: flex; align-items: center; padding: 80px;">
+    <div style="margin: 0 auto 0 20px;">
+    <h1 style="font-size: 40px; font-weight: 700;">Schedule a demo with</h1>
+    <h1 style="font-size: 40px; font-weight: 700;">our experts</h1>
+    </div>
+    <a style=" 
+        font-weight: 300;
+        color: white;
+        padding: 15px;
+        background: #0B3FC4;
+        border-radius: 5px;"
+      href="">Get a deom</a>
+  </div>
+</div> {% endcomment %}
+
+{% include "demo.html" %}
+
+{% endblock content %}

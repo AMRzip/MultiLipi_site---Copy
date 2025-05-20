@@ -1,0 +1,718 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | Goverment {% endblock title %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<!-- Meta tags for SEO -->
+<meta charset="UTF-8">
+<meta name="title" content="Web Agency Translation Solutions | Streamline Multilingual Website Projects with MultiLipi">
+<meta name="description" content="Discover how MultiLipi empowers web agencies to efficiently manage multilingual website projects with AI-driven translations, seamless editing, and comprehensive SEO tools.">
+{% endblock css %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: white;
+    }
+    .main-integration-review {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .main-integration-review p {
+        color: #0885DA;
+    }
+    .review-stars {
+        display: flex;
+        gap: 5px;
+    }
+    .review-stars i {
+        color: #fcd10a;
+    }
+</style>
+{% comment %} main front start  {% endcomment %}
+
+<div class="main-front-outerdiv">
+  <div class="main-front-innerdiv" style="padding: 0 80px;">
+    <div data-aos="fade-up">
+      <div class="main-integration-badge"> 
+        <p>Web Agency</p>
+      </div>
+      <div>
+        <h1 class="main-front-header-text" style="font-size: 60px;">Empower Your Web Agency with Seamless Multilingual Website Solutions</h1>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600" style="font-size:20px;">
+        <p>
+            MultiLipi offers web agencies a robust platform to efficiently manage and deliver multilingual websites for their clients. With features like AI-powered translations, intuitive editing interfaces, and comprehensive SEO optimization tools, agencies can streamline their workflow, reduce turnaround times, and enhance client satisfaction. Whether you're handling a single project or multiple client portfolios, MultiLipi ensures consistency, accuracy, and scalability in your website localization efforts.
+        </p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="10" data-aos-duration="600">
+        <div class="main-front-div-btn" data-aos-ancher-placement="center-center" style="
+        margin: 30px 0;
+        display: flex;
+        gap: 20px;">
+          <button class="home-button">
+            Get started for free
+          </button>
+        </div>
+      </div>
+    </div>
+    <img class="main-front-img" src="{% static "cards_imgs/agency.svg" %}" alt="Web agency dashboard showcasing multilingual website translation and management tools" style="width: 620px;" data-aos="fade-down"/>
+  </div>
+</div>
+
+<!-- features cards -->
+<div class="container mx-auto px-4 py-12">
+  <!-- Header -->
+  <div class="text-center mb-8">
+    <h2 class="text-4xl font-bold text-gray-800">
+      <span class="px-4 py-2 rounded-full">Deliver multilingual websites to clients, faster than ever</span>
+    </h2>
+  </div>
+
+  <!-- feature-card 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+      <!-- Left side image -->
+      <div class="flex items-center justify-center p-4 md:col-span-6" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+        <img src="{% static "cards_imgs/feature3.svg" %}" alt="Web agency translating website content using MultiLipi with no-code setup and AI editor" class="w-full h-auto rounded-lg" loading="lazy">
+      </div>
+      
+      <!-- Right side text content -->
+      <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Scan, translate, and deploy with Multilingual SEO</h3>
+        <p class="text-gray-600 mb-6">MultiLipi integrates effortlessly into your agency’s workflow, enabling you to translate client websites in minutes. With no-code installation, website content is automatically scanned, translated, and ready to publish — giving you more time to focus on design, UX, and strategy.</p>
+        <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+          Discover how Multilipi works
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- feature-card 2 -->
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f1e6ff; margin-top: 50px; height: 600px;">
+    <!-- Left side Text -->
+    <div class="flex flex-col justify-center p-4 md:col-span-5" data-aos="fade-up">
+      <h3 class="text-3xl font-bold text-gray-800 mb-4">Simplify translation management across multiple client projects</h3>
+      <p class="text-gray-600 mb-6">MultiLipi’s unified dashboard gives agencies total visibility into all client projects. Assign translators, apply glossary rules, approve edits, and monitor performance from one place. Your team can collaborate easily, while your clients enjoy consistent, high-quality translations.</p>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+        Learn more about translation quality
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+    <!-- Right side image -->
+    <div class="flex items-center justify-center md:col-span-5" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+      <img src="{% static "cards_imgs/dashboard.svg" %}" alt="MultiLipi dashboard for agencies managing multilingual websites and client translations" class="w-full h-auto rounded-lg" loading="lazy">
+    </div>
+  </div>
+
+    <!-- feature-card 3 -->
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+      <!-- left side image (70%) -->
+      <div class="flex items-center justify-center md:col-span-6" data-aos="fade-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+        <img src="{% static "cards_imgs/feature4.svg" %}" alt="Multilingual SEO preview for agency clients with hreflang, translated metadata, and URLs" class="w-full h-auto" loading="lazy">
+      </div>
+      <!-- right side Text (30%) -->
+      <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Boost discoverability in every market with localized SEO tags</h3>
+        <p class="text-gray-600 mb-6">MultiLipi handles all the behind-the-scenes SEO essentials for your agency-built websites. It automatically applies hreflang tags, generates language-specific URLs, and translates all meta content — ensuring your client’s site is ready to rank in local search engines worldwide.</p>
+        <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+          Read more about multilingual SEO
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+</div>
+<!-- End of features cards -->
+
+<!-- Integration -->
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+  <!-- Left side Image -->
+  <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <img src="{% static "cards_imgs/integration.svg" %}" alt="feature3" class="h-auto" style="width: 35rem" loading="lazy">
+  </div>
+  <!-- Right side Text -->
+  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+    <h2 class="text-5xl font-bold text-gray-800 mb-4" style="line-height: 60px;">Compatible with your website Technalogy</h2>
+    <p class="text-gray-600 mb-6">Don't change how your website works just incorporate our tool with your website for seemless integration</p>
+    <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
+      Explore all Integrations
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<style type="text/css">
+    .text-primary {
+        color: #0688E5;
+    }
+
+    .border-primary {
+        border-color: #0688E5;
+    }
+
+    .bg-white {
+        background-color: #ffffff;
+    }
+
+    .bg-lightBlue {
+        background-color: #E6F7FF;
+    }
+
+    .scroll-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    .scroll-wrapper {
+        display: flex;
+        flex-shrink: 0;
+        width: max-content;
+    }
+    
+    .scroll-left .scroll-wrapper {
+        animation: scroll-left 25s linear infinite;
+    }
+    
+    .scroll-right .scroll-wrapper {
+        animation: scroll-right 25s linear infinite;
+    }
+    
+    /* Pause animation on hover */
+    .scroll-container:hover .scroll-wrapper {
+        animation-play-state: paused;
+    }
+    
+    @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+    
+    .testimonial-card {
+        flex: 0 0 auto;
+        height: 380px;
+        width: 280px;
+        margin: 0 1rem;
+    }
+    
+    .logo-container {
+        height: 80px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 2rem;
+    }
+</style>
+<div class="container mx-auto px-4 py-16" style="margin-top: 100px;">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Trusted by Growing Web Agencies Around the World</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto italic">
+          From boutique studios to full-service digital agencies, teams use MultiLipi to deliver fast, high-quality multilingual websites that keep clients happy and projects on schedule. With features like instant setup, easy client hand-off, and built-in SEO optimization, agencies can expand their localization services without increasing operational overhead.
+        </p>
+    </div>
+    
+    <!-- Logo Section -->
+    <div class="mb-16">
+        <!-- First row of logos -->
+        <div class="mb-8 flex flex-wrap justify-center">
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">ACME Corp</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">TechFlow</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">GreenLeaf</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">DataSphere</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">InnovateLabs</span>
+            </div>
+        </div>
+        
+        <!-- Second row of logos -->
+        <div class="flex flex-wrap justify-center">
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">VisionForward</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">CloudNine</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">PeakPerform</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">BlueOcean</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">NexGen</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Testimonial Cards Section -->
+    <div class="mt-16" data-aos="fade-in">
+        <!-- First row of testimonials (left to right) -->
+        <div class="scroll-container scroll-left mb-8">
+            <div class="scroll-wrapper">
+                <!-- Testimonial Cards Row 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        Super happy with Multilipi – great tool and even better support!
+                        I’m really impressed with Multilipi so far. I used it to translate a hotel website into 8 languages, and it worked flawlessly. The translations are clean, the interface is super easy to use, and everything just clicks into place without headaches.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sarah Johnson</p>
+                        <p class="text-sm text-gray-600">Marketing Director, ACME Corp</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "We've seen a 40% increase in productivity since implementing this solution. Highly recommended!"
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Michael Chen</p>
+                        <p class="text-sm text-gray-600">CTO, TechFlow</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The customer service is exceptional. They went above and beyond to ensure our success."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Emily Rodriguez</p>
+                        <p class="text-sm text-gray-600">Operations Manager, GreenLeaf</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "Intuitive interface and powerful features. This has become an essential tool for our team."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">David Wilson</p>
+                        <p class="text-sm text-gray-600">Product Manager, DataSphere</p>
+                    </div>
+                </div>
+                
+                <!-- Duplicate testimonials for seamless scrolling -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This product has completely transformed our workflow. The team behind it is incredibly responsive and helpful."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sarah Johnson</p>
+                        <p class="text-sm text-gray-600">Marketing Director, ACME Corp</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "We've seen a 40% increase in productivity since implementing this solution. Highly recommended!"
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Michael Chen</p>
+                        <p class="text-sm text-gray-600">CTO, TechFlow</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The customer service is exceptional. They went above and beyond to ensure our success."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Emily Rodriguez</p>
+                        <p class="text-sm text-gray-600">Operations Manager, GreenLeaf</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "Intuitive interface and powerful features. This has become an essential tool for our team."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">David Wilson</p>
+                        <p class="text-sm text-gray-600">Product Manager, DataSphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second row of testimonials (right to left) -->
+        <div class="scroll-container scroll-right">
+            <div class="scroll-wrapper">
+                <!-- Testimonial Cards Row 2 -->
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The ROI on this product has been incredible. It paid for itself within the first month."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Alex Thompson</p>
+                        <p class="text-sm text-gray-600">Finance Director, VisionForward</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "I was skeptical at first, but now I can't imagine running our business without this tool."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Jessica Lee</p>
+                        <p class="text-sm text-gray-600">CEO, CloudNine</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The onboarding process was smooth and the learning curve was minimal. Our team was up and running in no time."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Robert Kim</p>
+                        <p class="text-sm text-gray-600">HR Manager, PeakPerform</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This solution has helped us scale our operations without adding headcount. A game-changer for our business."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sophia Martinez</p>
+                        <p class="text-sm text-gray-600">COO, BlueOcean</p>
+                    </div>
+                </div>
+                
+                <!-- Duplicate testimonials for seamless scrolling -->
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The ROI on this product has been incredible. It paid for itself within the first month."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Alex Thompson</p>
+                        <p class="text-sm text-gray-600">Finance Director, VisionForward</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "I was skeptical at first, but now I can't imagine running our business without this tool."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Jessica Lee</p>
+                        <p class="text-sm text-gray-600">CEO, CloudNine</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The onboarding process was smooth and the learning curve was minimal. Our team was up and running in no time."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Robert Kim</p>
+                        <p class="text-sm text-gray-600">HR Manager, PeakPerform</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This solution has helped us scale our operations without adding headcount. A game-changer for our business."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sophia Martinez</p>
+                        <p class="text-sm text-gray-600">COO, BlueOcean</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle scroll animations
+        function setupScrollers() {
+            const scrollContainers = document.querySelectorAll('.scroll-container');
+            
+            scrollContainers.forEach(container => {
+                // Calculate the total width of all items in the wrapper
+                const wrapper = container.querySelector('.scroll-wrapper');
+                const items = wrapper.children;
+                
+                // Calculate the duration based on content width
+                const totalWidth = wrapper.scrollWidth;
+                const duration = totalWidth / 60; // Adjust speed as needed
+                
+                // Set the animation duration
+                wrapper.style.animationDuration = `${duration}s`;
+            });
+        }
+        
+        // Initialize and recalculate on window resize
+        setupScrollers();
+        window.addEventListener('resize', setupScrollers);
+    });
+</script>
+<!-- End of Testimonial -->
+
+
+{% include "blog.html" %}
+
+<style>
+    .font-family {
+        font-family: Inter, sans-serif;
+        font-feature-settings: "liga" 1, "calt" 1;
+    }
+    .faq-section-outer-div {
+        padding: 30px 0 40px;
+        background-color: white;
+    }
+    .faq-section {
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+    }
+    .faq-title {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 52px;
+        text-align: center;
+        color: #212121;
+        margin: 40px auto;
+    }
+    .faq-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+        border-bottom: 1px solid grey;
+        gap: 40px;
+    }
+    .faq-question {
+        flex: 0 0 35%;
+        align-self: center;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        color: #212121;
+        text-align: left;
+    }
+    .faq-answer {
+        flex: 0 0 55%;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 27px;
+        text-align: left;
+        color: #212121;
+    }
+</style>
+
+<div id="FAQs" class="faq-section-outer-div" id="FAQs">
+    <h2 class="faq-title font-family">Frequently Asked Questions</h2>
+    <div class="faq-section">
+        <div class="faq-item" style="border-top: 1px solid grey;" data-aos="fade-left">
+            <div class="faq-question">
+                How does MultiLipi benefit web agencies and freelancers?
+            </div>
+            <div class="faq-answer">
+                MultiLipi enables agencies and freelancers to offer professional website translation services without relying on manual workflows. With AI-powered translation, customizable editing, glossary management, and SEO automation, you can deliver fully multilingual websites to your clients—faster and more affordably.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Can I manage multiple client websites from one dashboard?
+            </div>
+            <div class="faq-answer">
+                Yes. MultiLipi’s agency dashboard allows you to manage multiple websites, each with their own language settings, translation rules, and user access. This centralized control is ideal for handling numerous projects without switching tools.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                Can I invite clients or team members to collaborate on translations?
+            </div>
+            <div class="faq-answer">
+                Absolutely. You can assign translation permissions to clients, teammates, or external linguists. This helps streamline content review, approvals, and glossary enforcement, while keeping technical control in your hands.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                What CMS platforms does MultiLipi support for agency work?
+            </div>
+            <div class="faq-answer">
+                MultiLipi works seamlessly with WordPress, Webflow, Wix, Shopify, and custom-built websites. It requires no coding, meaning agencies can quickly deploy multilingual solutions regardless of the underlying tech stack.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                 Is MultiLipi white-labeled or brandable for my clients?
+            </div>
+            <div class="faq-answer">
+                While MultiLipi is not currently fully white-labeled, you can present it as a core part of your multilingual solution offering, with your own branding during client onboarding, and manage all work under your agency’s workflow.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Does MultiLipi handle multilingual SEO for client websites?
+            </div>
+            <div class="faq-answer">
+                Yes. MultiLipi automatically generates hreflang tags, creates language-specific URLs, and translates metadata and SEO tags, ensuring your client’s content is optimized to rank in each target market.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Is there a partner program for agencies?
+            </div>
+            <div class="faq-answer">
+                Yes! MultiLipi offers an Agency Partnership Program with exclusive benefits such as discounted rates, premium support, co-marketing opportunities, and early feature access. It’s perfect for scaling your translation services.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "contact_form.html" %}
+{% include "banner.html" %}
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock content %}

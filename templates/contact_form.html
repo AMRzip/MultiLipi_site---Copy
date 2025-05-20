@@ -1,0 +1,223 @@
+{% load static %} 
+
+<style>
+  .form-section{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .form-section h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 58px;
+    color: #000;
+    margin: 20px 0px;
+    text-align: center;
+  }
+
+  .form-div{
+    width: fit-content;
+    margin: 30px 20px;
+  }
+
+  .multi-input-div{
+    gap: 10px;
+    display: flex;
+    width: fit-content;
+    margin: 30px 0;
+    flex-wrap: nowrap;
+  }
+
+  .multi-input-div input{
+    box-sizing: border-box;
+    background: #0885da;
+    border: 1px solid #0885da;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    width: 300px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  .multi-input-div input::placeholder, .subject-input::placeholder, .message-textarea::placeholder{
+    color: #fff;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  .subject-input{
+    box-sizing: border-box;
+    background: #0885da;
+    border: 1px solid #0885da;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 30px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  .message-textarea{
+    box-sizing: border-box;
+    background: #0885da;
+    border: 1px solid #0885da;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    width: 100%;
+    min-height: 91px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 16px;
+  }
+
+  .small-para-outher-div{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 35px;
+    letter-spacing: 0.03em;
+    color: #000;
+    max-width: 400px;
+    padding: 50px 30px;
+    text-align: left;
+    margin: 30px 0;
+  }
+
+  .connect-submit-btn{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 16px;
+    padding: 15px 55px;
+    background-color: #0885da;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .form-bg-img{
+    width: 475px; 
+    z-index: 0; 
+    position: absolute;     
+    bottom: -20px;
+    right: 0;
+    height: 80%;
+  }
+
+  @media (max-width: 1024px) {
+    .multi-input-div input{
+      /* width: 100% */
+    }
+  }
+
+  @media (max-width: 650px) {
+    .form-div{
+      margin-top: 20px;
+    }
+    .multi-input-div{
+      flex-wrap: wrap;
+    }
+    .multi-input-div input{
+      width: 100%
+    }
+    
+    .form-section h1{
+      margin: 30px auto 10px;
+      text-align: center;
+      font-size: 35px;
+
+    }
+  }  
+</style>
+
+<div id="contact_us" class="form-section" id="contact_us">
+  <h1>Connect With Us In A Flash</h1>
+  <form id="contact_us_form">
+  <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div class="form-div" style="border-right: 1px solid grey; padding-right: 40px;">
+      <div class="multi-input-div">
+        <input 
+            id="full_name_input"
+            type="text" 
+            name="full_name" 
+            placeholder="Full Name*" 
+            required
+            autocomplete="name"   
+        />
+        <input 
+            type="email" 
+            name="email" 
+            id="email_input" 
+            placeholder="E-Mail*"
+            name="email"
+            required
+            autocomplete="email"
+        />
+      </div>
+      <div class="multi-input-div">
+        <input 
+            id="phone_input"
+            type="tel" 
+            name="phone" 
+            id="phone_input" 
+            placeholder="Phone No.*" 
+            autocomplete="mobile"
+            required
+        />
+        <input 
+            type="text" 
+            name="company_name" 
+            id="company_input" 
+            placeholder="Company Name">
+      </div>
+      <input 
+          class="subject-input" 
+          type="text" 
+          name="subject" 
+          id="subject_input" 
+          placeholder="Subject*" 
+          required>
+      <textarea 
+          class="message-textarea" 
+          name="msg" 
+          id="msg_input" 
+          placeholder="Type Message*" 
+          required></textarea>
+    </div>
+    <div class="form-div" style="margin: 50px 0;">
+      <div class="small-para-outher-div">
+        As we understand your business is
+        mostly about words, we not only
+        translate language we transform
+        business in the world of words.
+      </div>
+      <div style="display: flex; margin: 20px; margin-top: -20px;">
+        <button type="button" id="submitBtn"
+            form="contact_us_form"
+            class="connect-submit-btn">Submit</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  <!-- <img class="form-bg-img" src="{% static "files3/form-bg.svg" %}" alt=""> -->
+</div>

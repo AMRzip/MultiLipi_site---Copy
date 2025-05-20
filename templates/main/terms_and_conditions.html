@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Terms & Conditions{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background: #161616;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+  }
+
+  .policy p,
+  .policy li {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .policy ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .policy ul li::before {
+    content: "• ";
+    color: #0056b3;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+</style>
+
+{% comment %} {% include "nav_policy.html" %} {% endcomment %}
+
+<div class="policy" style="display: flex; justify-content: center; margin: 100px auto 50px">
+  <div class="container text-justify">
+    <h1 class="font-bold text-3xl md:text-4xl mb-8">Terms &amp; Conditions</h1>
+    <p class="text-xs mb-2">Last updated on June 15th 2024</p>
+    <p class="mb-2">The Website Owner, including subsidiaries and affiliates (“Website” or “Website Owner” or “we” or “us” or “our”) provides the information contained on the website or any of the pages comprising the website (“website”) to visitors (“visitors”) (cumulatively referred to as “you” or “your” hereinafter) subject to the terms and conditions set out in these website terms and conditions, the privacy policy and any other relevant terms and conditions, policies and notices which may be applicable to a specific section or module of the website.
+  <br><br>
+      Welcome to our website. If you continue to browse and use this website you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern MULTILIPI PRIVATE LIMITED''s relationship with you in relation to this website.<br>
+      <br>
+      The term 'MULTILIPI PRIVATE LIMITED' or 'us' or 'we' refers to the owner of the website whose registered/operational office is 75/17 TAGORE LANE, SHIPRA PATH, MANSAROVAR Jaipur RAJASTHAN 302020. The term 'you' refers to the user or viewer of our website.<br>
+      <br>
+      <span class="font-bold">The use of this website is subject to the following terms of use:</span>
+      </p>
+    <div class="ml-8">
+    <ul class="text-sm">
+      <li class="mb-2">The content of the pages of this website is for your general information and use only. It is subject to change without notice.</li>
+      <li class="mb-2">Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any particular purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.</li>
+      <li class="mb-2">Your use of any information or materials on this website is entirely at your own risk, for which we shall not be liable. It shall be your own responsibility to ensure that any products, services or information available through this website meet your specific requirements.</li>
+      <li class="mb-2">This website contains material which is owned by or licensed to us. This material includes, but is not limited to, the design, layout, look, appearance and graphics. Reproduction is prohibited other than in accordance with the copyright notice, which forms part of these terms and conditions.</li>
+      <li class="mb-2">All trademarks reproduced in this website which are not the property of, or licensed to, the operator are acknowledged on the website.
+      </li>
+      <li class="mb-2">Unauthorized use of this website may give rise to a claim for damages and/or be a criminal offense.</li>
+      <li class="mb-2">From time to time this website may also include links to other websites. These links are provided for your convenience to provide further information. </li>
+      <li class="mb-2">You may not create a link to this website from another website or document without MULTILIPI PRIVATE LIMITED’s prior written consent. </li>
+      <li class="mb-2">Your use of this website and any dispute arising out of such use of the website is subject to the laws of India or other regulatory authority.</li>
+      We as a merchant shall be under no liability whatsoever in respect of any loss or damage arising directly or indirectly out of the decline of authorization for any Transaction, on Account of the Cardholder having exceeded the preset limit mutually agreed by us with our acquiring bank from time to time
+    </ul>
+  </div>
+  </div>
+</div>
+{% endblock content %}

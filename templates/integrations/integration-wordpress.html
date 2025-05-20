@@ -1,0 +1,424 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | WordPress{% endblock title %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<meta name="description" content="MultiLipi is a powerful, easy-to-use WordPress translation plugin. Translate your wordpress website into 120+ languages with AI and human editing. Enjoy fast, accurate, and SEO-optimized translations with full control.">
+<meta name="title" content="Website Translation with AI | Best WordPress Translation Plugin">
+{% endblock css %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: white;
+    }
+    .main-integration-review {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .main-integration-review p {
+        color: #0885DA;
+    }
+    .review-stars {
+        display: flex;
+        gap: 5px;
+    }
+    .review-stars i {
+        color: #fcd10a;
+    }
+</style>
+{% comment %} main front start  {% endcomment %}
+
+<div class="main-front-outerdiv">
+  <div class="main-front-innerdiv" style="padding: 0 80px;">
+    <div data-aos="fade-up">
+      <div class="main-integration-badge"> 
+        <p>Wordpress x MultiLipi</p>
+      </div>
+      <div>
+        <h1 class="main-front-header-text" style="font-size: 60px;">WordPress Translation<br>Plugin for Multilingual<br>SEO and Global Reach</h1>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600" style="font-size:20px;">
+        <p>
+            MultiLipi is a powerful, easy-to-use WordPress translation plugin. Translate your wordpress website into 120+ languages with AI and human editing. Enjoy fast, accurate, and SEO-optimized translations with full control.
+        </p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="10" data-aos-duration="600">
+        <div class="main-front-div-btn" data-aos-ancher-placement="center-center" style="
+        margin: 30px 0;
+        display: flex;
+        gap: 20px;">
+          <button class="home-button">
+            <span>Translate my Wordpress site</span>
+          </button>
+        </div>
+        <div class="main-integration-review">
+            <p>4.8</p>
+            <div class="review-stars">
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+            </div>
+            <h4>G2</h4>
+            <h4>|</h4>
+            <p>4.7</p>
+            <div class="review-stars">
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+                <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
+            </div>
+            <h4>Wordpress Directory</h4>
+        </div>
+      </div>
+    </div>
+    <div style="width: fit-content; margin: 0 auto;" data-aos="fade-down">
+      <img class="main-front-img" src="{% static "cards_imgs/wordpress.svg" %}"
+      alt="Translate WordPress website into any language using MultiLipi plugin with SEO supporti" style="width: 600px;"/>
+    </div>
+  </div>
+</div>
+
+<!-- features cards -->
+<div class="container mx-auto px-4 py-12">
+  <!-- Header -->
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">
+      <span class="px-4 py-2 rounded-full">Get started with our WordPress translation plugin in minutes</span>
+    </h2>
+  </div>
+
+  <!-- feature-card 1 -->
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+    <!-- Left side image -->
+    <div class="flex items-center justify-center p-4 md:col-span-6" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+      <img src="{% static "cards_imgs/feature3.svg" %}" alt="Start translating your WordPress website in minutes using MultiLipi plugin" class="w-full h-auto rounded-lg" loading="lazy">
+    </div>
+    
+    <!-- Right side text content -->
+    <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Quick to install, fully compatible with all WordPress plugins</h2>
+      <p class="text-gray-600 mb-6">Launch your multilingual WordPress website in under 5 minutes with no coding required. MultiLipi supports 120+ languages and integrates seamlessly with all WordPress themes, plugins, and page builders, including Elementor and WooCommerce. Enjoy smooth setup, instant translation, and multilingual SEO right out of the box..</p>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+        Discover how Multilipi works
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="text-center mb-8" style="margin-top: 50px;">
+    <h2 class="text-4xl font-bold text-gray-800">
+      <span class="px-4 py-2 rounded-full">Reach global visitors with multilingual SEO for WordPress</span>
+    </h2>
+  </div>
+
+    <!-- feature-card 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+      <!-- Left side Text (30%) -->
+      <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+        <h3 class="text-3xl font-bold text-gray-800 mb-4">Optimize your translated WordPress website to rank on Google</h3>
+        <p class="text-gray-600 mb-6">Boost your website’s visibility with AI-powered multilingual SEO. MultiLipi automatically adds hreflang tags, creates language-specific URLs, and translates metadata — following Google’s best practices to help your translated WordPress site rank globally.</p>
+        <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+          Read more about multilingual SEO
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <!-- Right side image (70%) -->
+      <div class="flex items-center justify-center md:col-span-6" data-aos="fade-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+        <img src="{% static "cards_imgs/feature4.svg" %}" alt="Multilingual Site setup showing ranking, hreflang tags, and metadata for WordPress" class="w-full h-auto" loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of features cards -->
+
+<!-- Integration -->
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+  <!-- Left side Image -->
+  <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <img src="{% static "cards_imgs/integration.svg" %}" alt="Translate websites built on Wix, Webflow, and Shopify using MultiLipi" class="h-auto" style="width: 35rem" loading="lazy">
+  </div>
+  <!-- Right side Text -->
+  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+    <h2 class="text-5xl font-bold text-gray-800 mb-4">MultiLipi works with Wix, Webflow, Shopify, and more</h2>
+    <p class="text-gray-600 mb-6">While MultiLipi is a powerful WordPress translation plugin, it's also fully compatible with other platforms like Wix, Webflow, Shopify, and WooCommerce. Whether your website is built on a CMS or a custom stack, MultiLipi makes it easy to translate any website into 120+ languages — with full multilingual SEO support and zero code changes.</p>
+    <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
+      Explore all Integrations
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</div>
+<!-- End of Integration -->
+
+{% include "multilipi_features.html" %}
+{% include "testimonials.html" %}
+
+<style>
+    .font-family {
+        font-family: Inter, sans-serif;
+        font-feature-settings: "liga" 1, "calt" 1;
+    }
+    .faq-section-outer-div {
+        padding: 30px 0 40px;
+        background-color: white;
+    }
+    .faq-section {
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+    }
+    .faq-title {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 52px;
+        text-align: center;
+        color: #212121;
+        margin: 40px auto;
+    }
+    .faq-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+        border-bottom: 1px solid grey;
+        gap: 40px;
+    }
+    .faq-question {
+        flex: 0 0 35%;
+        align-self: center;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        color: #212121;
+        text-align: left;
+    }
+    .faq-answer {
+        flex: 0 0 55%;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 27px;
+        text-align: left;
+        color: #212121;
+    }
+</style>
+
+<div id="FAQs" class="faq-section-outer-div" id="FAQs">
+    <h2 class="faq-title font-family">Frequently Asked Questions</h2>
+    <div class="faq-section">
+        <div class="faq-item" style="border-top: 1px solid grey;" data-aos="fade-left">
+            <div class="faq-question">
+                Is MultiLipi compatible with WordPress websites?
+            </div>
+            <div class="faq-answer">
+                Yes! MultiLipi is fully compatible with WordPress. You can translate your WordPress website into 120+ languages within minutes — no coding required. Just install the plugin, choose your languages, and go live instantly.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                How is MultiLipi different from other translation plugins?
+            </div>
+            <div class="faq-answer">
+                MultiLipi offers a simpler setup, intuitive dashboard, and AI + human-powered translations, all while focusing on multilingual SEO. Unlike many competitors, we provide real-time editing, subdomain/subdirectory support, and seamless plugin compatibility.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                 How do I integrate MultiLipi with my WordPress website?
+            </div>
+            <div class="faq-answer">
+                It’s easy! Install the MultiLipi WordPress translation plugin, select your preferred languages, and follow our quick start guide. Your multilingual site will be ready in less than 5 minutes.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Can I try MultiLipi for free on WordPress?
+            </div>
+            <div class="faq-answer">
+                Absolutely. You can start with our free plan, which allows you to test MultiLipi on your WordPress site without any commitment. Upgrade anytime for more words, languages, and advanced features.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                How does MultiLipi work on WordPress?
+            </div>
+            <div class="faq-answer">
+                MultiLipi automatically detects and translates your website content using AI. You can then edit or enhance translations manually via the MultiLipi dashboard, or invite human translators. It's a complete multilingual WordPress solution.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Is MultiLipi good for WordPress multilingual SEO?
+            </div>
+            <div class="faq-answer">
+                Yes! MultiLipi follows Google’s best practices for multilingual SEO — including hreflang tags, translated metadata, and support for language-specific subdomains or subdirectories. This helps your translated WordPress website rank globally.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} 
+<div class="testimonial-section">
+  <div class='test-title' style="text-align: center; display: flex;flex-direction: column;">
+      <h1 class="testimonial-title" style="margin-bottom: 25px;">
+          What Our Customers <br> Say About Us.
+      </h1>
+      <!-- <p class="testimonial-title" style="margin: 0 auto 40px;">Say About Us.</p> -->
+
+      <!-- <a style="font-size: 16px;
+  color: #1A9FE2;
+  font-weight: 700;" href="https://www.google.com/">Read all customer stories</a> -->
+  </div>
+
+  <div style="display: flex; margin: auto;
+  flex-wrap: wrap;
+  margin-top: 30px;
+    justify-content: center;
+  ">
+      <div class="test-card">
+          <div>
+              <img class="testimonial-logo" src="{% static "icons/p_logo.webp" %}" alt="" loading="lazy">
+              <div class="test-title">
+                <p>Thanks to MultiLipi, we've been able to deliver local news and knowledge to even more villages in their native languages. Simple to use and incredibly effective, their translation services are a game-changer for us. Grateful to MultiLipi for helping us connect deeper with rural India.</p>
+              </div>
+              <img class="test-pic " src="{% static "files/img-23.webp" %}" alt="" loading="lazy">
+              <p class="test-name">
+                  Vaibavh, Rajasthan
+
+              </p>
+          </div>
+      </div>
+      <div class="test-card">
+          <div>
+              <img class="testimonial-logo" src="{% static "icons/bhashini_logo.webp" %}" alt="" loading="lazy">
+              <div class="test-title">
+                <p>
+                MultiLipi has been a game-changer for our team at Bhashini. The platform's advanced multilingual SEO solutions have helped us seamlessly translate and optimize our content for diverse audiences across India. With AI-powered translation and intuitive editing options, we were able to maintain accuracy and cultural relevance across multiple languages. The seamless integration and subdomain hosting made it incredibly easy for us to implement the system in just a few minutes. MultiLipi’s powerful features like glossary management and translation memory have truly enhanced our workflow. We highly recommend MultiLipi for any business looking to expand its reach through multilingual SEO.
+              </p>
+              </div>
+              <img class="test-pic " src="{% static "files/img-25.webp" %}" alt="" loading="lazy">
+              <p class="test-name">
+                Ajay Rajawat,
+                Senior Manager, Bhashini
+              </p>
+          </div>
+      </div>
+      <div class="test-card">
+        <div>
+            <img class="testimonial-logo" src="{% static "icons/My_Body_affairs_Logo.avif" %}" alt="" loading="lazy">
+            <div class="test-title">
+              <p>MyBodyAffair values diversity in beauty. With MultiLipi, our products now resonate in multiple languages. Their translations have deepened trust and clarity for our brand, ensuring every customer feels seen. Kudos to MultiLipi for bridging the gap!</p>
+            </div>
+            <img class="test-pic " src="{% static "files/img-24.webp" %}" alt="" loading="lazy">
+            <p class="test-name">
+                Sandeep, Rajasthan
+
+            </p>
+        </div>
+      </div>
+
+      <!-- <div class="see-more">
+          <p style="
+          color: azure;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 27.2px;">
+              Lorem ipsum dolor sit amet consectetur. Sollicitudin vestibulum pulvinar in sapien tortor. Proin sed
+              morbi cursus velit vulputate eget lorem ut. Consectetur morbi.
+          </p>
+          <button class="see-more-btn">
+              see more
+          </button>
+
+      </div> -->
+
+  </div>
+</div> {% endcomment %}
+{% comment %} 
+<div class="partners-outer-div" style="margin: 50px auto;">
+  <h1>Our Recognition</h1>
+  <ul>
+    <li>
+      <img src="{% static "files/img-17.webp" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img style="max-width: 70%;
+    margin: 0 auto;" src="{% static "files/img-19.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy" rel>
+    </li>
+    <li>
+      <img src="{% static "files/img-18.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+ {% endcomment %}
+{% include "blog.html" %}
+{% include "frequently_asked.html" %}
+{% include "contact_form.html" %}
+{% include "banner.html" %}
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock content %}

@@ -1,0 +1,140 @@
+.container{
+    max-width: 1300px;
+    width: 60vw;
+    margin: 25px auto;
+    display: block;
+    min-height: 75vh;
+}
+
+.comm-title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top :10px;
+    margin-bottom: 10px;
+}
+
+.forms{
+    /* border: red solid 2px; */
+    width:100%;
+    display: flex;
+    margin-right: 10px;
+    flex-wrap: wrap;
+}
+
+.input-box{
+    /* border: yellow solid 2px; */
+    display: flex;
+    width: 90%;
+    height: 80%;
+    flex: 1;
+    height: 80px;
+    border: 2px solid rgba(255, 255, 245, .1);
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+    /* margin:10px ; */
+    /* background-color:red; */
+}
+
+.input-box > input{
+    margin-left: 50px;
+    margin-right: 10px;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 22px;
+   padding-left: 10px;
+   margin-right: 30px;
+    border-radius: 1px;
+    /* background-color:#f7f8fb; */
+    /* border: 2px solid rgba(255, 255, 245, .1); */
+}
+
+.input-comment{
+   width: 90%;
+   border-radius: 20px;
+   margin-top:10px;
+   margin-bottom :10px;
+   border: 2px solid rgba(255, 255, 245, .1);
+   /* background-color:white; */
+   /* background-color:red; */
+}
+
+.input-comment >  textarea{
+    outline: none;
+    margin-left: 30px;
+    width: 95%;
+    line-height: 1.5;
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 20px;
+    /* background-color:#161616; */
+  
+}
+
+.input-comment i{
+    position: absolute;
+    margin: 5px;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.form-btn{
+    width: 90%;
+    height: auto;
+    border-radius: 50px;
+    text-align: center;
+    padding: 10px;
+    background:#1A9FE2;
+}
+
+.form-btn:hover{
+    background: #223a66;
+}
+
+.form-btn > input{
+    color: black;
+}
+
+
+.profile{
+    display: flex;
+    margin-top:10px ;
+    margin-bottom: 10px;
+}
+
+.author-pic{
+    margin-top: 7px;
+    display: flex;
+    width: 25%; 
+    align-items: center;
+    justify-content: start;
+
+}
+
+.author-pic > img{
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius:100% ;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.input-box i{
+    position: absolute;
+    margin: 5px;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+
+/* .author-info{
+    
+} */

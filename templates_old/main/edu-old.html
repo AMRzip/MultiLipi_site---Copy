@@ -1,0 +1,232 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Education Industry{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #161616ff;
+  }
+</style>
+<style> /* our-trusted */
+  .outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    line-height: 0px;
+  }
+  .header-span1 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      103.37deg,
+      #d8d5d199 0%,
+      #f1f0eeff 43%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  .seo-card {
+    width: 75%;
+    background: #FAFBFC;
+    box-shadow: 0px 9px 23px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin: 0 auto 20px;
+    color: black;
+    display: flex;
+    padding-bottom: 20px;
+  }
+</style>
+
+{% include "nav_indus.html" %}
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <img src="{% static "files2/edu_main_bg.webp" %}" alt="website localization" class="main-front-bg" />
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 style="display: inline" class="gradint-text">Education </h2>
+        <h1 style="display: inline" class="heading-blueis">Industry</h1>
+      </div>
+      <div class="main-front-para">
+        <p>
+          In the field of education, effective communication and accessibility are paramount. MultiLipi's multilingual SEO and document translation services can significantly enhance educational institutions' ability to reach and serve a diverse student body.
+        </p>
+      </div>
+      <div>
+        <div>
+          <a class="main-front-btn" href="#requesting-demo">Get started for free</a>
+          {% comment %} <a class="main-front-btn" href="">Try now free</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    {% comment %} <div>
+      <img style="width: 525px" src="{% static "files2/edu_main_img.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- features 1 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Multilingual SEO for Educational Institutions</span
+    >
+    {% comment %} <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span> {% endcomment %}
+  </div>
+  <h1 style="height: 0; overflow: hidden;">Multilingual SEO for Educational Institutions</h1>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\Enhancing_gov__seo_incl_comms.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Inclusive Communication</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Educational institutions cater to students from various linguistic backgrounds. Ensuring websites and digital platforms are accessible in multiple languages helps in delivering critical information to all students, fostering inclusivity and equal opportunity.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\enhancing_gov_seo_outreach_2.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Global Reach</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          By optimizing content for different languages, educational institutions can attract international students, researchers, and faculty. Multilingual SEO enhances the global visibility of academic programs, research opportunities, and campus life.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Government\SEO\Enhancing_gov_seo_transperency-nobg.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Enhanced Student Experience</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Providing information in multiple languages, including admissions guidelines, course details, and campus services, improves the overall student experience. It helps students and parents make informed decisions and feel more connected to the institution.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- features 1 end -->
+
+
+<!-- features 2 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Document Translation for Educational Institutions</span
+    >
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Education_doc_trans_coursematerial.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Course Materials</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating course materials, textbooks, and academic papers ensures that students who are non-native speakers can fully engage with the curriculum. It supports better learning outcomes and academic success.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Education_doc_trans_accessible.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Accessible Admissions Process</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          Translating admission forms, brochures, and guidelines makes the application process more accessible to international students. It reduces barriers and encourages a more diverse student body.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\education_doc_support.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Support Services</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Educational institutions provide various support services, including counseling, health services, and career guidance. Offering these services in multiple languages ensures all students can access and benefit from them.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Enhancing_gov__doc_trans_compliance.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Compliance with Language Policies</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Many countries and regions have language policies mandating the use of multiple languages in educational institutions. MultiLipi ensures compliance with these policies, helping institutions meet legal requirements and avoid potential penalties.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Education_Doc_community.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Improved Community Engagement</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating communications for parents, community members, and other stakeholders fosters better engagement and participation in school activities, meetings, and events. It strengthens the relationship between the institution and its community.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- features 2 end -->
+
+
+{% include "demo.html" %}
+
+{% endblock content %}

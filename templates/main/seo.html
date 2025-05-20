@@ -1,0 +1,1627 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Multilingual SEO{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+  }
+</style>
+
+<!-- main front start  -->
+<style> /* main front */
+  .main-front-outerdiv {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 0 100px;
+    /* background: linear-gradient(45deg, #0FB9E9, #2C5C6C); */
+    /* background-image: url('{% static "files3/doc-bg-2.webp" %}');
+    background-repeat: no-repeat;
+    background-size: cover;  */
+  }
+  .main-front-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+  }
+  .main-front-innerdiv {
+    background-repeat: ;
+  }
+  .main-front-header-text{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .main-front-header-text > h1 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 103px;
+    /* or 143% */
+    text-align: center;
+    letter-spacing: -3px;
+
+    color: #FFFFFF;
+  }
+  .main-front-header-text-para {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 53px;
+    color: white;
+  }
+
+  .main-front-header-text-para-trans {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+  }
+  .main-front-tablist-outerdiv{
+    background: #FFFFFF;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 80px auto 50px;
+  }
+
+  .main-front-seo{
+    background: #1179FC;
+    border-radius: 50px;
+  }
+
+  .main-front-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 3.5px;
+    background: #FFFFFF;
+    border-radius: 40px;
+  }
+
+  .main-front-bg img{
+    height: 100%;
+    max-width: fit-content;
+  }
+
+  @media (max-width: 768px) {
+    .main-front-header-text > h1{
+      font-size: 50px;
+      line-height: 80px;
+      text-align: center;
+      letter-spacing: 0px;
+    }    
+  }
+
+  @media (max-width: 400px) {
+    .main-front-outerdiv{
+      padding: 160px 30px 100px 30px;
+    }
+    .main-front-header-text > h1{
+      font-size: 40px;
+      line-height: 60px;
+      text-align: center;
+      letter-spacing: 0px;
+    }    
+  }
+
+</style>
+
+<style>
+  .tab-container {
+      display: flex;
+      background-color: white;
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+  }
+  .tab {
+      width: 195px;
+      margin: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      align-content: center;
+      position: relative;
+      transition: color 0.3s;
+  }
+  .tab:first-child {
+      margin-right: 10px; /* Spacing between tabs */
+  }
+  .tab p{
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.8594px;
+    line-height: 26px;
+  }
+  .tab.selected {
+      /* background-color: #007BFF; Blue background for selected tab */
+      color: white;
+  }
+  .tab:not(.selected) {
+      color: #191919; /* Default black text color for unselected tab */
+  }
+  .tab-icon {
+      margin-right: 10px; /* Space between icon and text */
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+  .overlay div{
+    background-color: #007BFF;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+  }
+</style>
+
+<style>
+  .primary-btn-outline {
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+  }
+  .border-gray {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  }
+  .border-green,
+  .border-orange {
+    --tw-border-opacity: 1;
+    border-color: rgb(251 146 60 / var(--tw-border-opacity));
+  }
+  .border-green {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    border-color: rgb(74 222 128 / var(--tw-border-opacity));
+  }
+  .border-red,
+  .border-violet {
+    --tw-border-opacity: 1;
+    border-color: rgb(167 139 250 / var(--tw-border-opacity));
+  }
+  .border-red {
+    border-color: rgb(248 113 113 / var(--tw-border-opacity));
+  }
+  .pricing-card {
+    --tw-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
+      0 8px 10px -6px rgba(255, 255, 255, 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px rgba(255, 255, 255, 0.3),
+      0 8px 10px -6px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #ffffff00),
+      var(--tw-ring-shadow, 0 0 #ffffff00), var(--tw-shadow);
+    padding: 1.25rem;
+    border-top-width: 4px;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    min-width: 265px;
+    max-width: 19%;
+    background: white;
+  }
+  .pricing-card:hover {
+    border-width: 4px !important;
+    border-color: rgb(59 130 246) !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.1);
+  }
+  .pricing-card-section {
+    gap: 3rem 0;
+  }
+</style>
+
+{% comment %} <div class="main-front-outerdiv">
+  <div  class="main-front-bg">
+    <img src="{% static "files3/doc-bg-2.webp" %}" alt="">
+  </div>
+  <div class="main-front-innerdiv">
+    <div class="main-front-header-text">
+      <h1>Your Content, Any Language: <br> Seamless AI Document <br> Translation Made Easy</h1>
+    </div>
+    <div>
+      <div style="
+      margin-top: 80px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;">
+        <a class="main-front-btn" style="background: white;
+          border-radius: 30px;
+          cursor: pointer;
+          width: 200px;
+          height: 51.6px;
+          font-family: 'Lato';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15.75px;
+          color: rgba(0, 0, 0, 0.8);
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+        " href="">BOOK A MEETING</a>
+        <a class="main-front-btn" style="
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        width: 200px" href="">Try now</a>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+<style> /* main front */
+  .main-front-outerdiv {
+    /* background-image: url("imgs/doc_bg.webp"); */
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 50px 0px 80px;
+    background: linear-gradient(45deg, #0FB9E9, #2C5C6C);
+    /* background-size: cover; */
+  }
+  .main-front-innerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: normal;
+    gap: 30px;
+  }
+  .main-front-para {
+    color: white;
+    max-width: 500px;
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .main-front-header-text {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 69px;
+    text-decoration: none;
+    text-transform: none;
+    background: white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+  }
+  .main-front-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 3.5px;
+    background: #FFFFFF;
+    border-radius: 40px;
+  }
+  .bg-lang-div{
+    width: 175px;
+    position: absolute;
+    left: -22%;
+    top: -7%;
+    padding: 12px 12px 4px;
+    background: #FFFFFF;
+    border-radius: 5.0875px;
+  }
+  .bg-lang-div-heading{
+    background-color: #1A9FE2; 
+    color: white; 
+    font-family: K2D; 
+    width: fit-content; 
+    padding: 0 10px 3px; 
+    border-radius: 4px;
+    font-size: 20px;
+  }
+  .bg-lang-div-rows{
+    text-align: left;
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px; 
+    font-size: 18px; 
+    font-weight: 500;
+    font-family: K2D;
+  }
+  .bg-lang-div-rows-lang-val{
+    width: 70px;
+    color: #1A9FE2; 
+    padding-bottom: 3px;
+  }
+  .bg-lang-div-rows-lang{
+    width: 100%;
+    padding-bottom: 3px;
+  }
+  .bg-lang-div-rows-icon{
+    width: 25px;
+    height: 25px;
+  }
+  .main-front-div-btn{
+    margin: 80px auto;
+    display: flex;
+    gap: 20px;
+  }
+  .main-front-img{
+    width: 525px;
+    z-index: 2;
+    position: relative;
+  }
+  .main-front-para > p{
+    font-family: Montserrat;   
+  }
+  @media (max-width: 1250px) {
+    .main-front-innerdiv{
+      justify-content: center;
+    }
+    .main-front-header-text{
+      text-align: center;
+    }
+    .main-front-div-btn{
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
+    .main-front-img{
+      display: none;
+    }
+    .bg-lang-div{
+      display: none;
+    }
+    .main-front-para > p{
+      text-align: center;
+    }
+  }
+  @media (max-width: 550px) {
+    .main-front-outerdiv{
+      padding: 140px 20px 0px;
+    }
+
+    .main-front-header-text{
+      font-size: 36px;
+      line-height: 50px;
+    }
+    .main-front-innerdiv{
+      gap: 0;
+    }
+  }
+</style>
+
+<div class="main-front-outerdiv">
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 class="main-front-header-text">Discover Worldwide Visibility <br />Unleash Your Content's
+          Global Potential <br />With MultiLipi From<span
+                  style="
+                    background: linear-gradient(
+                      90deg,
+                      #ff744833 0%,
+                      #ff74470d 100%
+                    );
+                    border-left: 4px solid #ff7448ff;
+                  "
+                  >&nbsp;English</span
+                 >
+                to <a
+                  disabled="disabled"
+                  id="typewrite"
+                  data-period="500"
+                  loopdur="0"
+                  data-type='[ "हिंदी", "ગુજરાતી", "தமிழ்", "বাংলা" ]'
+                >
+                  <span class="wrap"></span>
+                </a>
+                &nbsp;
+              </span>
+          </h2>
+      </div>
+      {% comment %} <div class="main-front-para">
+        <p>
+          Experience fast, accurate translations with our cutting-edge AI technology. Make your content accessible to global audiences effortlessly.
+        </p>
+      </div> {% endcomment %}
+      <div>
+        <div class="main-front-div-btn" style="
+        margin-top: 80px;
+        display: flex;
+        gap: 20px;">
+          <a class="main-front-btn" style="background: white;
+          color: black;
+          border-radius: 30px;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          width: 200px;
+          font-family: 'Lato';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15.75px;
+          line-height: 14px;
+          min-height: 51.6px;
+          color: rgba(0, 0, 0, 0.8);
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+          " href="#contact_us">BOOK A MEETING</a>
+          <a class="main-front-btn" style="
+          background: transparent;
+          border: 1px solid white;
+          color: white;
+          border-radius: 30px;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          width: 200px" href="https://dashboard.multilipi.com/">Try now</a>
+        </div>
+      </div>
+    </div>
+    {% comment %} <div style="position: relative;">
+      <div class="bg-lang-div">
+        <div class="bg-lang-div-heading">Translate into:</div>
+        <div style="margin: 10px 0px;
+        /* border: 0.5px solid rgba(0, 0, 0, 0.2); */
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        height: 1px;
+        border-radius: 8px; "></div>
+        <div class="bg-lang-div-rows">
+          <span class="bg-lang-div-rows-lang-val">EN</span>
+          <span class="bg-lang-div-rows-lang">English</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="">
+        </div>
+        <div class="bg-lang-div-rows">
+          <span class="bg-lang-div-rows-lang-val">HI</span>
+          <span class="bg-lang-div-rows-lang">Hindi</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="">
+        </div>
+        <div class="bg-lang-div-rows">
+          <span class="bg-lang-div-rows-lang-val">FR</span>
+          <span class="bg-lang-div-rows-lang">French</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="">
+        </div>
+        <div class="bg-lang-div-rows">
+          <span class="bg-lang-div-rows-lang-val">SP</span>
+          <span class="bg-lang-div-rows-lang">Spanish</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="">
+        </div>
+        <div class="bg-lang-div-rows">
+          <span class="bg-lang-div-rows-lang-val">IT</span>
+          <span class="bg-lang-div-rows-lang">Italian</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="">
+        </div>
+      </div>
+      <img class="main-front-img" src="{% static "files3/home_front.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<style> /* features icon */
+  .features-icon-outerdiv{
+    margin: 80px 60px 120px;
+  }
+  .features-icon-outerdiv ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px;
+    gap: 162px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  .features-icon-outerdiv ul li{
+    text-align: center;
+  }
+  .features-icon-outerdiv ul li img{
+    width: 108px;
+    height: 108px;
+    margin: 10px auto;
+  }
+
+  .features-icon-outerdiv ul li p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20.6046px;
+    line-height: 25px;
+    text-align: center;
+  }
+
+</style>
+
+<div class="features-icon-outerdiv">
+  <ul>
+    <li>
+      <img src="{% static "icons/home_f1.webp" %}" alt="300% increase in Organic - online translators" loading="lazy">
+      <p>300% increase in Organic<br>Traffic in regional language</p>
+    </li>
+    <li>
+      <img src="{% static "icons/home_f2.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+      <p>80% improvement in<br>Conversion Rate</p>
+    </li>
+    <li>
+      <img src="{% static "icons/home_f3.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+      <p>75% increase in Average<br>Session Time</p>
+    </li>
+    <li>
+      <img src="{% static "icons/home_f4.webp" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+      <p>2x improvement in<br>User Retention</p>
+    </li>
+  </ul>
+</div>
+
+
+<style>
+  .youtube-video-outerdiv{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  .youtube-video-outerdiv iframe{
+    width: 90vw;
+    height: calc(90vw / 2.2);
+    border-radius: 25px;
+  }
+
+  #related-videos{
+    display: none;
+  }
+  #watch-next-section{
+    display: none;
+  }
+</style>
+
+<div class="youtube-video-outerdiv">
+  <style>.hytPlayerWrap{display:inline-block;position:relative}.hytPlayerWrap.ended::after{content:"";position:absolute;top:0;left:0;bottom:0;right:0;cursor:pointer;background-color:black;background-repeat:no-repeat;background-position:center;background-size:64px 64px;background-image:url(data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgNTEwIDUxMCI+PHBhdGggZD0iTTI1NSAxMDJWMEwxMjcuNSAxMjcuNSAyNTUgMjU1VjE1M2M4NC4xNSAwIDE1MyA2OC44NSAxNTMgMTUzcy02OC44NSAxNTMtMTUzIDE1My0xNTMtNjguODUtMTUzLTE1M0g1MWMwIDExMi4yIDkxLjggMjA0IDIwNCAyMDRzMjA0LTkxLjggMjA0LTIwNC05MS44LTIwNC0yMDQtMjA0eiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==)}</style><div class="hytPlayerWrapOuter"><div class="hytPlayerWrap"> <iframe src="https://www.youtube.com/embed/siGC_OMPFYk?rel=0&enablejsapi=1" frameborder="0" ></iframe></div></div> <script>"use strict";document.addEventListener('DOMContentLoaded',function(){if(window.hideYTActivated)return;if(typeof YT==='undefined'){let tag=document.createElement('script');tag.src="https://www.youtube.com/iframe_api";let firstScriptTag=document.getElementsByTagName('script')[0];firstScriptTag.parentNode.insertBefore(tag,firstScriptTag);} let onYouTubeIframeAPIReadyCallbacks=[];for(let playerWrap of document.querySelectorAll(".hytPlayerWrap")){let playerFrame=playerWrap.querySelector("iframe");let onPlayerStateChange=function(event){if(event.data==YT.PlayerState.ENDED){playerWrap.classList.add("ended");}else if(event.data==YT.PlayerState.PAUSED){playerWrap.classList.add("paused");}else if(event.data==YT.PlayerState.PLAYING){playerWrap.classList.remove("ended");playerWrap.classList.remove("paused");}};let player;onYouTubeIframeAPIReadyCallbacks.push(function(){player=new YT.Player(playerFrame,{events:{'onStateChange':onPlayerStateChange}});});playerWrap.addEventListener("click",function(){let playerState=player.getPlayerState();if(playerState==YT.PlayerState.ENDED){player.seekTo(0);}else if(playerState==YT.PlayerState.PAUSED){player.playVideo();}});} window.onYouTubeIframeAPIReady=function(){for(let callback of onYouTubeIframeAPIReadyCallbacks){callback();}};window.hideYTActivated=true;});</script>
+</div>
+
+<style> /* features */
+  .streamlined-features-with-bg{
+    margin-top: 100px;
+  }
+
+  .streamlined-features-with-bg h1{
+    width: fit-content;
+    margin: 40px auto;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    /* identical to box height, or 130% */
+    text-align: center;
+    color: #212121;
+  }
+  .streamlined-features-with-bg ul{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+  .streamlined-features-with-bg ul li{
+    background: #FAFBFC;
+    box-shadow: 0px 4px 4px 0px rgba(26, 159, 226, 0.2);
+
+    border-radius: 7px;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .streamlined-features-with-bg ul li img{
+    width: 75px;
+  }
+  .streamlined-features-with-bg ul li p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #091E42;
+  }
+
+  .streamlined-features-img-outer-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<div class="streamlined-features-with-bg">
+  <h1>Streamlined Feature Navigation</h1>
+  <ul>
+    <li>
+      <img src="{% static "icons/img-14.webp" %}" alt="22+Languages Supported" loading="lazy">
+      <p>22+ Languages <br>
+        Supported</p>
+    </li>
+    <li>
+      <img src="{% static "icons/img-13.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+      <p>500 Million+
+        words Translate</p>
+    </li>
+    <li>
+      <img src="{% static "icons/img-16.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+      <p>Highest Accuracy
+        in will languages</p>
+    </li>
+    <li>
+      <img src="{% static "icons/img-15.webp" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+      <p>70% Savings on
+        cost & time</p>
+    </li>
+  </ul>
+</div>
+
+<style>
+  .pricing-section h1{
+    width: fit-content;
+    margin: 40px auto;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    text-align: center;
+    color: #212121;
+  }
+</style>
+
+<div class="pricing-section">
+  <h1>Pricing</h1>
+  <div class="pricing-card-section flex justify-evenly flex-wrap">
+    <!-- Card 1 -->
+    <div
+      class="pricing-card border-gray sm:w-[30%] w-full my-transition pricing-card"
+    >
+      <p class="font-semibold text-4xl">Free</p>
+      <p class="text-sm mt-10">
+        {% if curr == 'INR' %}
+        <span class="font-bold text-4xl"
+          ><i class="fa-solid fa-indian-rupee-sign"></i>0</span
+        >
+        {% else %}
+        <span class="font-bold text-4xl"
+          >$0</span
+        >
+        {% endif %}
+        /month
+      </p>
+      <ul class="mt-10">
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >10K Translated words
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >10K Page Views
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >2 Languages Supported
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Multilingual SEO
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Email Support
+        </li>
+      </ul>
+      <div class="flex mt-12 mr-5">
+        <a href="/pricing" class="primary-btn-outline"> Select Plan </a>
+      </div>
+    </div>
+    <!-- End of Card 1 -->
+    <!-- Card 2 -->
+    <div
+      class="pricing-card border-orange sm:w-[30%] w-full my-transition pricing-card"
+    >
+      <p class="font-semibold text-4xl">Starter</p>
+      <p class="text-sm mt-10">
+        {% if curr == 'INR' %}
+        <span class="font-bold text-4xl"
+          ><i class="fa-solid fa-indian-rupee-sign"></i>3,000</span
+        >
+        {% else %}
+        <span class="font-bold text-4xl"
+          >$39</span
+        >
+        {% endif %}
+        /month
+      </p>
+      <ul class="mt-10">
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >300K Translated words
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >300K Page Views
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >4 Languages Supported
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Multilingual SEO
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Email Support
+        </li>
+      </ul>
+      <div class="flex mt-12 mr-5">
+        <a href="/pricing" class="primary-btn-outline"> Select Plan </a>
+      </div>
+    </div>
+    <!-- End of Card 2 -->
+    <!-- Card 3 -->
+    <div
+      class="pricing-card border-green sm:w-[30%] w-full my-transition pricing-card"
+    >
+      <div class="flex justify-end mr-2">
+        <p
+          class="bg-green-400 font-bold py-1 text-sm rounded-lg px-2"
+        >
+          Most Popular
+        </p>
+      </div>
+      <p class="font-semibold text-4xl">Business</p>
+      <p class="text-sm mt-6">
+        {% if curr == 'INR' %}
+        <span class="font-bold text-4xl"
+          ><i class="fa-solid fa-indian-rupee-sign"></i>6,000</span
+        >
+        {% else %}
+        <span class="font-bold text-4xl"
+          >$69</span
+        >
+        {% endif %}
+        /month
+      </p>
+      <ul class="mt-10">
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >600K Translated words
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >600K Page View
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >8 Laguages Supported
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Multilingual SEO
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Email and Phone Support
+        </li>
+      </ul>
+      <div class="flex mt-12 mr-5">
+        <a href="/pricing" class="primary-btn-outline"> Select Plan </a>
+      </div>
+    </div>
+    <!-- End of Card 3 -->
+    <!-- Card 4 -->
+    <div
+      class="pricing-card border-violet sm:w-[30%] w-full my-transition"
+    >
+      <p class="font-semibold text-4xl">Growth</p>
+      <p class="text-sm mt-10">
+        {% if curr == 'INR' %}
+        <span class="font-bold text-4xl"
+          ><i class="fa-solid fa-indian-rupee-sign"></i>10,000</span
+        >
+        {% else %}
+        <span class="font-bold text-4xl"
+          >$119</span
+        >
+        {% endif %}
+        /month
+      </p>
+      <ul class="mt-10">
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >1M Translated words
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >1M Page Views
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >10 Languages Supported
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Multilingual SEO
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Email and Phone Support
+        </li>
+      </ul>
+      <div class="flex mt-12 mr-5">
+        <a href="/pricing" class="primary-btn-outline">
+          Select Plan
+        </a>
+      </div>
+    </div>
+    <!-- End of Card 4 -->
+    <!-- Card 5 -->
+    <div
+      class="pricing-card border-red sm:w-[30%] w-full my-transition pricing-card"
+    >
+      <p class="font-semibold text-4xl">Enterprise</p>
+      <p class="text-4xl font-semibold mt-10">Contact Us</p>
+      <ul class="mt-10">
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >1M+ Translated words
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >1M+ Page Views
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >10+ Languages Supported
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Multilingual SEO
+        </li>
+        <li class="mt-5">
+          <i
+            class="fa-solid fa-check text-blue-500 mr-5 text-2xl"
+          ></i
+          >Email and Phone Support
+        </li>
+      </ul>
+      <div class="flex mt-12 mr-5">
+        <a href="#contact_us" class="primary-btn-outline">Contact Sales</a>
+      </div>
+    </div>
+    <!-- End of Card 5 -->
+  </div> 
+</div>
+
+<style> /* partners */
+  .partners-outer-div{
+    padding: 70px 10px;
+  }
+  .partners-outer-div h1{
+    width: fit-content;
+    margin: 40px auto;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    /* identical to box height, or 130% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+  }
+  .partners-outer-div ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+</style>
+
+<div class="partners-outer-div">
+  <h1>Our Trusted Partners</h1>
+  <ul>
+    <li>
+      <img src="{% static "icons/Bhashini navbar logo.svg" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NSAP.svg" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/TOI.svg" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/MOE.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/EAIT.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NITI.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+
+<style> /* features */
+  .features-with-bg{
+    margin-top: 50px;
+  }
+
+  .features-with-bg h1{
+    width: fit-content;
+    margin: 40px auto;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    /* identical to box height, or 130% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+  }
+  .features-with-bg ul{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+  .features-with-bg ul li{
+    background: #FAFBFC;
+    box-shadow: 0px 4px 4px rgba(26, 159, 226, 0.2);
+    border-radius: 7px;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .features-with-bg ul li img{
+    width: 75px;
+  }
+  .features-with-bg ul li p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #091E42;
+  }
+</style>
+
+<div class="features-with-bg">
+  <h1>Why we are Best</h1>
+  <ul>
+    <li>
+      <img src="{% static "icons/pc with pen.svg" %}" alt="300% increase in Organic - online translators" loading="lazy">
+      <p>500+ Million Words 
+        Translated</p>
+    </li>
+    <li>
+      <img src="{% static "icons/cost.svg" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+      <p>70% Savings On Cost & Time</p>
+    </li>
+    <li>
+      <img src="{% static "icons/mark.svg" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+      <p>Highest Accuracy In All Languages</p>
+    </li>
+    <li>
+      <img src="{% static "icons/multi-langs.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+      <p>22+ Languages Supported</p>
+    </li>
+  </ul>
+</div>
+
+<style> /* faq */
+  
+  .cen {
+    text-align: center;
+  }
+  .font-family {
+    font-family: Inter, sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  .faq-section-outer-div {
+    padding: 30px 0 100px;
+    background: linear-gradient(63.08deg, rgba(15, 185, 233, 0.45) -311.21%, rgba(231, 231, 231, 0.45) 81.84%);
+  }
+  .faq-section {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+    padding: 20px 35px;
+    width: 100%;
+    border-radius: 16px;
+  }
+  .faq-item i{
+    line-height: inherit;
+  }
+  .faq-item > h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: white;
+  }
+  .faq-item i {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: white; 
+  }
+  
+  .faq-section-outer-div h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+    width: fit-content;
+    margin: 40px auto;
+  }
+  .faq-section details {
+    list-style: none;
+  }
+  .faq-section details p {
+    text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    margin: 15px 20px 0;
+  }
+  .faq-section summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-section details[open] > summary {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  
+  
+</style>
+  
+<div class="faq-section-outer-div">
+  <h2 class=" cen font-family">Frequently Asked Questions</h2>
+  <div class="faq-section">
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>How many languages can I translate my website into?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Translate your website into more than 22 Indian languages, including custom languages such as Hindi, Tamil, Gujrati, Marathi</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>What is a language subdomain/ subdirectory?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">If for example, your original website is www.example.com, a subdirectory would be www.example.com/hi/ (for the Hindi version), and a subdomain would be www.hi.example.com, and so on.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            How is MultiLipi optimized for multilingual SEO?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">MultiLipi follows Google's best practices for multilingual SEO. When launching a multilingual website you also need to implement technical elements such as hreflang tags and create language subdirectories or subdomains. Both of these aspects are automatically handled by MultiLipi as well as translating your metadata, an important part of your multilingual SEO.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            How accurate is machine translation?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">We leverage the power of AI and neural machine translation from the best translation, to give the most accurate translation return. You then have full editing control through your MultiLipi Dashboard.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            How can I edit machine translations?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">You can edit your machine translations through your MultiLipi Dashboard. Edit the translations yourself or add your own translators to make quick edits to any translation displayed on your website.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>Where do my translations exist?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Your translations are stored by MultiLipi, accessible through your MultiLipi Dashboard. This gives you an easier overview of all your translations through a simple interface.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            How many translated words do I need?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Translated words indicate the number of words you can translate within your MultiLipi plan. To know the number of translated words you need, you must first know how many words you have on your website and how many languages you wish to translate your website into. You can learn the total number of words on your website using our Word Count Tool and easily get a plan suggestion based on your needs.
+      </p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Can I use MultiLipi on more than one website?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Yes, if you have at least a Pro plan you have the multisite feature. It allows you to manage several websites separately and gives access to one person per website.
+      </p>
+    </details>
+  </div>
+</div>
+
+<style>
+  .feature-sec {
+      background: #F0F1F4;
+      display: flex;
+      flex-direction: column;
+      padding: 100px;
+      justify-content: flex-start; /* Align content to the start */
+  }
+
+  .feature-btn {
+      background: #fff;
+      border-radius: 6px;
+      display: flex;
+      margin: 10px;
+      min-width: 245px;
+      width: calc(25% - 20px);
+      height: 72px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      cursor: pointer; /* Pointer cursor for better UX */
+      transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+
+  .feature-btn:hover {
+      background-color: #e0e0e0; /* Hover effect */
+  }
+
+  .btn-title {
+      margin-left: 10px;
+      color: rgba(8, 4, 34, 0.70);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+  }
+
+  .feature-card {
+      display: flex;
+      flex-wrap: nowrap;
+      border-radius: 16px;
+      background: #FFF;
+      /* height: 588.9px; */
+      justify-content: space-evenly;
+      
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+
+  @media (max-width: 768px) {
+    .feature-card {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  .card-col {
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+
+  .card-title {
+      height: 94.40px;
+      color: rgba(4, 1, 14, 0.94);
+      font-size: 24px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 32px;
+      word-wrap: break-word;
+  }
+
+  .card-des {
+      margin-top: 20px;
+      height: 71.20px;
+      color: rgba(8, 4, 34, 0.70);
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 26px;
+      word-wrap: break-word;
+  }
+  /* Style for the selected feature button */
+  .feature-btn.selected {
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+      color: #fff; /* Adjust text color for better contrast */
+  }
+
+  .feature-btn.selected .btn-title {
+      color: #fff; /* Make the text white */
+  }
+
+
+
+  .card-btn {
+      text-align: center;
+      border-radius: 6px;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%), rgba(3, 1, 14, 0.91);
+      cursor: pointer; /* Pointer cursor for better UX */
+      padding: 10px 20px; /* Added padding for better button size */
+      margin-top: 20px;
+      transition: background-color 0.3s ease; /* Smooth transition for background change */
+  }
+
+  .card-btn > p {
+      color: #FFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+  }
+
+  #card-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      transition: all 0.3s ease; /* Smooth transition for image changes */
+  }
+
+  .image-container {
+      width: 60%; /* Default width for the container */
+      /* border: 2px solid #ddd; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      overflow: hidden; /* Ensures content doesn't overflow the container */
+      border-radius: 8px;
+      padding: 20px;
+  }
+
+  @media (max-width: 400px) {
+    .image-container {
+        width: 100%; /* Container takes full width */
+    }
+
+    .responsive-image {
+        width: 100%; /* Image takes full width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Ensure the image doesn't overflow */
+        max-height: none; /* Remove max-height to prevent scaling issues */
+    }
+  }
+
+
+  @media (max-width: 1240px) {
+      .card-col{
+          padding: 20px;
+      }
+
+      .feature-sec{
+          padding: 20px;
+      }
+      .image-container{
+          width: 80%;
+      }
+      #card-image{
+          max-width: 100%;
+          max-height: 100%;
+          height: auto;
+          transition: all 0.3s ease;
+      }
+  }
+
+
+</style>
+
+<div class="partners-outer-div" style="margin: 50px auto;">
+  <h1>Our Recognition</h1>
+  <ul>
+    <li>
+      <img src="{% static "files/img-17.webp" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img style="    max-width: 70%;
+    margin: 0 auto;" src="{% static "files/img-19.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "files/img-18.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+
+{% include "blog.html" %}
+{% include "contact_form.html" %}
+
+<style>
+  .form-section{
+    margin: 0px 0 0; 
+  }
+</style>
+
+<script>
+  var TxtType = function (el, toRotate, period, loopdur) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.loopdur = loopdur - 1;
+    this.period = parseInt(period, 10) || 1000;
+    this.txt = "";
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtType.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML =
+      '<span style="border-right: 0.08em solid #48aef3ff; background: linear-gradient(90deg, #4870ff33 0%, #48b2ff0d 100%);" class="wrap">' +
+      this.txt +
+      "</span>";
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      if (this.loopNum === this.loopdur) {
+        console.log(this.toRotate.length - 1);
+        return; // Stop after completing all elements in toRotate
+      }
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  function textAnimation(id) {
+    var elements = document.getElementById(id);
+    // for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements.getAttribute("data-type");
+    var period = elements.getAttribute("data-period");
+    var loopdur = elements.getAttribute("loopdur");
+    if (toRotate) {
+      new TxtType(elements, JSON.parse(toRotate), period, loopdur);
+    }
+    // }
+  }
+  textAnimation("typewrite");
+  // window.onload= function(){
+  //  textAnimation('typewrite')
+  // }
+</script>
+
+<script>
+  function changeContent(contentType) {
+    const buttons = document.querySelectorAll('.feature-btn');
+    buttons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
+    const selectedButton = document.querySelector(`.feature-btn[onclick="changeContent('${contentType}')"]`);
+    selectedButton.classList.add('selected');
+    const cardTitle = document.getElementById('card-title');
+    const cardDescription = document.getElementById('card-des');
+    const cardImage = document.getElementById('card-image');
+
+    // Set content based on the button selected
+    if (contentType === 'ai-translation') {
+        cardTitle.textContent = 'AI Translation Title';
+        cardDescription.textContent = 'AI Translation Description';
+        cardImage.src = 'https://statics.topai.tools/img/tools/free-doc-translator.webp';
+    } else if (contentType === 'procurement-platform') {
+        cardTitle.textContent = 'Procurement Platform Title';
+        cardDescription.textContent = 'Procurement Platform Description';
+        cardImage.src = 'https://statics.topai.tools/img/tools/free-doc-translator.webp';
+    } else if (contentType === 'collaborative-tms') {
+        cardTitle.textContent = 'Collaborative TMS Title';
+        cardDescription.textContent = 'Collaborative TMS Description';
+        cardImage.src = 'https://statics.topai.tools/img/tools/free-doc-translator.webp';
+    } else if (contentType === 'wallet-platform') {
+        cardTitle.textContent = 'Wallet Platform Title';
+        cardDescription.textContent = 'Wallet Platform Description';
+        cardImage.src = 'https://statics.topai.tools/img/tools/free-doc-translator.webp';
+    }
+  }
+</script>
+{% endblock content %}

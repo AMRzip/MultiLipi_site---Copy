@@ -1,0 +1,13 @@
+<a href="#" onclick="console.log('aaaaaaaaa')" style="background-color: black;">
+
+    <div style="width: 40px; height: 40px;">
+        <div onclick="qwe(event,this)" style="width: 20px; height: 20px; background-color: red;"></div>
+    </div>
+</a>
+
+<script>
+    function qwe(e, ele){
+        e.stopImmediatePropagation;
+        console.log("qwe")
+    }
+</script>

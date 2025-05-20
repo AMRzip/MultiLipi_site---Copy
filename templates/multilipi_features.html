@@ -1,0 +1,209 @@
+{% load static %}
+<style>
+    .feature-card {
+        height: 100%;
+        transition: transform 0.3s ease;
+        border: 1.5px solid rgb(0, 114, 196);
+        border-radius: 10px;
+        width: 95%;
+    }
+    .feature-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+        background: linear-gradient(to bottom, #f0f4ff 0%, #ffffff 100%);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .feature-head {
+        padding-left: 10px;
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .feature-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 1.40rem;
+        line-height: 1.5rem;
+    }
+    .feature-para {
+        padding-left: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+</style>
+
+<div class="container mx-auto max-w-6xl" style="margin: 30px auto;">
+    <!-- Header -->
+    <div class="text-center mb-8">
+        <div class="inline-block p-2 mb-2">
+            <h1 class="text-4xl font-bold">Key MultiLipi features</h1>
+            <p class="text-1xl text-gray-600">All-in-one website translation solution with multilingual SEO built-in</p>
+        </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- No code install -->
+        <div class="feature-card bg-white p-4 rounded" data-aos="fade-right" data-aos-delay="0">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="p-1 rounded-full mr-2" style="background-color: #E1F7FF;">
+                        <img src="{% static 'cards_imgs/noCode.svg' %}" alt="No code install" style="width: 30px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">No code install</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">From integration to management, run your website translation project easily without the help of your developer/IT team.</p>
+        </div>
+
+        <!-- Automatic workflow -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="50">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/automatic-workflow.svg' %}" alt="No code install" style="width: 24px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Automatic workflow</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Never waste time on manual tasks. Any new content added to your site is automatically detected and automatically translated.</p>
+        </div>
+
+        <!-- Machine translation -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="100">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/machine-translation.svg' %}" alt="No code install" style="width: 24px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Machine translation</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Accelerate your website translation project with a first layer of machine translation from leading providers Microsoft, DeepL, and Google.</p>
+        </div>
+
+        <!-- Editing translations -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="150">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/edittingTranslation.svg' %}" alt="No code install" style="width: 24px; height: auto; padding: 2px;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Editing translations</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Use Multilipi post-editing tools to make human edits to your machine translations, add your own translators to your dashboard.</p>
+        </div>
+
+        <!-- Translated website displaying -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-left" data-aos-delay="0">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/translatedDisplay.svg' %}" alt="No code install" style="width: 24px; height: auto; padding: 2px;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Translated website displaying</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Instead of creating separate websites for new markets, makes your current one multilingual under subdomains.</p>
+        </div>
+
+        <!-- Visual translation editing -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-left" data-aos-delay="50">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/VisualTranslation.svg' %}" alt="No code install" style="width: 24px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Visual translation editing</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Edit your translations through your Translations List or use the Visual Editor to translate your content directly.</p>
+        </div>
+
+        <!-- Multilingual SEO -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-left" data-aos-delay="100">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/MultilinguaSEO.svg' %}" alt="No code install" style="width: 24px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Multilingual SEO</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Get found by your audience with a translation software that follows multilingual SEO best practices set out by Google (translated metadata, hreflang tags).</p>
+        </div>
+
+        <!-- One dashboard -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-left" data-aos-delay="150">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/OneDashboard.svg' %}" alt="No code install" style="width: 30px; height: auto; padding: 4px;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">One dashboard</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Easily manage the workflow of your translation project through one interface. Review your translations, SEO metadata, and media files all in one place.</p>
+        </div>
+
+        <!-- Glossary -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="0">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/Glossary.svg' %}" alt="No code install" style="width: 24px; height: auto; padding: 2px;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Glossary</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Define and add terms, phrases, brand, and product names to your multilingual glossary and keep your project consistent. Avoid the repetitive task of editing.</p>
+        </div>
+
+        <!-- Visitors auto-redirection -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="50">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/VisitorRedirect.svg' %}" alt="No code install" style="width: 30px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Visitors auto-redirection</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Improve your bounce rate with the redirection feature, allowing you to automatically serve your pages in your audience language.</p>
+        </div>
+
+        <!-- Localized customer journey -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="100">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/LocalizedCustomer.svg' %}" alt="No code install" style="width: 24px; height: auto;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Localized customer journey</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Get all your key conversion steps translated into your customers language including your checkout experience.</p>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="feature-card bg-white p-4 rounded shadow" data-aos="fade-right" data-aos-delay="150">
+            <div class="flex items-center mb-2">
+                <div class="feature-head">
+                    <div class="bg-blue-100 p-2 rounded-full mr-2">
+                        <img src="{% static 'cards_imgs/CustomerSupport.svg' %}" alt="No code install" style="width: 24px; height: auto; padding: 2px;">
+                    </div>
+                    <h3 class="feature-text text-blue-500 font-bold">Customer Support</h3>
+                </div>
+            </div>
+            <p class="feature-para text-sm text-gray-700">Rely on our expert support team to assist you whenever you might need help or have questions, we're just a message away.</p>
+        </div>
+    </div>
+</div>

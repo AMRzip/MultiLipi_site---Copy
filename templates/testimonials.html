@@ -1,0 +1,392 @@
+{% load static %}
+<style type="text/css">
+    .text-primary {
+        color: #0688E5;
+    }
+
+    .border-primary {
+        border-color: #0688E5;
+    }
+
+    .bg-white {
+        background-color: #ffffff;
+    }
+
+    .bg-lightBlue {
+        background-color: #E6F7FF;
+    }
+
+    .scroll-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    .scroll-wrapper {
+        display: flex;
+        flex-shrink: 0;
+        width: max-content;
+    }
+    
+    .scroll-left .scroll-wrapper {
+        animation: scroll-left 25s linear infinite;
+    }
+    
+    .scroll-right .scroll-wrapper {
+        animation: scroll-right 25s linear infinite;
+    }
+    
+    /* Pause animation on hover */
+    .scroll-container:hover .scroll-wrapper {
+        animation-play-state: paused;
+    }
+    
+    @keyframes scroll-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+    
+    .testimonial-card {
+        flex: 0 0 auto;
+        height: 380px;
+        width: 280px;
+        margin: 0 1rem;
+    }
+    
+    .logo-container {
+        height: 80px;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 2rem;
+    }
+</style>
+<div class="container mx-auto px-4 py-16" style="margin-top: 50px;">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black mb-4">Testimonials</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto italic">
+            "Our customers love our products and services. Here's what they have to say about their experience with us."
+        </p>
+    </div>
+    
+    <!-- Logo Section -->
+    <div class="mb-16">
+        <!-- First row of logos -->
+        <div class="mb-8 flex flex-wrap justify-center">
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">ACME Corp</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">TechFlow</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">GreenLeaf</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">DataSphere</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">InnovateLabs</span>
+            </div>
+        </div>
+        
+        <!-- Second row of logos -->
+        <div class="flex flex-wrap justify-center">
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">VisionForward</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">CloudNine</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">PeakPerform</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">BlueOcean</span>
+            </div>
+            <div class="logo-container bg-gray-50 rounded-lg shadow-sm border border-gray-100 flex items-center justify-center">
+                <span class="text-lg font-bold text-primary p-4 rounded">NexGen</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Testimonial Cards Section -->
+    <div class="mt-16" data-aos="fade-in">
+        <!-- First row of testimonials (left to right) -->
+        <div class="scroll-container scroll-left mb-8">
+            <div class="scroll-wrapper">
+                <!-- Testimonial Cards Row 1 -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        Super happy with Multilipi – great tool and even better support!
+                        I’m really impressed with Multilipi so far. I used it to translate a hotel website into 8 languages, and it worked flawlessly. The translations are clean, the interface is super easy to use, and everything just clicks into place without headaches.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sarah Johnson</p>
+                        <p class="text-sm text-gray-600">Marketing Director, ACME Corp</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "We've seen a 40% increase in productivity since implementing this solution. Highly recommended!"
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Michael Chen</p>
+                        <p class="text-sm text-gray-600">CTO, TechFlow</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The customer service is exceptional. They went above and beyond to ensure our success."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Emily Rodriguez</p>
+                        <p class="text-sm text-gray-600">Operations Manager, GreenLeaf</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "Intuitive interface and powerful features. This has become an essential tool for our team."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">David Wilson</p>
+                        <p class="text-sm text-gray-600">Product Manager, DataSphere</p>
+                    </div>
+                </div>
+                
+                <!-- Duplicate testimonials for seamless scrolling -->
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This product has completely transformed our workflow. The team behind it is incredibly responsive and helpful."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sarah Johnson</p>
+                        <p class="text-sm text-gray-600">Marketing Director, ACME Corp</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "We've seen a 40% increase in productivity since implementing this solution. Highly recommended!"
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Michael Chen</p>
+                        <p class="text-sm text-gray-600">CTO, TechFlow</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The customer service is exceptional. They went above and beyond to ensure our success."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Emily Rodriguez</p>
+                        <p class="text-sm text-gray-600">Operations Manager, GreenLeaf</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "Intuitive interface and powerful features. This has become an essential tool for our team."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">David Wilson</p>
+                        <p class="text-sm text-gray-600">Product Manager, DataSphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Second row of testimonials (right to left) -->
+        <div class="scroll-container scroll-right">
+            <div class="scroll-wrapper">
+                <!-- Testimonial Cards Row 2 -->
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The ROI on this product has been incredible. It paid for itself within the first month."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Alex Thompson</p>
+                        <p class="text-sm text-gray-600">Finance Director, VisionForward</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "I was skeptical at first, but now I can't imagine running our business without this tool."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Jessica Lee</p>
+                        <p class="text-sm text-gray-600">CEO, CloudNine</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The onboarding process was smooth and the learning curve was minimal. Our team was up and running in no time."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Robert Kim</p>
+                        <p class="text-sm text-gray-600">HR Manager, PeakPerform</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This solution has helped us scale our operations without adding headcount. A game-changer for our business."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sophia Martinez</p>
+                        <p class="text-sm text-gray-600">COO, BlueOcean</p>
+                    </div>
+                </div>
+                
+                <!-- Duplicate testimonials for seamless scrolling -->
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The ROI on this product has been incredible. It paid for itself within the first month."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Alex Thompson</p>
+                        <p class="text-sm text-gray-600">Finance Director, VisionForward</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "I was skeptical at first, but now I can't imagine running our business without this tool."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Jessica Lee</p>
+                        <p class="text-sm text-gray-600">CEO, CloudNine</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-lightBlue rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "The onboarding process was smooth and the learning curve was minimal. Our team was up and running in no time."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Robert Kim</p>
+                        <p class="text-sm text-gray-600">HR Manager, PeakPerform</p>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-lg shadow-md p-6 flex flex-col border-t-4 border-primary">
+                    <div class="mb-4">
+                        <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                        </svg>
+                    </div>
+                    <p class="text-black flex-grow">
+                        "This solution has helped us scale our operations without adding headcount. A game-changer for our business."
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="font-semibold text-black">Sophia Martinez</p>
+                        <p class="text-sm text-gray-600">COO, BlueOcean</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to handle scroll animations
+        function setupScrollers() {
+            const scrollContainers = document.querySelectorAll('.scroll-container');
+            
+            scrollContainers.forEach(container => {
+                // Calculate the total width of all items in the wrapper
+                const wrapper = container.querySelector('.scroll-wrapper');
+                const items = wrapper.children;
+                
+                // Calculate the duration based on content width
+                const totalWidth = wrapper.scrollWidth;
+                const duration = totalWidth / 60; // Adjust speed as needed
+                
+                // Set the animation duration
+                wrapper.style.animationDuration = `${duration}s`;
+            });
+        }
+        
+        // Initialize and recalculate on window resize
+        setupScrollers();
+        window.addEventListener('resize', setupScrollers);
+    });
+</script>

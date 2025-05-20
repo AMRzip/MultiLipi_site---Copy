@@ -1,0 +1,523 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | Home{% endblock title %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+<!-- Meta tags for SEO -->
+<meta charset="UTF-8">
+<meta name="title" content="Translate any Website with AI | Website Page Translator">
+<meta name="description" content="Website Translation made simple with AI and human edits. Launch a multilingual site fast and grow traffic with our SEO optimized website page translator.">
+{% endblock css %}
+
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+</style>
+{% comment %} main front start  {% endcomment %}
+
+<div class="main-front-outerdiv">
+  <div class="main-front-innerdiv">
+    <div data-aos="fade-up">
+      <div>
+        <h1 class="main-front-header-text">Translate any website<br>in under 5 minutes with<br>full multilingual<br>SEO optimization</h1>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600">
+        <p>
+          Translate your website using AI-powered translation, make quick edits, and launch your multilingual site in 120+ languages - in just a few clicks.
+        </p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="10" data-aos-duration="600">
+        <div class="main-front-div-btn" data-aos-ancher-placement="center-center" style="
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;">
+          <button class="home-button">
+            <span>Sign up for Free</span>
+          </button>
+            <button class="home-button" onclick="document.getElementById('contact_us').scrollIntoView({ behavior: 'smooth' });">
+            <span>Book a demo</span>
+            </button>
+        </div>
+      </div>
+    </div>
+    <div style="position: relative;">
+      <img class="main-front-img" src="{% static "cards_imgs/home.svg" %}" style="width: 100%; height: auto; margin-right: 50px;" alt="Translate any website with MultiLipi and boost multilingual SEO, traffic, and user engagement." data-aos="fade-up" data-aos-delay="300" data-aos-offset="10" data-aos-duration="600">
+      {% comment %} <div class="bg-lang-div">
+        <div class="bg-lang-div-heading">Translate into:</div>
+        <div style="margin: 10px 0px;
+        /* border: 0.5px solid rgba(0, 0, 0, 0.2); */
+        height: 1px;
+        background: rgba(0, 0, 0, 0.2);
+        height: 1px;
+        border-radius: 8px; "></div>
+        <div class="bg-lang-div-rows" data-aos="fade-down" data-aos-delay="0" data-aos-offset="10">
+          <span class="bg-lang-div-rows-lang-val">EN</span>
+          <span class="bg-lang-div-rows-lang">English</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="" loading="lazy">
+        </div>
+        <div class="bg-lang-div-rows" data-aos="fade-down" data-aos-delay="100">
+          <span class="bg-lang-div-rows-lang-val">HI</span>
+          <span class="bg-lang-div-rows-lang">Hindi</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="" loading="lazy">
+        </div>
+        <div class="bg-lang-div-rows" data-aos="fade-down" data-aos-delay="200">
+          <span class="bg-lang-div-rows-lang-val">FR</span>
+          <span class="bg-lang-div-rows-lang">French</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="" loading="lazy">
+        </div>
+        <div class="bg-lang-div-rows" data-aos="fade-down" data-aos-delay="300">
+          <span class="bg-lang-div-rows-lang-val">SP</span>
+          <span class="bg-lang-div-rows-lang">Spanish</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="" loading="lazy">
+        </div>
+        <div class="bg-lang-div-rows" data-aos="fade-down" data-aos-delay="400">
+          <span class="bg-lang-div-rows-lang-val">IT</span>
+          <span class="bg-lang-div-rows-lang">Italian</span>
+          <img class="bg-lang-div-rows-icon" src="{% static "icons/tick.svg" %}" alt="" srcset="" loading="lazy">
+        </div>
+      </div>
+      <img class="main-front-img" src="{% static "files3/home_front.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+  </div>
+</div>
+
+<!-- features cards -->
+<div class="container mx-auto px-4 py-12">
+  <!-- Header -->
+  <div class="text-center mb-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <h1 class="text-4xl font-bold text-gray-800">
+      <span class="px-4 py-2 rounded-full">Kickstart your website's multilingual journey</span>
+    </h1>
+  </div>
+
+  <!-- feature-card 1 -->
+  <div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; min-height: 500px;">
+    <!-- Left side image -->
+    <div class="flex items-center justify-center">
+      <img src="{% static "cards_imgs/feature1.svg" %}" alt="Add languages and translate your website with MultiLipi's website page translator & with no-code setup" class="w-full h-auto rounded-lg object-contain" loading="lazy" data-aos="zoom-in-up" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+    </div>
+    
+    <!-- Right side text content -->
+    <div class="flex flex-col justify-center p-6" data-aos="fade-up">
+      <h3 class="text-3xl font-bold text-gray-800 mb-4">Make your multilingual site available in 120+ languages</h3>
+      <p class="text-gray-600 mb-6">Add MultiLipi to any website and get a fully translated, SEO-optimized site in minutes. With no-code integration, anyone can set it up. Go live with just a few clicks.</p>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+        See our integrations
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+    <!-- feature-card 2 -->
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+    <!-- Left side Text -->
+    <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+      <h3 class="text-3xl font-bold text-gray-800 mb-4">Translate your website in minutes, not days</h3>
+      <p class="text-gray-600 mb-6">Don't let complex setups slow you down. With MultiLipi, you can translate any website into multiple languages in just a few clicks — no tech skills needed. Launch a multilingual site instantly and streamline your workflow with AI-powered automation.</p>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+        Learn more about translation quality
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+    <!-- Right side image -->
+    <div class="flex items-center justify-center md:col-span-6" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+      <img src="{% static "cards_imgs/feature3.svg" %}" alt="Translate any website fast with MultiLipi’s simple no-code editor" class="w-full h-auto rounded-lg" loading="lazy">
+    </div>
+  </div>
+
+  <!-- feature-card 3 -->
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+    <!-- Left side image -->
+    <div class="flex items-center justify-center p-4 md:col-span-5" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+      <img src="{% static "cards_imgs/dashboard.svg" %}" alt="Geographic traffic heatmap and browser language analytics report from MultiLipi showing top regions and languages driving international growth" class="w-full h-auto rounded-lg" loading="lazy">
+    </div>
+    
+    <!-- Right side text content -->
+    <div class="flex flex-col justify-center p-4 md:col-span-5" data-aos="fade-up">
+      <h3 class="text-3xl font-bold text-gray-800 mb-4">Understand Your Global Audience at a Glance</h3>
+      <p class="text-gray-600 mb-6">Track top languages and visitor locations with MultiLipi’s built-in analytics. Make smarter localization decisions and boost engagement - all from one dashboard.</p>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+        Discover how Multilipi works
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+    <!-- feature-card 4 -->
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+      <!-- Left side Text (30%) -->
+      <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Reach global users with Multilingual SEO that ranks</h2>
+        <p class="text-gray-600 mb-6">Automatically generate language-specific URLs, hreflang tags, and translated metadata with MultiLipi. Your multilingual site gets indexed and ranked — helping you grow international traffic and visibility effortlessly.</p>
+        <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium">
+          Read more about multilingual SEO
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <!-- Right side image (70%) -->
+      <div class="flex items-center justify-center md:col-span-6" data-aos="fade-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
+        <img src="{% static "cards_imgs/feature4.svg" %}" alt="Boost multilingual SEO using hreflang tags, language-specific URLs, translated metadata, and our Website Page Translator" class="w-full h-auto" loading="lazy">
+      </div>
+    </div>
+</div>
+<!-- End of features cards -->
+
+<!-- Integration -->
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+  <!-- Left side Image -->
+  <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+    <img src="{% static "cards_imgs/integration.svg" %}" alt="Translate any website built on WordPress, Shopify, Webflow, Wix, or WooCommerce with MultiLipi" class="h-auto" style="width: 35rem" loading="lazy">
+  </div>
+  <!-- Right side Text -->
+  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+    <h2 class="text-5xl font-bold text-gray-800 mb-4">Seamless integrations with every website technology</h2>
+    <p class="text-gray-600 mb-6">MultiLipi works perfectly with platforms like WordPress, Shopify, WooCommerce, Webflow, and Wix. Whether you’re running a CMS or a custom tech stack, you can translate any website effortlessly and launch your multilingual site without changing how your site works.</p>
+    <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
+      Explore all Integrations
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</div>
+<!-- End of Integration -->
+
+<!-- Global Languages -->
+<div class="global_languages mt-12">
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">
+      <span class="px-4 py-2 rounded-full">Translate your website into 120+ languages with AI-powered multilingual SEO</span>
+    </h1>
+  </div>
+  <div class="flex items-center justify-center">
+    <img src="{% static "cards_imgs/global-languages.svg" %}" alt="World map with flags showing that MultiLipi supports 120+ languages to translate website worldwide " class="h-auto w-full" style=" margin: 20px 200px;" data-aos="fade-up">
+  </div>
+</div>
+<!-- End of Global Languages -->
+
+{% comment %} <div class="partners-outer-div">
+  <h1>Trusted by 1,600+ companies, including</h1>
+  <ul>
+    <li>
+      <img src="{% static "icons/Bhashini navbar logo.svg" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NSAP.svg" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/TOI.svg" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/MOE.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/EAIT.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NITI.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+  </ul> 
+</div> {% endcomment %}
+
+{% include "testimonials.html" %}
+
+{% comment %} 
+<div class="testimonial-section">
+  <div class='test-title' style="text-align: center; display: flex;flex-direction: column;">
+      <h1 class="testimonial-title" style="margin-bottom: 25px;">
+          What Our Customers <br> Say About Us.
+      </h1>
+      <!-- <p class="testimonial-title" style="margin: 0 auto 40px;">Say About Us.</p> -->
+
+      <!-- <a style="font-size: 16px;
+  color: #1A9FE2;
+  font-weight: 700;" href="https://www.google.com/">Read all customer stories</a> -->
+  </div>
+
+  <div style="display: flex; margin: auto;
+  flex-wrap: wrap;
+  margin-top: 30px;
+    justify-content: center;
+  ">
+      <div class="test-card">
+          <div>
+              <img class="testimonial-logo" src="{% static "icons/p_logo.webp" %}" alt="" loading="lazy">
+              <div class="test-title">
+                <p>Thanks to MultiLipi, we've been able to deliver local news and knowledge to even more villages in their native languages. Simple to use and incredibly effective, their translation services are a game-changer for us. Grateful to MultiLipi for helping us connect deeper with rural India.</p>
+              </div>
+              <img class="test-pic " src="{% static "files/img-23.webp" %}" alt="" loading="lazy">
+              <p class="test-name">
+                  Vaibavh, Rajasthan
+
+              </p>
+          </div>
+      </div>
+      <div class="test-card">
+          <div>
+              <img class="testimonial-logo" src="{% static "icons/bhashini_logo.webp" %}" alt="" loading="lazy">
+              <div class="test-title">
+                <p>
+                MultiLipi has been a game-changer for our team at Bhashini. The platform's advanced multilingual SEO solutions have helped us seamlessly translate and optimize our content for diverse audiences across India. With AI-powered translation and intuitive editing options, we were able to maintain accuracy and cultural relevance across multiple languages. The seamless integration and subdomain hosting made it incredibly easy for us to implement the system in just a few minutes. MultiLipi’s powerful features like glossary management and translation memory have truly enhanced our workflow. We highly recommend MultiLipi for any business looking to expand its reach through multilingual SEO.
+              </p>
+              </div>
+              <img class="test-pic " src="{% static "files/img-25.webp" %}" alt="" loading="lazy">
+              <p class="test-name">
+                Ajay Rajawat,
+                Senior Manager, Bhashini
+              </p>
+          </div>
+      </div>
+      <div class="test-card">
+        <div>
+            <img class="testimonial-logo" src="{% static "icons/My_Body_affairs_Logo.avif" %}" alt="" loading="lazy">
+            <div class="test-title">
+              <p>MyBodyAffair values diversity in beauty. With MultiLipi, our products now resonate in multiple languages. Their translations have deepened trust and clarity for our brand, ensuring every customer feels seen. Kudos to MultiLipi for bridging the gap!</p>
+            </div>
+            <img class="test-pic " src="{% static "files/img-24.webp" %}" alt="" loading="lazy">
+            <p class="test-name">
+                Sandeep, Rajasthan
+
+            </p>
+        </div>
+      </div>
+
+      <!-- <div class="see-more">
+          <p style="
+          color: azure;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 27.2px;">
+              Lorem ipsum dolor sit amet consectetur. Sollicitudin vestibulum pulvinar in sapien tortor. Proin sed
+              morbi cursus velit vulputate eget lorem ut. Consectetur morbi.
+          </p>
+          <button class="see-more-btn">
+              see more
+          </button>
+
+      </div> -->
+
+  </div>
+</div> {% endcomment %}
+{% comment %} 
+<div class="partners-outer-div" style="margin: 50px auto;">
+  <h1>Our Recognition</h1>
+  <ul>
+    <li>
+      <img src="{% static "files/img-17.webp" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img style="max-width: 70%;
+    margin: 0 auto;" src="{% static "files/img-19.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy" rel>
+    </li>
+    <li>
+      <img src="{% static "files/img-18.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+ {% endcomment %}
+{% include "blog.html" %}
+
+<style>
+    .font-family {
+        font-family: Inter, sans-serif;
+        font-feature-settings: "liga" 1, "calt" 1;
+    }
+    .faq-section-outer-div {
+        padding: 30px 0 40px;
+        background-color: white;
+    }
+    .faq-section {
+        width: 80%;
+        margin: auto;
+        padding: 10px;
+    }
+    .faq-title {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 52px;
+        text-align: center;
+        color: #212121;
+        margin: 40px auto;
+    }
+    .faq-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+        border-bottom: 1px solid grey;
+        gap: 40px;
+    }
+    .faq-question {
+        flex: 0 0 35%;
+        align-self: center;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 34px;
+        color: #212121;
+        text-align: left;
+    }
+    .faq-answer {
+        flex: 0 0 55%;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 27px;
+        text-align: left;
+        color: #212121;
+    }
+</style>
+
+<div id="FAQs" class="faq-section-outer-div" id="FAQs">
+    <h2 class="faq-title font-family">Frequently Asked Questions</h2>
+    <div class="faq-section">
+        <div class="faq-item" style="border-top: 1px solid grey;" data-aos="fade-left">
+            <div class="faq-question">
+                How many languages can I translate my website into?
+            </div>
+            <div class="faq-answer">
+                With MultiLipi, you can translate your website into 120+ languages, including 22 Indian languages such as Hindi, Tamil, Gujarati, and Marathi. Whether you're building a multilingual site for regional or global users, we've got you covered.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                What is a language subdomain or subdirectory?
+            </div>
+            <div class="faq-answer">
+                For multilingual SEO, MultiLipi supports both subdirectories and subdomains.<br>
+● Example subdirectory: www.example.com/hi/ (for Hindi)<br>
+● Example subdomain: hi.example.com<br>
+These structures help search engines index your translated website correctly and improve visibility in local search results.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                How is MultiLipi optimized for multilingual SEO?
+            </div>
+            <div class="faq-answer">
+                MultiLipi automatically implements Google-recommended SEO practices like:<br>
+● Language-specific subdomains/subdirectories<br>
+● Hreflang tag generation<br>
+● Translation of page metadata<br>
+These features ensure your translated website ranks well and maintains SEO consistency across every language.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                How accurate is MultiLipi's machine translation?
+            </div>
+            <div class="faq-answer">
+                MultiLipi uses AI-powered neural machine translation for high-quality results. You also get full control through the dashboard to refine translations manually or with human editors, ensuring accurate website translation.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                How can I edit the machine-translated content?
+            </div>
+            <div class="faq-answer">
+                Use the MultiLipi Dashboard to edit any translation instantly. You can make changes yourself or invite team members and professional translators to review and update content for your multilingual site.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                 Where are my website translations stored?
+            </div>
+            <div class="faq-answer">
+                All your translated website content is securely stored within the MultiLipi platform. The dashboard gives you a clear, organized view of every language version, making it easy to manage updates.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-left">
+            <div class="faq-question">
+                How do I know how many translated words I need?
+            </div>
+            <div class="faq-answer">
+                The number of translated words depends on:<br>
+● Total word count on your current website<br>
+● Number of target languages<br>
+Use our Word Count Tool to calculate your needs, and we'll suggest the right MultiLipi plan based on your website translation goals.
+            </div>
+        </div>
+
+        <div class="faq-item" data-aos="fade-right">
+            <div class="faq-question">
+                Can I use MultiLipi on more than one website?
+            </div>
+            <div class="faq-answer">
+                Yes! With the MultiLipi Pro Plan or higher, you can manage multiple websites independently. Each site can have its own translations and user access — ideal for agencies or large businesses.
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "contact_form.html" %}
+{% include "banner.html" %}
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock content %}

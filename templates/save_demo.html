@@ -1,0 +1,138 @@
+{% load static %}
+
+<!-- request a demo start -->
+<div
+  class="pos-rel request-a-demo"
+  id="requesting-demo"
+  style="margin: 100px 0"
+  >
+  <section class="w-full min-h-[50vw] mt-10">
+    <form action="" method="POST">
+      <h2
+        class="md:text-[59px] text-4xl font-[600] text-center text-white mb-2"
+      >
+        Request a <span class="text-blue-500">Demo</span>
+      </h2>
+
+      <div
+        class="demo-from flex flex-col md:flex-row items-center justify-center md:gap-20 p-5"
+      >
+        <div
+          class="md:w-[50%] w-full rounded-xl p-5 sm:px-5"
+          style="color: white"
+        >
+          <h1
+            class="text-[36px] font-[600] text-center text-white demo-form-request"
+          >
+            Request a Demo
+          </h1>
+          <form id="demoForm" action="">
+            <div
+              class="sm:grid sm:grid-cols-2 grid-cols-1 gap-y-8 sm:gap-x-5 my-10"
+            >
+              <div
+                class="w-full h-12 mb-2 rounded-2xl border-2 border-blue-500"
+              >
+                <input
+                  id="full_name_input"
+                  type="text"
+                  placeholder="Full Name*"
+                  class="w-full h-full rounded-xl py-2 px-3 bg-transparent text-lg"
+                  name="full_name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div
+                class="w-full h-12 mb-2 rounded-2xl border-2 border-blue-500"
+              >
+                <input
+                  id="email_input"
+                  type="email"
+                  placeholder="E-Mail*"
+                  class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                  name="email"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+              <div
+                class="w-full h-12 mb-2 rounded-2xl border-2 border-blue-500"
+              >
+                <input
+                  id="phone_input"
+                  type="text"
+                  placeholder="Phone*"
+                  name="phone"
+                  class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                  required
+                  autocomplete="mobile"
+                />
+              </div>
+              <div
+                class="w-full h-12 mb-2 rounded-2xl border-2 border-blue-500"
+              >
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  name="company_name"
+                  class="w-full h-full rounded-xl px-3 py-2 bg-transparent text-lg"
+                />
+              </div>
+              <div
+                class="w-full h-12 mb-2 col-span-2 rounded-2xl border-2 border-blue-500"
+              >
+                <input
+                  id="subject_input"
+                  type="text"
+                  placeholder="Subject*"
+                  name="subject"
+                  class="w-full h-full rounded-xl py-2 px-3 bg-transparent text-lg"
+                  required
+                />
+              </div>
+              <div
+                class="w-full min-h-20 mb-2 col-span-2 rounded-2xl border-2 border-blue-500"
+              >
+                <textarea
+                  name="msg"
+                  id="msg_input"
+                  class="w-full h-full rounded-xl py-2 px-3 text-lg bg-transparent"
+                  placeholder="Type Message*"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <!-- <a class="primary-btn w-1/2 sm:w-1/2 rounded-3xl" onclick=submitAlert() href="">Submit Now</a> -->
+              <button
+                class="primary-btn w-1/2 sm:w-1/2 rounded-3xl"
+                form=""
+                id="submitBtn"
+              >
+                Submit Now
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="md:w-[30%] w-full">
+          <div class="border-l-4 border-blue-500 py-2">
+            <p class="tracking-wider text-xl ml-8 text-white">
+              As we understand your business is mostly about words, we not only
+              translate language we transform business in the world of words.
+            </p>
+          </div>
+          <div class="flex gap-10 px-5 mt-20">
+            <button class="primary-btn rounded-3xl py-2" id="callbtn" form="">
+              <i class="fa-solid fa-phone mr-1"></i>Call Us
+            </button>
+            <button class="primary-btn rounded-3xl py-2" id="mailbtn" form="">
+              <i class="fa-solid fa-envelope mr-1"></i>Mail Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
+<!-- request a demo end -->

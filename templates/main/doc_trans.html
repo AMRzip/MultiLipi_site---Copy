@@ -1,0 +1,1205 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | Document Translation{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+  }
+</style>
+
+<!-- main front start  -->
+<style> /* main front */
+  .main-front-outerdiv {
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 50px 100px 80px;
+    /* background: linear-gradient(45deg, #0FB9E9, #2C5C6C); */
+    /* background-image: url('{% static "files3/doc-bg-2.webp" %}');
+    background-repeat: no-repeat;
+    background-size: cover;  */
+  }
+  .main-front-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+  }
+  .main-front-innerdiv {
+    background-repeat: ;
+  }
+  .main-front-header-text{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .main-front-header-text > h1 {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 103px;
+    /* or 143% */
+    text-align: center;
+    letter-spacing: -3px;
+
+    color: #FFFFFF;
+  }
+  .main-front-header-text-para {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 53px;
+    color: white;
+  }
+
+  .main-front-header-text-para-trans {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+  }
+  .main-front-tablist-outerdiv{
+    background: #FFFFFF;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 80px auto 50px;
+  }
+
+  .main-front-seo{
+    background: #1179FC;
+    border-radius: 50px;
+  }
+
+  .main-front-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 3.5px;
+    background: #FFFFFF;
+    border-radius: 40px;
+  }
+
+  .main-front-bg img{
+    min-height: 100%;
+    min-width: fit-content;
+    max-width: none;
+    height: fit-content;
+    width: 100%;
+    max-height: none;
+  }
+
+  @media (max-width: 768px) {
+    .main-front-header-text > h1{
+      font-size: 50px;
+      line-height: 80px;
+      text-align: center;
+      letter-spacing: 0px;
+    }    
+  }
+
+  @media (max-width: 400px) {
+    .main-front-outerdiv{
+      padding: 160px 30px 100px 30px;
+    }
+    .main-front-header-text > h1{
+      font-size: 40px;
+      line-height: 60px;
+      text-align: center;
+      letter-spacing: 0px;
+    }    
+  }
+
+</style>
+
+<style>
+  .tab-container {
+      display: flex;
+      background-color: white;
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+  }
+  .tab {
+      width: 195px;
+      margin: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      align-content: center;
+      position: relative;
+      transition: color 0.3s;
+  }
+  .tab:first-child {
+      margin-right: 10px; /* Spacing between tabs */
+  }
+  .tab p{
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.8594px;
+    line-height: 26px;
+  }
+  .tab.selected {
+      /* background-color: #007BFF; Blue background for selected tab */
+      color: white;
+  }
+  .tab:not(.selected) {
+      color: #191919; /* Default black text color for unselected tab */
+  }
+  .tab-icon {
+      margin-right: 10px; /* Space between icon and text */
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+  .overlay div{
+    background-color: #007BFF;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+  }
+</style>
+
+<style>
+  .primary-btn-outline {
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+  }
+  .border-gray {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  }
+  .border-green,
+  .border-orange {
+    --tw-border-opacity: 1;
+    border-color: rgb(251 146 60 / var(--tw-border-opacity));
+  }
+  .border-green {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    border-color: rgb(74 222 128 / var(--tw-border-opacity));
+  }
+  .border-red,
+  .border-violet {
+    --tw-border-opacity: 1;
+    border-color: rgb(167 139 250 / var(--tw-border-opacity));
+  }
+  .border-red {
+    border-color: rgb(248 113 113 / var(--tw-border-opacity));
+  }
+  .pricing-card {
+    --tw-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
+      0 8px 10px -6px rgba(255, 255, 255, 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px rgba(255, 255, 255, 0.3),
+      0 8px 10px -6px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #ffffff00),
+      var(--tw-ring-shadow, 0 0 #ffffff00), var(--tw-shadow);
+    padding: 1.25rem;
+    border-top-width: 4px;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    min-width: 15%;
+    max-width: 350px;
+    background: white;
+  }
+  .pricing-card:hover {
+    border-width: 4px !important;
+    border-color: rgb(59 130 246) !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.1);
+  }
+  .pricing-card-section {
+    gap: 3rem 0;
+  }
+</style>
+
+<div class="main-front-outerdiv">
+  <div  class="main-front-bg">
+    <img src="{% static "files3/doc-bg-2.webp" %}" alt="">
+  </div>
+  <div class="main-front-innerdiv">
+    <div class="main-front-header-text">
+      <h1>Your Content, Any Language: <br> Seamless AI Document <br> Translation Made Easy</h1>
+    </div>
+    <div>
+      <div style="
+      margin-top: 80px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;">
+        <a class="main-front-btn" style="background: white;
+          border-radius: 30px;
+          cursor: pointer;
+          width: 200px;
+          height: 51.6px;
+          font-family: 'Lato';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15.75px;
+          color: rgba(0, 0, 0, 0.8);
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+        " href="#contact_us">BOOK A MEETING</a>
+        <a class="main-front-btn" style="
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        width: 200px" href="https://dashboard.multilipi.com/">Try now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main front end -->
+
+<style> /* partners */
+  .partners-outer-div{
+    padding: 70px 10px;
+  }
+  .partners-outer-div h1{
+    width: fit-content;
+    margin: 40px auto;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    /* identical to box height, or 130% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+  }
+  .partners-outer-div ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+</style>
+
+<div class="partners-outer-div">
+  <h1>Our Trusted Partners</h1>
+  <ul>
+    <li>
+      <img src="{% static "icons/Bhashini navbar logo.svg" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NSAP.svg" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/TOI.svg" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/MOE.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/EAIT.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "icons/NITI.svg" %}" alt="2x improvement in User Retention - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+
+
+<style>
+  .feature-sec {
+      background: #F0F1F4;
+      display: flex;
+      flex-direction: column;
+      padding: 100px;
+      justify-content: flex-start; /* Align content to the start */
+  }
+
+  .feature-btn {
+      background: #fff;
+      border-radius: 6px;
+      display: flex;
+      margin: 10px;
+      min-width: 330px;
+      width: calc(25% - 20px);
+      height: 72px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      cursor: pointer; /* Pointer cursor for better UX */
+      transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+
+  .feature-btn:hover {
+      background-color: #e0e0e0; /* Hover effect */
+  }
+
+  .btn-title {
+      margin-left: 10px;
+      color: rgba(8, 4, 34, 0.70);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+  }
+
+  .feature-card {
+      display: flex;
+      flex-wrap: nowrap;
+      border-radius: 16px;
+      background: #FFF;
+      /* height: 588.9px; */
+      justify-content: space-evenly;
+      
+      transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+
+  @media (max-width: 768px) {
+    .feature-card {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  .card-col {
+      width: 30%;
+      padding: 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+  }
+
+  .card-title {
+      height: fit-content;
+      color: rgba(4, 1, 14, 0.94);
+      font-size: 30px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 40px;
+      word-wrap: break-word;
+
+  }
+
+  .card-des {
+      height: fit-content;
+      color: rgba(8, 4, 34, 0.70);
+      font-size: 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      line-height: 32px;
+      word-wrap: break-word;
+  }
+
+  .card-para-center-div{
+  
+  }
+  /* Style for the selected feature button */
+  .feature-btn.selected {
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+      color: #fff; /* Adjust text color for better contrast */
+  }
+
+  .feature-btn.selected .btn-title {
+      color: #fff; /* Make the text white */
+  }
+
+
+
+  .card-btn {
+      text-align: center;
+      border-radius: 6px;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%), rgba(3, 1, 14, 0.91);
+      cursor: pointer; /* Pointer cursor for better UX */
+      padding: 10px 20px; /* Added padding for better button size */
+      margin-top: 20px;
+      transition: background-color 0.3s ease; /* Smooth transition for background change */
+  }
+
+  .card-btn > p {
+      color: #FFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+  }
+
+  #card-image {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      transition: all 0.3s ease; /* Smooth transition for image changes */
+  }
+
+  .image-container {
+      width: 70%; /* Default width for the container */
+      /* border: 2px solid #ddd; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      overflow: hidden; /* Ensures content doesn't overflow the container */
+      border-radius: 8px;
+      padding: 20px;
+  }
+
+
+  @media (max-width: 1240px) {
+      .card-col{
+          padding: 20px;
+      }
+
+      .feature-sec{
+          padding: 20px;
+      }
+      .image-container{
+          width: 80%;
+      }
+      #card-image{
+          max-width: 100%;
+          max-height: 100%;
+          height: auto;
+          transition: all 0.3s ease;
+      }
+      .card-title{
+        margin-bottom: 20px;
+      }
+  }
+
+  @media (max-width: 768px) {
+    .card-col{
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .image-container {
+        width: 100%; /* Container takes full width */
+    }
+
+    .responsive-image {
+        width: 100%; /* Image takes full width */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Ensure the image doesn't overflow */
+        max-height: none; /* Remove max-height to prevent scaling issues */
+    }
+  }
+</style>
+
+<div class="feature-sec">
+  <h1 style="margin-bottom: 40px;">Take total control of your translations</h1>
+
+  <div style="display: flex; overflow-x: auto;    scrollbar-width: none; /* For Firefox */
+-ms-overflow-style: none; ">
+      <div class="feature-btn selected" onclick="changeContent('Support_Many_File_Types')">
+        <i class="fa-solid fa-file-pen"></i>
+        <p class="btn-title">Support Many File Types</p>
+      </div>
+      <div class="feature-btn" onclick="changeContent('AI_Translation_with_Editing_Options')">
+        <i class="fa-solid fa-robot"></i>
+        <p class="btn-title">AI Translation with Editing Options</p>
+      </div>
+      <div class="feature-btn" onclick="changeContent('Team_Access')">
+        <i class="fa-solid fa-people-group"></i>
+        <p class="btn-title">Team Access</p>
+      </div>
+      <div class="feature-btn" onclick="changeContent('Glossary_and_Translation_Memory')">
+        <i class="fa-solid fa-language"></i>
+        <p class="btn-title">Glossary and Translation Memory</p>
+      </div>
+  </div>
+
+  <div class="feature-card">
+      <div class="card-col">
+          {% comment %} <div style="max-width: 600px;
+                      margin-bottom: 30px;
+                      height: fit-content;">
+              <div class="card-para-center-div">
+                
+              </div>
+          </div> {% endcomment %}
+          <div class="card-title" id="card-title">Support Many File Types</div>
+
+          <div class="card-des" id="card-des">
+            Easily upload and translate a wide range of file formats, including PDFs, Word documents, spreadsheets, and more, ensuring flexibility for all your translation needs.
+          </div>
+          <div class="card-btn">
+              <p><a href="https://dashboard.multilipi.com/">Get Started</a></p>
+          </div>
+      </div>
+
+      <div class="image-container">
+          <img id="card-image" class="responsive-image" 
+               src="{% static "imgs\multy_file.webp" %}" alt="doc">
+      </div>  
+  </div>
+</div>
+
+<style>
+  .hero-section {
+      padding:  100px;
+      background: linear-gradient(180deg, #1A9FE2 -35.31%, #E8E8E8 56.7%);
+  }
+
+  .hero-header{
+      color: #FFF;
+  font-family: "Plus Jakarta Sans";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px; /* 120.833% */
+  letter-spacing: -0.96px;
+  }
+  .calculator {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 25%;
+  }
+
+  .calculator p {
+      color: #000;
+
+      font-family: "Plus Jakarta Sans";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px; /* 125% */
+      letter-spacing: -0.64px;
+      margin: 0;
+  }
+
+  .word-count {
+      font-family: "Plus Jakarta Sans";
+      font-size: 36px;
+      color: #0FB9E9;
+      font-weight: 700;
+  }
+
+  .language-select span{
+    font-family: "Plus Jakarta Sans";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+    letter-spacing: -0.64px;
+    border: 0px solid #ccc;
+    border-radius: 0px;
+    background-color: transparent;
+    background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+  }
+
+  .language-select select {
+      font-family: "Plus Jakarta Sans";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px; /* 125% */
+      letter-spacing: -0.64px;
+      border: 0px solid #ccc;
+      border-radius: 0px;
+      background-color: transparent;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      cursor: pointer;
+      width: fit-content;
+  }
+
+  .language-select select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+  .language-select select option{
+    font-size: 15px;
+    height: 18px;
+  }
+
+  .hero-child{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      /* gap: 30px; */
+  }
+
+  h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #333;
+      text-align: center;
+  }
+  .gradient-word {
+      background: linear-gradient(45deg, #0FB9E9, #2C5C6C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+  }
+
+  .hero-card1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 65.8px;
+      padding: 20px;
+      border-radius: 16px;
+      background: #F4F4F4;
+      width: 30%;
+  }
+
+  .hero-card-title{
+      color: #000;
+      font-family: "Plus Jakarta Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px; /* 133.333% */
+  }
+
+  .hero-card2{
+      display: flex;
+      padding: 20px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 48.6px;
+      border-radius: 16px;
+      background: #F4F4F4;
+      width: 30%;
+
+  }
+
+  .responsive-image {
+      max-width: 60%;
+      max-height: 60%;
+      width: auto; /* Maintains the aspect ratio */
+      height: auto; /* Maintains the aspect ratio */
+      display: block; /* Removes any extra space below the image */
+  }
+
+  .hero-section > h1{
+    color: #FFF;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px; 
+    letter-spacing: -0.96px;
+    margin-bottom: 60px;
+  }
+
+  @media (max-width: 1024px) {
+      .hero-child{
+          flex-wrap: wrap;
+      }
+      .calculator {
+          width: 100%;
+      }
+      .calculator p{
+        margin-bottom: 40px;
+      }
+      .hero-card1{
+          width: 42%;
+      }
+      .hero-card2{
+          width: 42%;
+      }
+
+  }
+
+  @media (max-width: 768px) {
+      .hero-card1{
+          width: 100%;
+          margin-bottom: 20px;
+      }
+      .hero-card2{
+          width: 100%;
+      }
+      .hero-section{
+          padding: 20px;
+      }
+  }
+  @media (max-width: 400px) {
+      .image-container {
+          width: 100%; /* Container takes full width */
+      }
+      .hero-section > h1{
+        color: #FFF;
+        font-family: 'Plus Jakarta Sans';
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 38px; 
+        letter-spacing: -0.96px;
+        margin-bottom: 60px;
+      }
+      .responsive-image {
+          width: 100%; /* Image takes full width */
+          height: auto; /* Maintain aspect ratio */
+          max-width: 100%; /* Ensure the image doesn't overflow */
+          max-height: none; /* Remove max-height to prevent scaling issues */
+      }
+  }
+
+</style>
+
+<div class = "hero-section">
+  <h1 >Budget-saving technology for global companies</h1>
+  <div class = "hero-child">
+      <div class="calculator">
+          <p>I want to translate <span id="save-word-count" class="word-count" contenteditable="true">1000000</span> words from
+          <span class="language-select" style="cursor: default;">
+            <span>English</span>
+              <!-- <select>
+                  <option value="english">English</option>
+                  <option value="hindi">Hindi</option>
+                  <option value="gujarati">Gujarati</option>
+                  <option value="french">French</option>
+                  <option value="spanish">Spanish</option>
+                  <option value="italian">Italian</option>
+              </select> -->
+          </span>
+          to
+          <span class="language-select">
+              <select id="save-tgr-lang">
+                  {% for lang in langs %}
+                    <option value="0.20">{{ lang }}</option>
+                  {% endfor %}
+                  {% for forn_lang, forn_pricing in lang_dict.items %}
+                  <option value="{{ forn_pricing }}">{{ forn_lang }}</option>
+                  {% endfor %}
+              </select>
+          </span>
+          </p>
+      </div>
+      <div class = "hero-card1">
+          <div class = "hero-card-title">Your savings with MultiLipi</div>
+          <div id="save-result" style="font-family: 'Plus Jakarta Sans';
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;">
+          $200000</div>   
+          
+      </div>
+
+      <div class = "hero-card2">
+      <div class = "hero-card-title">Want to know how it works? Talk
+          to our solutions expert.</div>
+          <div class="card-btn">
+              <p><a href="#contact_us">Book demo</a></p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<style>
+  .bg-col {
+    background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+  }
+
+
+  .benefit {
+      display: flex;
+      /* width: 1000px; */
+      /* max-height: 580px; */
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+  }
+
+  .ben-card {
+      display: flex;
+      width: 300px;
+      height: 280px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #FFF;
+      padding: 20px;
+  }
+
+  .ben-card-title {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 72px;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      margin: 0;
+      -webkit-text-fill-color: transparent;
+  }
+
+</style>
+
+<div class="benefit">
+  <div class="ben-card">
+      <p class="ben-card-title"> 70%</p>
+      <p style="color: #000;
+     font-size: 30px;
+     font-style: normal;
+     font-weight: 700;
+     font-family: 'Inter';
+  ">
+          Cost savings
+      </p>
+  </div>
+  <div class="ben-card">
+      <p class="ben-card-title"> 85%</p>
+      <p style="color: #000;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                font-family: 'Inter';
+          ">
+          AI language accuracy that’s ever-improving
+      </p>
+  </div>
+
+  <div class="ben-card">
+      <p class="ben-card-title"> 400%</p>
+      <p style="color: #000;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                font-family: 'Inter';
+          ">
+          Faster turnaround time
+      </p>
+  </div>
+</div>
+
+
+<style> /* faq */
+  
+  .cen {
+    text-align: center;
+  }
+  .font-family {
+    font-family: Inter, sans-serif;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  .faq-section-outer-div {
+    padding: 30px 0 100px;
+    background: linear-gradient(63.08deg, rgba(15, 185, 233, 0.45) -311.21%, rgba(231, 231, 231, 0.45) 81.84%);
+  }
+  .faq-section {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+    padding: 20px 35px;
+    width: 100%;
+    border-radius: 16px;
+  }
+  .faq-item i{
+    line-height: inherit;
+  }
+  .faq-item > h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: white;
+  }
+  .faq-item i {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    color: white; 
+  }
+  
+  .faq-section-outer-div h2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #212121;
+    width: fit-content;
+    margin: 40px auto;
+  }
+  .faq-section details {
+    list-style: none;
+  }
+  .faq-section details p {
+    text-align: left;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    margin: 15px 20px 0;
+  }
+  .faq-section summary {
+    list-style: none;
+    cursor: pointer;
+  }
+  .faq-section details[open] > summary {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+  
+  
+</style>
+  
+<div class="faq-section-outer-div">
+  <h2 class=" cen font-family">Frequently Asked Questions</h2>
+  <div class="faq-section">
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>What types of files can MultiLipi translate?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">MultiLipi supports a variety of file formats including PDFs, Word documents, Excel sheets, and more, allowing you to translate documents in the format you prefer.</p>
+    </details>
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>How accurate is the AI-powered translation?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Our AI delivers highly accurate translations, and you can manually edit any part to ensure contextual accuracy and make refinements for specific needs.</p>
+    </details>
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Can I collaborate with my team on document translations?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Yes! MultiLipi allows multiple team members to work on the same project simultaneously, providing real-time collaboration for faster and more effective translations.</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Is it possible to maintain consistency across large translation projects?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Absolutely. With our glossary and translation memory features, you can save key terms and reuse past translations to ensure consistency and save time across all your projects.</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Do I have control over the translation process?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Yes, in addition to automatic translations, MultiLipi provides full editing capabilities so you can adjust and refine translations as needed.</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>How does MultiLipi handle data security?</h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">We take data privacy seriously. All uploaded files are securely stored, and only authorized team members have access. We comply with industry-standard encryption protocols.</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Can I track the progress of my translation projects?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">Yes, MultiLipi provides detailed insights and progress tracking, allowing you to monitor project completion rates, team contributions, and other important statistics.</p>
+    </details>
+
+    <details>
+      <summary>
+        <div class="faq-item">
+          <h1>
+            Is there a limit to the number of languages MultiLipi supports?
+          </h1>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </summary>
+      <p style="text-align: left">MultiLipi supports a wide range of languages, allowing you to translate documents into multiple languages for global audiences with ease. If you have specific language needs, feel free to reach out!</p>
+    </details>
+  </div>
+</div>
+
+<div class="partners-outer-div" style="margin: 50px auto;">
+  <h1>Our Recognition</h1>
+  <ul>
+    <li>
+      <img src="{% static "files/img-17.webp" %}" alt="300% increase in Organic - online translators" loading="lazy">
+    </li>
+    <li>
+      <img style="    max-width: 70%;
+    margin: 0 auto;" src="{% static "files/img-19.webp" %}" alt="80% improvement in Conversion Rate - website localization" loading="lazy">
+    </li>
+    <li>
+      <img src="{% static "files/img-18.webp" %}" alt="75% increase in Average Session Time - website localization" loading="lazy">
+    </li>
+  </ul>
+</div>
+
+{% include "blog.html" %}
+{% include "contact_form.html" %}
+
+<script>
+  function changeContent(contentType) {
+    const buttons = document.querySelectorAll('.feature-btn');
+    buttons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
+    const selectedButton = document.querySelector(`.feature-btn[onclick="changeContent('${contentType}')"]`);
+    selectedButton.classList.add('selected');
+    const cardTitle = document.getElementById('card-title');
+    const cardDescription = document.getElementById('card-des');
+    const cardImage = document.getElementById('card-image');
+
+    // Set content based on the button selected
+    if (contentType === 'Support_Many_File_Types') {
+        cardTitle.textContent = 'Support Many File Types';
+        cardDescription.textContent = 'Easily upload and translate a wide range of file formats, including PDFs, Word documents, spreadsheets, and more, ensuring flexibility for all your translation needs.';
+        cardImage.src = '{% static "imgs\multy_file.webp" %}';
+    } else if (contentType === 'AI_Translation_with_Editing_Options') {
+        cardTitle.textContent = 'AI Translation with Editing Options';
+        cardDescription.textContent = 'Harness the power of AI to automatically translate content, while retaining full control to manually edit and fine-tune translations, ensuring accuracy and context for every project.';
+        cardImage.src = '{% static "imgs\Editor.webp" %}';
+    } else if (contentType === 'Team_Access') {
+        cardTitle.textContent = 'Team Access';
+        cardDescription.textContent = 'Grant your team members access to collaborate on projects in real time, enabling faster, more efficient translations with shared responsibilities and streamlined communication.';
+        cardImage.src = '{% static "imgs\team.webp" %}';
+    } else if (contentType === 'Glossary_and_Translation_Memory') {
+        cardTitle.textContent = 'Glossary and Translation Memory';
+        cardDescription.textContent = 'Maintain consistency across projects by saving frequently used terms and phrases in a customizable glossary. Leverage translation memory to reuse previous translations, speeding up workflows and improving accuracy.';
+        cardImage.src = '{% static "imgs\Glossary.webp" %}';
+    }
+  }
+</script>
+
+
+<script>
+  var save_word_count = document.getElementById("save-word-count");
+  var save_result = document.getElementById("save-result");
+  var save_tgr_lang = document.getElementById("save-tgr-lang");
+  
+  let observer = new MutationObserver(mutations =>
+    mutations.forEach(mutation => save_calu())
+  );
+  observer.observe(save_word_count, {
+    childList: true,
+    characterData: true,
+    subtree: true,
+  });
+
+  function save_calu(){
+    console.log(save_word_count.innerText * save_tgr_lang.value)
+    save_result.innerText ="$" + save_word_count.innerText * save_tgr_lang.value;
+  }
+
+  save_word_count.addEventListener(
+    "input", save_calu()
+  );
+
+  save_tgr_lang.addEventListener('change', () => {
+    "input", save_calu()
+  });
+</script>
+{% endblock content %}

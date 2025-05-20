@@ -1,0 +1,366 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Unlock global reach with MultiLipi, the top multilingual SEO platform in India. Seamlessly translate your website content using our advanced AI. Enhance your multilingual site with our website language translator and online translators, ensuring top search engine rankings and improved user engagement in under 5 minutes.">
+    <meta name="keywords" content="website page translator, online free translate, website translation services, wordpress translation plugin, website localization, website language translator, online translators, multilingual site">
+    {% tailwind_css %}
+    <title>MultiLipi{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static "files/img-7.webp" %}" />
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    {% comment %} <script async media="print" onload="this.media='all'"
+        src="https://kit.fontawesome.com/5482c79e6d.js"
+        crossorigin="anonymous"
+    ></script> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link async media="print" onload="this.media='all'"
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link async media="print" onload="this.media='all'"
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script> -->
+    {% block css %}
+    
+    {% endblock %}
+    <link href="https://multilipi.com/" hreflang="en" rel="alternate">
+
+    <link href="https://fr.multilipi.com/" hreflang="fr" rel="alternate">
+    
+    <link href="https://de.multilipi.com/" hreflang="de" rel="alternate">
+    
+    <link href="https://hi.multilipi.com/" hreflang="hi" rel="alternate">
+    
+    <link href="https://it.multilipi.com/" hreflang="it" rel="alternate">
+    
+    <link href="https://pt-pt.multilipi.com/" hreflang="pt-pt" rel="alternate">
+    
+    <script src="https://multilipistorage.blob.core.windows.net/static/JS/page_translations.js" multilipi-key="867b25f4-12c6-4f67-b0e8-06a9a0a7206f" mode="auto" data-pos-x="50" data-pos-y="50" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <header class="header">
+        <div class="container-navbar">
+          <nav class="navbar">
+            <div>
+              <div class="pt-2 h-full flex flex-col" style="margin-left: 25%; margin-top: -5px;">
+                <div class="text-right">
+                  <a href="/">
+                    <img
+                      src="{% static "files/image.webp" %}"
+                      style=" width: 200px;"
+                      alt="speak local scale global"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="nav-links">
+              <div class="nav-item has-dropdown">
+                <a href="#" class="nav-link">Solutions</a>
+                <div class="dropdown-menu mega-menu-solutions">
+                  <div class="mega-menu-container-solution">
+                    <h3 class="mega-menu-title">Industries & Use Cases</h3>
+                    <div style="display: flex; justify-content: space-between;">
+                      <div class="mega-menu-column">
+                        <div class="mega-menu-items">
+                          <div class="mega-menu-item">
+                            <div class="mega-menu-icon">
+                              <i class="fa-solid fa-cart-shopping" style="height: auto; width: 20px;"></i>
+                            </div>
+                            <div class="mega-menu-content" onclick="window.location.href='{% url 'ecommerce' %}'">
+                              <h4>Ecommerce</h4>
+                              <p>Add new languages in minutes for an instantly translated store on autopilot</p>
+                            </div>
+                          </div>
+                          <div class="mega-menu-item">
+                            <div class="mega-menu-icon">
+                              <i class="fa-solid fa-briefcase" style="height: auto; width: 20px;"></i>
+                            </div>
+                            <div class="mega-menu-content" onclick="window.location.href='{% url 'government' %}'">
+                              <h4>Government</h4>
+                              <p>Help your communities access information in their language with an easy to install</p>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mega-menu-column">
+                        <div class="mega-menu-items">
+                          <div class="mega-menu-item">
+                            <div class="mega-menu-icon">
+                              <i class="fa-solid fa-chart-simple" style="height: auto; width: 20px;"></i>
+                            </div>
+                            <div class="mega-menu-content" onclick="window.location.href='{% url 'marketing' %}'">
+                              <h4>Marketing</h4>
+                              <p>A simple, fast and reliable multilingual integration that seamlessly adapts</p>
+                            </div>
+                          </div>
+                          <div class="mega-menu-item">
+                            <div class="mega-menu-icon">
+                              <i class="fa-solid fa-desktop" style="height: auto; width: 20px;"></i>
+                            </div>
+                            <div class="mega-menu-content" onclick="window.location.href='{% url 'web_agency' %}'">
+                              <h4>Web Agency</h4>
+                              <p>A simple, fast and reliable multilingual integration that seamlessly adapts</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="nav-item">
+                <a href="{% url 'pricing' %}" class="nav-link">Pricing</a>
+              </div>
+              
+              <div class="nav-item">
+                <a href="#" class="nav-link">Reviews</a>
+              </div>
+              
+              <div class="nav-item has-dropdown">
+                <a href="#" class="nav-link">Integrations</a>
+                  <div class="dropdown-menu mega-menu">
+                  <div class="mega-menu-container">
+                    <div class="mega-menu-column-int" style="width: 100px; height: 100px; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); border-radius: 10px; background-color: #f6f7fb; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+                    <a href="{% url 'wordpress' %}" style="display: flex; flex-direction: column; align-items: center;">
+                      <i class="fa-brands fa-wordpress" style="width: 30px; height: auto;"></i>
+                      <h3 class="mega-menu-title mb-0">Wordpress</h3>
+                    </a>
+                    </div>
+                    <div class="mega-menu-column-int" style="width: 100px; height: 100px; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); border-radius: 10px; background-color: #f6f7fb; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+                    <a href="{% url 'wix' %}" style="display: flex; flex-direction: column; align-items: center;">
+                      <i class="fa-brands fa-wix" style="width: 60px; height: auto;"></i>
+                    </a>
+                    </div>
+                    <div class="mega-menu-column-int" style="width: 100px; height: 100px; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); border-radius: 10px; background-color: #f6f7fb; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+                    <a href="{% url 'shopify' %}" style="display: flex; flex-direction: column; align-items: center;">
+                      <i class="fa-brands fa-shopify" style="width: 30px; height: auto;"></i>
+                      <h3 class="mega-menu-title mb-0">Shopify</h3>
+                    </a>
+                    </div>
+                    <div class="mega-menu-column-int" style="width: 100px; height: 100px; box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2); border-radius: 10px; background-color: #f6f7fb; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+                    <a href="{% url 'webflow' %}" style="display: flex; flex-direction: column; align-items: center;">
+                      <i class="fa-brands fa-webflow" style="width: 30px; height: auto;"></i>
+                      <h3 class="mega-menu-title mb-0">WebFlow</h3>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                {% comment %} <div class="dropdown-menu">
+                  <a href="{% url 'wix' %}" class="dropdown-item">Wix</a>
+                  <a href="{% url 'wordpress' %}" class="dropdown-item">Wordpress</a>
+                  <a href="{% url 'shopify' %}" class="dropdown-item">Shopify</a>
+                  <a href="{% url 'webflow' %}" class="dropdown-item">WebFlow</a>
+                </div> {% endcomment %}
+              </div>
+              
+              <div class="nav-item has-dropdown">
+                <a href="#" class="nav-link">Resources <span class="dropdown-arrow"></a>
+                <div class="dropdown-menu-resources">
+                  <a href="{% url 'All-blog' %}" class="dropdown-item">Blog</a>
+                  <a href="{% url 'home' %}#FAQs" class="dropdown-item">Frequently asked</a>
+                  <a href="{% url 'home' %}#contact_us" class="dropdown-item">Contact us</a>
+                </div>
+              </div>
+              
+              <div class="nav-item">
+                <a href="{% url 'referral' %}" class="nav-link affiliate">Affiliate <span class="badge">30%</span></a>
+              </div>
+            </div>
+            
+            <div class="auth-buttons" style="margin-right: 3rem;">
+              <a href="#" class="login-btn">Log in</a>
+              <a href="#" class="secondary-btn">Start For Free</a>
+            </div>
+
+          </nav>
+        </div>
+      </header>
+
+      {% block content %}
+
+      {% endblock content %}
+
+      {% comment %} <link rel="stylesheet" href="{% static "css/style.css" %}" /> {% endcomment %}
+      {% comment %} <link rel="stylesheet" href="{% static "css/animation.css" %}" /> {% endcomment %}
+      <footer class="footer-container py-12 w-full" style="background-color: #eff1f5; width: 100%; margin: 0;">
+        <div class="mb-8">
+          <div class="flex flex-nowrap justify-evenly items-center-safe mb-8 gap-2">
+            <!-- Logo and Social Links -->
+            <div class="w-full mb-8 md:mb-0" style="width: 35%;">
+              <div class="mb-4">
+                <a href="/">
+                  <img
+                    src="{% static "files/image.webp" %}"
+                    style=" width: 150px;"
+                    alt="speak local scale global"
+                  />
+                </a>
+              </div>
+              
+              <div class="flex mb-6 gap-4">
+                <a href="#" class="social-links-icons text-white rounded p-2">
+                  <i class="fa-brands fa-youtube" style="color: white;"></i>
+                </a>
+                <a href="#" class="social-links-icons text-white rounded p-2">
+                  <i class="fa-brands fa-facebook" style="color: white;"></i>
+                </a>
+                <a href="#" class="social-links-icons text-white rounded p-2">
+                  <i class="fa-brands fa-instagram" style="color: white;"></i>
+                </a>
+                <a href="#" class="social-links-icons text-white rounded p-2">
+                  <i class="fa-brands fa-x-twitter" style="color: white;"></i>
+                </a>
+              </div>
+              
+              <blockquote class="text-gray-600 text-sm italic mb-6">
+                "We spent countless hours building this so you can spend countless hours not manually messaging people on LinkedIn"
+              </blockquote>
+              
+              <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div class="flex item-centre">
+                  <div class="w-12 h-12 bg-blue-500 rounded-md mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Dewang Bharadwaj</p>
+                    <p class="text-sm text-gray-600">Founder @Multilipi</p>
+                  </div>
+                </div>
+                <div class="flex item-centre">
+                  <div class="w-12 h-12 bg-blue-500 rounded-md mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Kunal Singh Shekhawat</p>
+                    <p class="text-sm text-gray-600">Founder @Multilipi</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Links Columns -->
+            <div class="md:w-2/3 grid grid-cols-2" style="width:40%;">
+              <div style="width: 180px;">
+                <ul class="space-y-3">
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For Agencies</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For Sales</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For growth & rev ops</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Pricing</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Affiliate (30%)</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Integrations</a></li>
+                  <li><a href="{% url 'wordcount' %}" class="footer-text text-gray-700 hover:text-blue-500">Word Count</a></li>
+                </ul>
+              </div>
+              <div style="witdh: 180px;">
+                <ul class="space-y-3">
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Reviews</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Outbound</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Blog</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Help Center</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Videos</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Webinars</a></li>
+                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Terms of Service</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="text-center pt-8 border-t border-gray-200 text-gray-600 text-sm">
+          <p>© 2025 Multilipi. A multilingual SEO platform for agencies, sales teams & GTM operators. All rights reserved.
+          </p>
+        </div>
+      </footer>
+      {% comment %} <script>
+        var TxtType = function (el, toRotate, period, loopdur) {
+          this.toRotate = toRotate;
+          this.el = el;
+          this.loopNum = 0;
+          this.loopdur = loopdur - 1;
+          this.period = parseInt(period, 10) || 1000;
+          this.txt = "";
+          this.tick();
+          this.isDeleting = false;
+        };
+
+        TxtType.prototype.tick = function () {
+          var i = this.loopNum % this.toRotate.length;
+          var fullTxt = this.toRotate[i];
+
+          if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+          } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+          }
+
+          this.el.innerHTML =
+            '<span style="border-right: 0.08em solid #48aef3ff; background: linear-gradient(90deg, #4870ff33 0%, #48b2ff0d 100%);" class="wrap">' +
+            this.txt +
+            "</span>";
+
+          var that = this;
+          var delta = 200 - Math.random() * 100;
+
+          if (this.isDeleting) {
+            delta /= 2;
+          }
+
+          if (!this.isDeleting && this.txt === fullTxt) {
+            if (this.loopNum === this.loopdur) {
+              console.log(this.toRotate.length - 1);
+              return; // Stop after completing all elements in toRotate
+            }
+            delta = this.period;
+            this.isDeleting = true;
+          } else if (this.isDeleting && this.txt === "") {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+          }
+
+          setTimeout(function () {
+            that.tick();
+          }, delta);
+        };
+
+        function textAnimation(id) {
+          var elements = document.getElementById(id);
+          // for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements.getAttribute("data-type");
+          var period = elements.getAttribute("data-period");
+          var loopdur = elements.getAttribute("loopdur");
+          if (toRotate) {
+            new TxtType(elements, JSON.parse(toRotate), period, loopdur);
+          }
+          // }
+        }
+        textAnimation("typewrite");
+        // window.onload= function(){
+        //  textAnimation('typewrite')
+        // }
+      </script> {% endcomment %}
+
+      <script async src="{% static "js/scripts.min.js" %}" media="print" onload="this.media='all'"></script>
+
+      <!-- Google tag (gtag.js) -->
+      <script async media="print" onload="this.media='all'" src="https://www.googletagmanager.com/gtag/js?id=G-3LLSTZJTF8"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3LLSTZJTF8');
+      </script>
+
+  </body>
+</html>

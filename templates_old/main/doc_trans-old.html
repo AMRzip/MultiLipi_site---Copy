@@ -1,0 +1,506 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Document Translation{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #161616ff;
+  }
+</style>
+<style>
+  /* main front */
+  .main-front-outerdiv {
+    /* background-image: url("imgs/doc_bg.webp"); */
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 50px 80px 80px;
+    /* background-size: cover; */
+  }
+  .main-front-bg {
+    opacity: 0.3;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+  .main-front-innerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  .main-front-para {
+    color: white;
+    max-width: 750px;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+  .gradint-text {
+    font-size: calc(60 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: none;
+    line-height: calc(61 * var(--ratio));
+    background: linear-gradient(
+      91.18deg,
+      #d8d5d199 0%,
+      #f1f0eeff 30%,
+      #f1f0eeff 69%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .heading-blueis {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+    color: #1a9fe2ff;
+  }
+
+  .white_line {
+    height: 0;
+    display: block;
+    width: 80%;
+    margin: 50px 0;
+    border: 1px white solid;
+  }
+</style>
+<style>
+  /* pricing */
+  .pricing-headerdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-header {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+
+    line-height: calc(59 * var(--ratio));
+    color: #1a9fe2ff;
+  }
+  .pricing-header-undertext {
+    color: white;
+    margin: 15px;
+    font-size: 17px;
+    font-weight: 100;
+  }
+  .pricing-features {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 70px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .pricing-features-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+  .green-tick{
+    font-size: 35px;
+    color: green;
+  }
+</style>
+<style>
+  /* our-trusted */
+  .our-trusted-outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    line-height: 0px;
+  }
+  .header-span1 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      103.37deg,
+      #d8d5d199 0%,
+      #f1f0eeff 43%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  /* Advantages */
+  .advantages-maindiv {
+    margin: 50px 0;
+  }
+  .advantages-header {
+    display: flex;
+    justify-content: center;
+  }
+  .advantages-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    align-items: center;
+    padding: 65px 50px;
+    flex-wrap: wrap;
+  }
+  .advantages-content-textdiv {
+    width: 55%;
+    padding-left: 20px;
+  }
+  .advantages-content-img {
+    width: 40%;
+  }
+  .advantages-content-header {
+    color: white;
+    max-width: 750px;
+    font-size: 40px;
+    margin: 20px 0;
+  }
+  .advantages-content-para {
+    color: white;
+    max-width: 750px;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 0 0;
+    width: 75%;
+    line-height: 45px;
+  }
+</style>
+
+<div style="display: flex; justify-content: center">
+  <div class="nav-container">
+    <div class="nav-link-box pos-abs">
+        <div class="nav-link-div dropdown">
+        <span class="nav-link">Products</span>
+          <div class="dropdown-content">
+            <a href="/">Multilingual SEO</a>
+            <a href="/Document Translation">Document Translation</a>
+          </div>
+        </div>
+        <div class="nav-link-div">
+          <a href="/#streamlined-feature"
+            ><span class="nav-link"
+              >Features</span
+            ></a>
+        </div>
+        <div class="nav-link-div">
+          <a href="#pricing"
+            ><span class="nav-link">Pricing</span></a
+          >
+        </div>
+        <div class="nav-link-div">
+          <a href="#requesting-demo">
+            <span class="nav-link">Contact</span></a
+          >
+        </div>
+        <div class="nav-link-div">
+          <a href="/#FAQs">
+            <span class="nav-link">FAQs</span></a
+          >
+        </div>
+        <div class="nav-link-div dropdown">
+          <span class="nav-link">Industries</span>
+          <div class="dropdown-content">
+            <a href="/E_commerce">E-commerce Industry</a>
+            <a href="/government">Government</a>
+            <a href="/edu">Education Industry</a>
+            <a href="/banking">Banking Industry</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <img src="{% static "imgs/doc_bg.webp" %}" alt="online translators" class="main-front-bg" loading="lazy" />
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h1 style="display: inline" class="gradint-text">Document</h1>
+        <h1 style="display: inline" class="heading-blueis">Translation</h1>
+      </div>
+      <div class="main-front-para">
+        <p>
+          We get your content and your local audience. We translate your content
+          to resonate from their perspective while preserving your brand's
+          message, style, and context for local authenticity.
+        </p>
+      </div>
+      <div>
+        <div>
+          {% comment %} <a class="main-front-btn" href="">Buy now</a> {% endcomment %}
+          <a class="main-front-btn" href="">Try now free</a>
+        </div>
+        <div class="white_line">
+          <p style="color: white; margin: 30px 0">
+            Questions? <a href="#requesting-demo" style="color: #3b82f6">Contact us</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    {% comment %} <div>
+      <img style="width: 525px" src="{% static "imgs/doc_front_img.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- Our Trusted Partners starts -->
+<div class="our-trusted-outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: calc(59 * var(--ratio))"
+      >Our Trusted&nbsp;</span
+    >
+    <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span>
+  </div>
+  <h1 style="height: 0; overflow: hidden;">Our Trusted Partners</h1>
+  <div class="" id="">
+    <div class="our-trusted-innerdiv-imgs" id="">
+      <img style="width: 100%" src="{% static "files/img-01.webp" %}" alt="Our Trusted Partners" loading="lazy" />
+    </div>
+  </div>
+</div>
+<!-- Our Trusted Partners end -->
+
+<!-- Pricing starts -->
+<div id="pricing">
+  <div class="pricing-headerdiv">
+    <span class="pricing-header">
+      <a
+        disabled="disabled"
+        class="onscreentypewrite"
+        id="pricing-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Pricing" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span>
+    <br><br>
+  </div> 
+  <h1 style="height: 0; overflow: hidden;">Pricing</h1>
+  <div class="pricing-features">
+    <div class="pricing-features-row">
+      <div style="width: 50%;font-size: 45px;font-weight: 700;color: #48aef3ff;">Document Translation</div>
+          <div style="font-size: 30px;font-weight: 700;margin-bottom: 10px">
+            <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true" style="
+        color: black;
+    "></i>1/- Per Word</div>
+        </div>
+        <div class="pricing-features-row">
+          <!-- <p><i class="fa-solid fa-check"></i> User-friendly interface</p> -->
+          <p><i class="fa-solid fa-check green-tick" aria-hidden="true" style="
+        font-size: 35px;
+        color: green;
+    "></i> Faster Speed</p>
+          <p><i class="fa-solid fa-check green-tick" aria-hidden="true"></i> Advance Editing Features</p>
+          <p style="
+        /* color: green; */
+    "><i class="fa-solid fa-check green-tick" aria-hidden="true" style="
+        color: green;
+    "></i> 24/7 customer support</p>
+        </div>
+        <div class="pricing-features-row" style="justify-content: space-around">
+          <p><i class="fa-solid fa-check green-tick" aria-hidden="true" style="
+        color: green;
+    "></i>  Layout Detection</p>
+          <p><i class="fa-solid fa-check green-tick" aria-hidden="true"></i> Supports 22+ languages</p>
+        </div>
+        <div style="text-align: center">
+          <a class="main-front-btn" href="" style="margin-right: 0">Buy now</a>
+        </div>
+      </div>
+    </div>
+
+<!-- Pricing ends -->
+
+<!-- Advantages start -->
+<div id="advantages" class="advantages-maindiv">
+  <div class="advantages-header">
+    <span class="header-span1"> Advantages of Using&nbsp;</span>
+    <span class="header-span2">
+      <a
+        class="onscreentypewrite"
+        id="advantages-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "MultiLipi" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span>
+  </div>
+  <h1 style="height: 0; overflow: hidden;">Advantages of Using MultiLipi</h1>
+  <div class="advantages-innerdiv">
+    <div class="advantages-content">
+      <div class="advantages-content-textdiv">
+        <h3 style="font-size: 40px" class="gradint-text">
+          AI-Powered Translation with Rich
+        </h3>
+        <h1 style="font-size: 40px" class="heading-blueis">
+          Content Glossary!
+        </h1>
+        <p class="advantages-content-para">
+          Empowering Global Communication: Introducing our AI- Powered
+          Translation Engine, Enriched with a Robust Content Glossary.
+          Experience Precise and Contextually Rich Translations for Seamless
+          Connections Across Languages.
+        </p>
+      </div>
+      <img class="advantages-content-img" src="{% static "imgs/doc_adv_1.webp" %}" alt="online translators" loading="lazy" >
+    </div>
+
+    <div class="advantages-content">
+      <img class="advantages-content-img" src="{% static "imgs/doc_adv_2.webp" %}" alt="online translators"loading="lazy">
+      <div class="advantages-content-textdiv">
+        <h3 style="font-size: 40px" class="gradint-text">
+          Best Results: Our AI and top-notch
+        </h3>
+        <h1 style="font-size: 40px" class="heading-blueis">
+          translations work together.
+        </h1>
+        <p class="advantages-content-para">
+          Open doors to engage with customers from across India in their local
+          languages and grow your business effortlessly. Our platform smoothly
+          translates your website's content into different regional languages,
+          widening your reach and connecting with a diverse audience.
+        </p>
+      </div>
+    </div>
+
+    <div class="advantages-content">
+      <div class="advantages-content-textdiv">
+        <h3 style="font-size: 40px" class="gradint-text">
+          Speedy Results: MultiLipi AI-driven
+        </h3>
+        <h3 style="display: inline; font-size: 40px" class="gradint-text">
+          translation
+        </h3>
+        <h1 style="display: inline; font-size: 40px" class="heading-blueis">
+          platform handles big
+        </h1>
+        <h1 style="font-size: 40px" class="heading-blueis">projects quickly</h1>
+        <p class="advantages-content-para">
+          Rapid Output: Thanks to MultiLipi advanced AI-driven translation
+          platform, we're equipped to efficiently handle substantial translation
+          projects, ensuring a swift turnaround time. This means your projects
+          get done faster without compromising on quality.
+        </p>
+      </div>
+      <img class="advantages-content-img" src="{% static "imgs/doc_adv_3.webp" %}" alt="online translators" loading="lazy">
+    </div>
+
+    <div class="advantages-content">
+      <img class="advantages-content-img" src="{% static "imgs/doc_adv_4.webp" %}" alt="online translators" loading="lazy">
+      <div class="advantages-content-textdiv">
+        <h3 style="font-size: 40px" class="gradint-text">
+          Optimal Pricing: Our blend of AI and
+        </h3>
+        <h3 style="display: inline; font-size: 40px" class="gradint-text">
+          human
+        </h3>
+        <h1 style="display: inline; font-size: 40px" class="heading-blueis">
+          translation ensures
+        </h1>
+        <h1 style="font-size: 40px" class="heading-blueis">
+          competitive rates for our clients
+        </h1>
+        <p class="advantages-content-para">
+          Competitive Rates: By harnessing the synergy of AI and human
+          translation, we provide our clients with cost-effective solutions.
+          This unique combination allows us to maintain quality while offering
+          rates that cater to your budget.
+        </p>
+      </div>
+    </div>
+
+    <div class="advantages-content">
+      <div class="advantages-content-textdiv">
+        <h3 style="font-size: 40px" class="gradint-text">
+          Your Documents, Our Multilingual
+        </h3>
+        <h3 style="display: inline; font-size: 40px" class="gradint-text">
+          Mastery:
+        </h3>
+        <h1 style="display: inline; font-size: 40px" class="heading-blueis">
+          Effortless Translation
+        </h1>
+        <h1 style="font-size: 40px" class="heading-blueis">
+          Across Indian Languages!
+        </h1>
+        <p class="advantages-content-para">
+          Language No Barrier: Effortlessly Translate Your Documents Online in
+          Numerous Indian and Global Languages. From English to Regional and
+          Vice Versa!
+        </p>
+      </div>
+      <img class="advantages-content-img" src="{% static "imgs/doc_adv_5.webp" %}" alt="online translators" loading="lazy">
+    </div>
+  </div>
+</div>
+<!-- Advantages end -->
+
+{% include "demo.html" %}
+
+{% endblock content %}

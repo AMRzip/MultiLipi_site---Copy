@@ -1,0 +1,143 @@
+* {
+    color: white;
+    /* background-color: black; */
+}
+.calendar-time{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-time >p{
+    color: #94A3B8;
+}
+
+.display{
+  display:flex;
+  margin: 5px;
+}
+
+/* .content-align{
+    align-items: center;
+} */
+
+body{
+    background-color: black;
+}
+.post-item{
+    display: inline-block;
+    border-radius:5px ;
+    background-color: black;
+    /* box-shadow: 2px 2px 2px 2px #888888; */
+    width: 340px;
+    border:1px solid grey;
+    height:340px;
+    padding: 10px;
+    /* margin: 20px; */
+    overflow: hidden;   /* flex-direction: column; */
+}
+.font-color{
+    color: white;
+}
+.btn:hover{
+    color: hsl(350, 74%, 58%);
+}
+.decoration{
+    text-decoration : none;
+}
+
+.btn{
+    border-radius: 50px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom:10px ;
+    justify-content: center;
+    align-items: center;
+
+    height: 10%;
+    width: 150px;
+    background-color: #3087e4;
+}
+
+.blog-title{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    text-align: start;
+    align-items: center;
+    font-size: 20px;
+    height: 15%;    
+    width: 100%;
+
+}
+
+ 
+
+ul{
+    font-family: Inter;
+    list-style: none;
+    display: flex;
+    font-weight: 500;
+    width: 100%;
+}
+
+.parent{
+    display: flex;
+    height: 100% ;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#blog-img{
+    height: 60%;
+    border:1px solid grey;
+}
+
+.author-pic{
+    margin-top: 7px;
+    display: flex;
+    width: 180px;
+    align-items: center;
+    height: 30px;
+}
+
+.author-pic > img{
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.author{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tags-readtime{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.item-tag{
+    margin:auto 0px 5px ;
+    background-color:grey;
+    border-radius: 10px;
+}
+
+
+.item-tag> p,h1{
+    margin:auto 10px ;
+    font-weight: 500;
+    color: #1A9FE2;
+    /* padding:auto 20px ; */
+    
+    text-align: center;
+}
+
+
+
+

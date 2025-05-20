@@ -1,0 +1,284 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Contact Us{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+  }
+</style>
+
+
+<style>
+    .form-section{
+      position: relative;
+      margin: 0 0; 
+      text-align: center;
+      width: 100%;
+      padding: 70px 10px 10px;
+      background: linear-gradient(45deg, #0FB9E9 0%, #2C5C6C 100%);
+    }
+    .form-section h1{
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 58px;
+      color: #FFFFFF;
+      margin: 30px 105px;
+      text-align: left;
+      max-width: 500px;
+    }
+    .form-div{
+      width: fit-content;
+      margin: 50px 25px 30px 25px;
+    }
+    .multi-input-div{
+      gap: 20px;
+      display: flex;
+      width: fit-content;
+      margin: 30px 0;
+      flex-wrap: nowrap;
+    }
+    .multi-input-div input{
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border: 1px solid rgba(81, 147, 212, 0.86);
+      border-radius: 7px;
+      padding: 10px 20px;
+      width: 300px;
+    }
+  
+    .subject-input{
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border: 1px solid rgba(81, 147, 212, 0.86);
+      border-radius: 7px;
+      padding: 10px 20px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .message-textarea{
+      box-sizing: border-box;
+      background: #FFFFFF;
+      border: 1px solid rgba(81, 147, 212, 0.86);
+      border-radius: 7px;
+      padding: 10px 20px;
+      width: 100%;
+      min-height: 195px;
+    }
+    .small-para-outher-div{
+      border-left: 2px solid rgba(255, 255, 255, 0.2);
+      /* border-radius: 7px; */
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 35px;
+      letter-spacing: 0.03em;
+      color: #FFFFFF;
+      max-width: 600px;
+      padding: 50px 30px;
+      text-align: left;
+      margin: 30px 0;
+    }
+    .connect-submit-btn{
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 16px;
+      padding: 15px 55px;
+      background-color: white;
+      border-radius: 3px;
+    }
+    .form-bg-img{
+      width: 475px; 
+      z-index: 0; 
+      position: absolute;     
+      bottom: -20px;
+      right: 0;
+      height: 80%;
+    }
+  
+    @media (max-width: 1024px) {
+      .multi-input-div input{
+        /* width: 100% */
+      }
+    }
+  
+    
+    @media (max-width: 650px) {
+      .form-div{
+        margin-top: 20px;
+      }
+      .multi-input-div{
+        flex-wrap: wrap;
+      }
+      .multi-input-div input{
+        width: 100%
+      }
+      
+      .form-section h1{
+        margin: 30px auto 10px;
+        text-align: center;
+        font-size: 35px;
+  
+      }
+    }  
+</style>
+
+<div id="contact_us" class="form-section">
+    <h1>Connect With Us In A Flash</h1>
+    <form id="contact_us_form">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div class="form-div">
+        <div class="multi-input-div">
+            <input 
+                id="full_name_input"
+                type="text" 
+                name="full_name" 
+                placeholder="Full Name*" 
+                required
+                autocomplete="name"   
+            />
+            <input 
+                type="email" 
+                name="email" 
+                id="email_input" 
+                placeholder="E-Mail*"
+                name="email"
+                required
+                autocomplete="email"
+            />
+        </div>
+        <div class="multi-input-div">
+            <input 
+                id="phone_input"
+                type="tel" 
+                name="phone" 
+                id="phone_input" 
+                placeholder="Phone No.*" 
+                autocomplete="mobile"
+                required
+            />
+            <input 
+                type="text" 
+                name="company_name" 
+                id="company_input" 
+                placeholder="Company Name">
+        </div>
+        <input 
+            class="subject-input" 
+            type="text" 
+            name="subject" 
+            id="subject_input" 
+            placeholder="Subject*" 
+            required>
+        <textarea 
+            class="message-textarea" 
+            name="msg" 
+            id="msg_input" 
+            placeholder="Type Message*" 
+            required></textarea>
+      </div>
+      <div class="form-div" style="margin: 50px 0;">
+        <div class="small-para-outher-div">
+            <h6><i class="fa-solid fa-building"></i> Multilipi Technologies Private Limited</h6>
+            <span>
+                <i class="fa-solid fa-map-pin"></i> <span>75/17, Tagore Lane, Shipra Path, Mansarovar, Tagore Lane, Jaipur City, Rajasthan, India 302020</span>
+            </span> <br>
+            <span><i class="fa-regular fa-envelope"></i> support@multilipi.com</span> <br>
+            <span><i class="fa-solid fa-phone"></i> +918118866530</span> <br>
+            <span>Domain Ownership: This website (https://multilipi.com) is owned and operated by Multilipi Technologies Private Limited.</span>
+        </div>
+        <div style="display: flex;">
+          <button type="button" id="submitBtn"
+            form="contact_us_form"
+            class="connect-submit-btn">Submit</button>
+        </div>
+      </div>
+    </div>
+    </form>
+    <!-- <img class="form-bg-img" src="{% static "files3/form-bg.svg" %}" alt=""> -->
+</div>
+  
+
+
+<script>
+  var TxtType = function (el, toRotate, period, loopdur) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.loopdur = loopdur - 1;
+    this.period = parseInt(period, 10) || 1000;
+    this.txt = "";
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtType.prototype.tick = function () {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML =
+      '<span style="border-right: 0.08em solid #48aef3ff; background: linear-gradient(90deg, #4870ff33 0%, #48b2ff0d 100%);" class="wrap">' +
+      this.txt +
+      "</span>";
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) {
+      delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      if (this.loopNum === this.loopdur) {
+        console.log(this.toRotate.length - 1);
+        return; // Stop after completing all elements in toRotate
+      }
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === "") {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function () {
+      that.tick();
+    }, delta);
+  };
+
+  function textAnimation(id) {
+    var elements = document.getElementById(id);
+    // for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements.getAttribute("data-type");
+    var period = elements.getAttribute("data-period");
+    var loopdur = elements.getAttribute("loopdur");
+    if (toRotate) {
+      new TxtType(elements, JSON.parse(toRotate), period, loopdur);
+    }
+    // }
+  }
+  textAnimation("typewrite");
+  // window.onload= function(){
+  //  textAnimation('typewrite')
+  // }
+</script>
+
+{% endblock content %}

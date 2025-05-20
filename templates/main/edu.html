@@ -1,0 +1,409 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Education Industry{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #161616ff;
+  }
+</style>
+<style> /* our-trusted */
+  .outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .header-span1 {
+    font-size: 50px;
+    font-family: Inter;
+    font-weight: 600;
+    color: black;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  .seo-card {
+    width: 75%;
+    border-radius: 16px;
+    margin: 0 auto 20px;
+    color: black;
+    display: flex;
+    padding-bottom: 20px;
+    background: #E3E3E3;
+    box-shadow: 0px 9px 23px rgba(0, 0, 0, 0.04);
+    align-items: center;
+  }
+
+  .seo-card-img{
+    min-width: 150px;
+    height: 150px;
+    margin: 25px;
+    max-width: 150px;
+  }
+  .seo-card-img img{
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .seo-card h5{
+    font-size: 20px; 
+    margin: 25px 0 10px 0;
+  }
+  
+  .seo-card p{
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  
+</style>
+<style>
+  /* main front */
+  .main-front-outerdiv {
+    /* background-image: url("imgs/doc_bg.webp"); */
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+    padding: 160px 50px 80px 80px;
+    /* background-size: cover; */
+  }
+  .main-front-bg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-front-bg > img{
+    min-height: 100%;
+    min-width: fit-content;
+    max-width: none;
+    height: fit-content;
+    width: 100%;
+    max-height: none;
+  }
+
+  .main-front-innerdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  .main-front-para {
+    color: white;
+    max-width: 750px;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+  .gradint-text {
+    font-size: 50px;
+    font-family: Inter;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      91.18deg,
+      #d8d5d199 0%,
+      #f1f0eeff 30%,
+      #f1f0eeff 69%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .heading-blueis {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+    color: #1a9fe2ff;
+  }
+
+  .white_line {
+    height: 0;
+    display: block;
+    width: 80%;
+    margin: 50px 0;
+    border: 1px white solid;
+  }
+  .main-front-btndiv {
+    margin-left: auto;
+    margin-right: 25px;
+    display: flex;
+    gap: 20px;
+    font-family: Inter;
+    font-weight: 700;
+  }
+  .main-front-btn {
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    padding: 8px 25px 10px;
+    margin-top: 40px;
+    font-size: 27px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    background-color: #48aef3ff;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+
+  .main-front-btn:hover {
+    background-color: rgb(59 130 246);
+  }
+
+  @media (max-width: 768px) {
+    .seo-card {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      width: 90%;
+    }
+
+    .seo-card h5, .seo-card p{
+      text-align: center;
+      margin: 10px 20px;
+    }
+    .main-front-innerdiv{
+      text-align: center;
+    }
+    .main-front-outerdiv{
+      padding: 120px 20px 50px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .header-span1{
+      font-size: 30px;
+      margin: 0 20px;
+    }
+    .main-front-para{
+      font-size: 20px;
+    }
+  }
+</style>
+{% comment %} {% include "nav_indus.html" %} {% endcomment %}
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <div class="main-front-bg">
+    <img src="{% static "files2/edu_main_bg.webp" %}" alt="website localization"  />
+  </div>
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 style="display: inline; font-size: 50px;" class="gradint-text">Education </h2>
+        <h1 style="display: inline; font-size: 50px;" class="heading-blueis">Industry</h1>
+      </div>
+      <div class="main-front-para">
+        <p>In the field of education, effective communication and accessibility are paramount. MultiLipi's multilingual SEO and document translation services can significantly enhance educational institutions' ability to reach and serve a diverse student body.
+        </p>
+      </div>
+      <div>
+        <div>
+          <a class="main-front-btn" href="https://dashboard.multilipi.com/">Get started for free</a>
+          {% comment %} <a class="main-front-btn" href="">Try now free</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    {% comment %} <div>
+      <img style="width: 525px" src="{% static "files2/ecom_main_img.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- features 1 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <h1 class="header-span1">Multilingual SEO for Educational Institutions</h1>
+    {% comment %} <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span> {% endcomment %}
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img  src="{% static "Multilipi\Multilipi Education\SEO\Enhancing_gov__seo_incl_comms.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Inclusive Communication</h5>
+        <p>
+          Educational institutions cater to students from various linguistic backgrounds. Ensuring websites and digital platforms are accessible in multiple languages helps in delivering critical information to all students, fostering inclusivity and equal opportunity.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img  src="{% static "Multilipi\Multilipi Education\SEO\enhancing_gov_seo_outreach_2.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Global Reach</h5>
+        <p>
+          By optimizing content for different languages, educational institutions can attract international students, researchers, and faculty. Multilingual SEO enhances the global visibility of academic programs, research opportunities, and campus life.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img  src="{% static "Multilipi\Multilipi Government\SEO\Enhancing_gov_seo_transperency-nobg.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Enhanced Student Experience</h5>
+        <p>
+          Providing information in multiple languages, including admissions guidelines, course details, and campus services, improves the overall student experience. It helps students and parents make informed decisions and feel more connected to the institution.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- features 1 end -->
+
+
+<!-- features 2 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <h1 class="header-span1">Document Translation for Educational Institutions</h1>
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img src="{% static "icons\lang_trans.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Multilingual Course Materials</h5>
+        <p>
+          Translating course materials, textbooks, and academic papers ensures that students who are non-native speakers can fully engage with the curriculum. It supports better learning outcomes and academic success.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img src="{% static "Multilipi\Multilipi Ecommerce\Document Translation\education_doc_support.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Accessible Admissions Process</h5>
+        <p>
+          Translating admission forms, brochures, and guidelines makes the application process more accessible to international students. It reduces barriers and encourages a more diverse student body.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img src="{% static "Multilipi\Multilipi Ecommerce\Document Translation\Ecommerce_doctrans.webp" %}" alt="">
+      </div>
+      <div>
+        <h5>Multilingual Support Services</h5>
+        <p>
+          Educational institutions provide various support services, including counseling, health services, and career guidance. Offering these services in multiple languages ensures all students can access and benefit from them.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+        <img  src="{% static "Multilipi\Multilipi Education\Document Translation\Enhancing_gov__doc_trans_compliance.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Compliance with Language Policies</h5>
+        <p>
+          Many countries and regions have language policies mandating the use of multiple languages in educational institutions. MultiLipi ensures compliance with these policies, helping institutions meet legal requirements and avoid potential penalties.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <div class="seo-card-img" >
+      <img  src="{% static "Multilipi\Multilipi Education\Document Translation\Education_Doc_community.webp" %}" alt="website localization">
+      </div>
+      <div>
+        <h5>Improved Community Engagement</h5>
+        <p>
+          Translating communications for parents, community members, and other stakeholders fosters better engagement and participation in school activities, meetings, and events. It strengthens the relationship between the institution and its community.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- features 2 end -->
+
+
+{% comment %} <div style="background-color: #000922; margin-bottom: 0;" class="outerdiv">
+  <div class="our-trusted-innerdiv-header" style="margin: 100px 0 0;">
+    <span class="header-span1" style="line-height: normal; font-size: calc(48 * var(--ratio));"
+    >Multilingual SEO for Government Websites</span>
+  </div>
+  <img src="{% static "files2\edu_NNTST.webp" %}" style="width: 100%; padding: 0 50px;" alt="">
+</div>
+
+<div style="background-image: url({% static "imgs\book_bg.webp" %}); background-size: cover;">
+  <div style="display: flex; align-items: center; padding: 80px;">
+    <div style="margin: 0 auto 0 20px;">
+    <h1 style="font-size: 40px; font-weight: 700;">Schedule a demo with</h1>
+    <h1 style="font-size: 40px; font-weight: 700;">our experts</h1>
+    </div>
+    <a style=" 
+        font-weight: 300;
+        color: white;
+        padding: 15px;
+        background: #0B3FC4;
+        border-radius: 5px;"
+      href="">Get a deom</a>
+  </div>
+</div> {% endcomment %}
+
+{% include "contact_form.html" %}
+
+{% endblock content %}

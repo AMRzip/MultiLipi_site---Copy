@@ -1,0 +1,234 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Banking Industry{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/output.css" %}" />
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: #161616ff;
+  }
+</style>
+<style> /* our-trusted */
+  .outerdiv {
+    margin: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+  .our-trusted-innerdiv-header {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    line-height: 0px;
+  }
+  .header-span1 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    background: linear-gradient(
+      103.37deg,
+      #d8d5d199 0%,
+      #f1f0eeff 43%,
+      #d8d5d199 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-span2 {
+    font-size: calc(58 * var(--ratio));
+    font-family: Inter;
+    font-weight: 600;
+
+    text-decoration: none;
+    text-transform: none;
+    color: #1a9fe2ff;
+  }
+  .our-trusted-innerdiv-imgs {
+    background: -webkit-radial-gradient(
+      #a5efffff 0%,
+      #6ebff439 77%,
+      #4690d400 100%
+    );
+    box-sizing: border-box;
+    border-left: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-right: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-top: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700 100%);
+    border-bottom: 2px solid -webkit-radial-gradient(#eabfffff 0%, #8726b700
+          100%);
+    backdrop-filter: blur(20px);
+  }
+</style>
+<style>
+  .seo-card {
+    width: 75%;
+    background: #FAFBFC;
+    box-shadow: 0px 9px 23px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    margin: 0 auto 20px;
+    color: black;
+    display: flex;
+    padding-bottom: 20px;
+  }
+</style>
+
+{% include "nav_indus.html" %}
+
+<!-- main front start -->
+<div class="main-front-outerdiv">
+  <img src="{% static "files2/bank_main_bg.webp" %}" alt="website localization" class="main-front-bg" />
+  <div class="main-front-innerdiv">
+    <div>
+      <div>
+        <h2 style="display: inline" class="gradint-text">Banking </h2>
+        <h1 style="display: inline" class="heading-blueis">Industry</h1>
+      </div>
+      <div class="main-front-para">
+        <p>
+          Revolutionizing Banking with MultiLipi
+          <br>
+          The banking industry thrives on clear communication and accessibility. MultiLipi's multilingual SEO and document translation services can greatly enhance banks' ability to serve a diverse clientele, ensuring customer satisfaction and regulatory compliance.
+        </p>
+      </div>
+      <div>
+        <div>
+          <a class="main-front-btn" href="#requesting-demo">Get started for free</a>
+          {% comment %} <a class="main-front-btn" href="">Try now free</a> {% endcomment %}
+        </div>
+      </div>
+    </div>
+    {% comment %} <div>
+      <img style="width: 525px" src="{% static "files2/bank_main_img.webp" %}"
+      alt="" />
+    </div> {% endcomment %}
+  </div>
+</div>
+<!-- main front end -->
+
+<!-- features 1 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Multilingual SEO for Banking Services</span
+    >
+    {% comment %} <span class="header-span2" style="line-height: calc(59 * var(--ratio))"
+      ><a
+        class="onscreentypewrite"
+        id="partners-span"
+        data-period="2000"
+        loopdur="1"
+        data-type='[ "Partners" ]'
+      >
+        <span class="wrap"></span>
+      </a>
+    </span> {% endcomment %}
+  </div>
+  <h1 style="height: 0; overflow: hidden;">Multilingual SEO for Banking Services</h1>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\Enhancing_gov__seo_incl_comms.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Inclusive Communication</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Banks serve clients from various linguistic backgrounds. Making online banking platforms and websites accessible in multiple languages ensures that all customers can understand and use banking services effectively.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\SEO\enhancing_gov_seo_outreach_2.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Expanding Market Reach</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          By optimizing content for different languages, banks can attract and retain clients from diverse linguistic communities. Multilingual SEO improves the visibility of banking services and products across different demographics.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Banking\SEO\Education_SEO_Experience.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Enhanced Customer Experience</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Providing information in multiple languages, including account details, loan information, and customer support, improves the overall banking experience. It helps customers make informed decisions and feel more connected to their bank.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<!-- features 1 end -->
+
+
+<!-- features 2 starts -->
+<div class="outerdiv" id="">
+  <div class="our-trusted-innerdiv-header">
+    <span class="header-span1" style="line-height: normal; font-size: 50px;"
+      >Document Translation for Banking Services</span
+    >
+  </div>
+  <div class="" id="">
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Banking\Document Translation\Banking_doctrans_financial_doc.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Financial Documents</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating financial documents, including statements, loan agreements, and investment reports, ensures that clients who are non-native speakers can fully understand their financial transactions and commitments.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Banking\Document Translation\Banking_application_Doctrans.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Accessible Application Processes</h5>
+        <p style="font-size: 15px; font-weight: 300; width: 95%;">
+          Translating application forms for accounts, loans, and credit cards makes the application process more accessible to a broader audience. It reduces barriers and encourages a more diverse client base.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\education_doc_support.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Multilingual Customer Support</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Banks offer various support services, including fraud prevention, dispute resolution, and financial advice. Providing these services in multiple languages ensures all clients can access and benefit from them.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Enhancing_gov__doc_trans_compliance.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Compliance with Regulatory Requirements</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Banks must comply with language policies and regulations in various regions. MultiLipi ensures compliance with these requirements, helping banks avoid potential penalties and maintain their reputation.
+        </p>
+      </div>
+    </div>
+
+    <div class="seo-card" >
+      <img style="width: 14%; padding: 25px;" src="{% static "Multilipi\Multilipi Education\Document Translation\Education_Doc_community.webp" %}" alt="website localization">
+      <div>
+        <h5 style="font-size: 20px; margin: 25px 0 10px 0;">Improved Client Engagement</h5>
+        <p style="font-size: 15px; font-weight: 300;  width: 95%;">
+          Translating communications for clients, including newsletters, alerts, and promotional materials, fosters better engagement and participation in banking services. It strengthens the relationship between the bank and its clients.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- features 2 end -->
+
+
+{% include "demo.html" %}
+
+{% endblock content %}

@@ -1,0 +1,1365 @@
+{% extends "base.html" %} {% load static %} 
+{% block title %} | Pricing{% endblock title %} 
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+  }
+  .main-front-outerdiv {
+    font-family: 'Inter', sans-serif;
+
+  }
+</style>
+
+<style>
+  .tab-container {
+      display: flex;
+      background-color: white;
+      border-radius: 50px;
+      padding: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+  }
+  .tab {
+      max-width: 195px;
+      margin: 15px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      align-content: center;
+      position: relative;
+      transition: color 0.3s;
+  }
+  .tab:first-child {
+      margin-right: 10px; /* Spacing between tabs */
+  }
+  .tab p{
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17.8594px;
+    line-height: 26px;
+  }
+  .tab.selected {
+      /* background-color: #007BFF; Blue background for selected tab */
+      color: white;
+  }
+  .tab:not(.selected) {
+      color: #191919; /* Default black text color for unselected tab */
+  }
+  .tab-icon {
+      margin-right: 10px; /* Space between icon and text */
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+  .overlay div{
+    background-color: #007BFF;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+  }
+
+  @media (max-width: 500px) {
+    .main-front-header-text > h1{
+      font-size: 40px;
+      line-height: 64px;
+      margin-bottom: 20px;
+    }
+    .main-front-header-text-para{
+      font-size: 25px;
+      line-height: 40px;
+    }
+    .main-front-header-text-para-trans{
+      font-size: 20px;
+      line-height: 25px;
+    }
+    .tab p{
+      font-size: 15px;
+    }
+  }
+</style>
+
+<style>
+  .primary-btn-outline {
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(59 130 246 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: rgb(59 130 246 / var(--tw-text-opacity));
+  }
+  .border-gray {
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+  }
+  .border-green,
+  .border-orange {
+    --tw-border-opacity: 1;
+    border-color: rgb(251 146 60 / var(--tw-border-opacity));
+  }
+  .border-green {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    border-color: rgb(74 222 128 / var(--tw-border-opacity));
+  }
+  .border-red,
+  .border-violet {
+    --tw-border-opacity: 1;
+    border-color: rgb(167 139 250 / var(--tw-border-opacity));
+  }
+  .border-red {
+    border-color: rgb(248 113 113 / var(--tw-border-opacity));
+  }
+  .pricing-card {
+    --tw-shadow: 0 20px 25px -5px rgba(255, 255, 255, 0.1),
+      0 8px 10px -6px rgba(255, 255, 255, 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px rgba(255, 255, 255, 0.3),
+      0 8px 10px -6px rgba(255, 255, 255, 0.3);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #ffffff00),
+      var(--tw-ring-shadow, 0 0 #ffffff00), var(--tw-shadow);
+    padding: 1.25rem;
+    border-top-width: 4px;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    min-width: 280px;
+    max-width: 350px;
+    background: white;
+  }
+  .pricing-card:hover {
+    border-width: 4px !important;
+    border-color: rgb(59 130 246) !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px 15px rgba(0, 0, 0, 0.1);
+  }
+  .pricing-card-section {
+    gap: 3rem;
+  }
+</style>
+<style>
+    .toggle-container {
+      position: relative;
+      display: inline-flex;
+      background-color: #fff;
+      border-radius: 9999px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    .toggle-option {
+      position: relative;
+      z-index: 10;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 40%;
+      background-color: #f3f4f6;
+      border-radius: 9999px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .save-badge {
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background-color: #0ea5e9;
+      color: #f3f4f6;
+      font-weight: bold;
+    }
+</style>
+
+<div class="main-front-outerdiv" style="width: 100vw; display: flex; justify-content: center; align-item: center; padding-top:50px;">
+  <div class="main-front-innerdiv" style="padding: 0 80px; text-align: center;">
+    <svg width="256" height="389" viewBox="0 0 256 389" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6" data-aos="slide-left" data-aos-delay="400" data-aos-easing="ease-in-out">
+      <rect x="134.169" y="270.383" width="52.121" height="52.121" rx="26.0605" transform="rotate(8.95763 134.169 270.383)" fill="#EFF1F5"/>
+      <path d="M152.62 313.544L156.827 286.854L158.537 287.124L154.33 313.813L152.62 313.544ZM160.413 296.17C160.459 295.244 160.161 294.471 159.518 293.849C158.882 293.229 157.99 292.829 156.844 292.648C156.037 292.521 155.327 292.533 154.711 292.686C154.096 292.838 153.603 293.099 153.231 293.468C152.86 293.836 152.628 294.288 152.537 294.822C152.467 295.267 152.507 295.668 152.657 296.027C152.814 296.386 153.052 296.709 153.37 296.994C153.689 297.272 154.052 297.522 154.459 297.743C154.866 297.963 155.28 298.16 155.702 298.334L157.624 299.15C158.401 299.464 159.136 299.84 159.829 300.277C160.53 300.715 161.137 301.224 161.651 301.804C162.172 302.384 162.552 303.046 162.791 303.789C163.03 304.532 163.077 305.366 162.931 306.29C162.734 307.541 162.24 308.592 161.451 309.444C160.663 310.288 159.621 310.883 158.328 311.227C157.042 311.566 155.544 311.601 153.835 311.331C152.173 311.069 150.772 310.585 149.63 309.878C148.494 309.171 147.66 308.271 147.128 307.175C146.602 306.081 146.424 304.821 146.591 303.394L150.397 303.994C150.335 304.746 150.467 305.401 150.792 305.958C151.118 306.515 151.584 306.966 152.192 307.311C152.807 307.657 153.518 307.894 154.324 308.021C155.165 308.154 155.922 308.145 156.594 307.994C157.274 307.838 157.83 307.562 158.262 307.167C158.696 306.766 158.965 306.26 159.068 305.649C159.149 305.092 159.058 304.607 158.795 304.196C158.533 303.777 158.133 303.4 157.595 303.066C157.064 302.726 156.432 302.399 155.698 302.083L153.368 301.075C151.68 300.346 150.398 299.442 149.521 298.364C148.652 297.28 148.338 295.973 148.579 294.444C148.778 293.186 149.292 292.138 150.122 291.3C150.959 290.463 152.009 289.877 153.273 289.542C154.538 289.2 155.917 289.147 157.412 289.383C158.927 289.621 160.213 290.095 161.269 290.803C162.334 291.505 163.12 292.373 163.626 293.407C164.134 294.435 164.303 295.551 164.135 296.757L160.413 296.17Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-left" data-aos-delay="400" data-aos-easing="ease-in-out">
+      <rect x="0.405273" y="336.318" width="52.121" height="52.121" rx="26.0605" transform="rotate(-5.27743 0.405273 336.318)" fill="#EFF1F5"/>
+      <path d="M21.9296 371.549L19.9415 350.025L28.0127 349.28C29.6662 349.127 31.08 349.286 32.2541 349.757C33.4352 350.228 34.3609 350.955 35.0312 351.939C35.7078 352.915 36.1096 354.089 36.2364 355.463C36.3639 356.843 36.1803 358.068 35.6856 359.138C35.1973 360.201 34.4112 361.062 33.3273 361.72C32.2427 362.371 30.8737 362.773 29.2202 362.926L23.4715 363.457L23.1726 360.22L28.3958 359.738C29.3626 359.648 30.142 359.442 30.734 359.119C31.3253 358.789 31.7442 358.351 31.9905 357.805C32.2433 357.252 32.3344 356.593 32.2638 355.83C32.1933 355.066 31.9825 354.428 31.6314 353.917C31.2796 353.398 30.7825 353.027 30.1401 352.804C29.497 352.573 28.6885 352.503 27.7146 352.593L24.1414 352.923L25.8286 371.189L21.9296 371.549ZM32.1477 360.769L38.3769 370.03L34.026 370.431L27.8914 361.162L32.1477 360.769Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-left" data-aos-delay="50" data-aos-easing="ease-in-out">
+      <rect x="30.6582" y="142.311" width="52.121" height="52.121" rx="26.0605" transform="rotate(8.60925 30.6582 142.311)" fill="#EFF1F5"/>
+      <path d="M60.488 167.786L59.3332 170.408L45.4856 168.311L46.6508 165.691L60.488 167.786ZM51.082 182.886L45.1076 172.993L45.4479 170.675L49.0585 171.222C49.9211 171.353 50.6628 171.319 51.2834 171.121C51.912 170.917 52.4154 170.577 52.7935 170.101C53.1797 169.618 53.4265 169.022 53.5339 168.313C53.695 167.248 53.5115 166.345 52.9834 165.604C52.4552 164.862 51.5024 164.387 50.1249 164.178L46.2013 163.584L47.5034 160.483L50.6131 160.954C52.3663 161.219 53.7757 161.71 54.8414 162.426C55.9151 163.137 56.663 164.026 57.0849 165.093C57.5139 166.161 57.6288 167.353 57.4297 168.668C57.2538 169.83 56.8847 170.834 56.3223 171.681C55.76 172.528 54.9789 173.175 53.9791 173.621C52.9793 174.068 51.7272 174.277 50.2228 174.248L50.0913 174.271L55.462 183.357L55.4335 183.545L51.082 182.886ZM61.2989 162.571L60.1168 165.232L48.8948 163.49L50.0705 160.871L61.2989 162.571Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-left" data-aos-delay="200" data-aos-easing="ease-in-out">
+      <rect x="203.508" y="153.723" width="52.121" height="52.121" rx="26.0605" fill="#EFF1F5"/>
+      <path d="M225.586 169.168L230.409 180.44L227.675 182.277L221.491 169.168H225.586ZM228.53 180.377L233.322 169.168H237.417L231.222 182.277L228.53 180.377ZM231.348 179.406V190.783H227.464V179.406H231.348ZM235.781 179.765V182.139H222.82V179.765H235.781ZM235.781 183.944V186.319H222.82V183.944H235.781Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-left" data-aos-delay="100" data-aos-easing="ease-in-out">
+      <rect x="79.9717" y="6.03516" width="52.1201" height="52.1201" rx="26.0601" transform="rotate(-6.45519 79.9717 6.03516)" fill="#F5F7F9"/>
+      <path d="M117.274 39.1118L102.131 40.8252L101.762 37.5637L116.905 35.8503L117.274 39.1118ZM112.035 31.1118L101.097 32.3494L100.738 29.1718L111.676 27.9342L112.035 31.1118ZM106.298 24.8996L107.65 33.8491C107.798 34.7742 107.735 35.5956 107.462 36.3133C107.195 37.0233 106.653 37.644 105.835 38.1756L102.947 37.4296C103.284 37.3419 103.526 37.134 103.673 36.8058C103.82 36.4776 103.901 36.1002 103.916 35.6736C103.931 35.24 103.91 34.8317 103.852 34.4488L102.502 25.3291C102.292 23.9154 102.426 22.6929 102.904 21.6616C103.389 20.6226 104.114 19.8006 105.079 19.1957C106.044 18.5839 107.145 18.2079 108.382 18.0679C109.445 17.9477 110.414 18.0009 111.289 18.2276C112.172 18.4534 112.932 18.8206 113.57 19.329C114.215 19.8367 114.713 20.453 115.064 21.178C115.422 21.9022 115.602 22.7069 115.603 23.5919L111.93 23.6995C111.906 23.0577 111.743 22.5487 111.438 22.1725C111.14 21.7885 110.756 21.5274 110.287 21.3892C109.825 21.2433 109.342 21.1988 108.838 21.2558C108.321 21.3143 107.852 21.4878 107.431 21.7761C107.018 22.0636 106.702 22.4675 106.485 22.9878C106.275 23.5072 106.212 24.1445 106.298 24.8996Z" fill="#0885DA"/>
+      </g>
+    </svg>
+    <div data-aos="fade-up" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <div>
+        <h1 class="main-front-header-text" style="font-size: 60px;">MultiLipi pricing that grows with you</h1>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600" style="font-size:20px; max-width: 40vw;">
+        <p>
+            Start using MultiLipi for free — no setup costs, no credit card required. Whether you’re managing one website or hundreds, our flexible pricing adapts to your business needs.
+        </p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="10" data-aos-duration="600">
+        <div class="main-front-div-btn" data-aos-ancher-placement="center-center" style="
+        margin: 30px 0; display-flex; justify-content: center;">
+          <a class="main-front-btn" style="background: linear-gradient(225deg, #13c3e8 0%, #0688E5 100%);
+          color: white;
+          border-radius: 10px;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          width: 200px;
+          " href="#contact_us">Book a demo</a>
+        </div>
+      </div>
+      <!-- Pricing Toggle -->
+      <div class="flex justify-center mb-12">
+        <div class="toggle-container">
+          <div class="toggle-slider" id="toggle-slider"></div>
+          <div class="toggle-option text-blue-500 font-medium" id="monthly-option">Monthly</div>
+          <div class="toggle-option text-gray-500 font-medium relative" id="annually-option">
+            Annually
+            <span class="save-badge">Save 30%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg width="256" height="389" viewBox="0 0 256 389" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6" data-aos="slide-right" data-aos-delay="400" data-aos-easing="ease-in-out">
+      <rect x="77.7061" y="6.16992" width="52.121" height="52.121" rx="26.0605" transform="rotate(-6.72338 77.7061 6.16992)" fill="#EFF1F5"/>
+      <path d="M107.137 42.7385L103.974 15.9055L105.693 15.7028L108.856 42.5358L107.137 42.7385ZM109.943 23.9055C109.738 23.0016 109.241 22.3375 108.455 21.913C107.675 21.4878 106.708 21.3431 105.555 21.479C104.745 21.5746 104.064 21.7788 103.513 22.0918C102.962 22.4047 102.557 22.7889 102.299 23.2445C102.041 23.7 101.94 24.1972 101.996 24.736C102.049 25.1833 102.196 25.5591 102.438 25.8637C102.686 26.1674 103.002 26.4135 103.385 26.6021C103.768 26.7837 104.185 26.9258 104.637 27.0285C105.088 27.1312 105.54 27.2089 105.993 27.2619L108.064 27.5277C108.897 27.6208 109.706 27.7841 110.492 28.0173C111.285 28.2498 112.007 28.5756 112.658 28.9947C113.317 29.413 113.862 29.9475 114.293 30.5981C114.723 31.2487 114.994 32.0387 115.103 32.968C115.252 34.2258 115.061 35.3713 114.531 36.4044C114 37.4305 113.158 38.2843 112.006 38.9657C110.86 39.6392 109.427 40.0774 107.708 40.28C106.038 40.4769 104.557 40.3893 103.267 40.0172C101.983 39.6442 100.936 39.0024 100.128 38.0917C99.3259 37.1802 98.8131 36.0149 98.5891 34.596L102.415 34.145C102.559 34.8861 102.863 35.4808 103.327 35.9292C103.79 36.3775 104.362 36.6857 105.04 36.8537C105.726 37.0208 106.474 37.0566 107.285 36.961C108.13 36.8614 108.856 36.6483 109.462 36.3217C110.075 35.9874 110.536 35.5717 110.846 35.0747C111.155 34.5706 111.276 34.0108 111.211 33.395C111.138 32.8368 110.919 32.395 110.555 32.0695C110.19 31.7371 109.703 31.4827 109.094 31.3065C108.492 31.1225 107.794 30.978 107.003 30.873L104.486 30.532C102.665 30.2862 101.186 29.7626 100.05 28.9613C98.9206 28.1522 98.2651 26.979 98.0838 25.4417C97.9347 24.1769 98.1466 23.029 98.7193 21.998C99.2991 20.9661 100.152 20.1181 101.278 19.4539C102.403 18.7828 103.717 18.3587 105.22 18.1816C106.743 18.002 108.109 18.1102 109.318 18.5062C110.532 18.8944 111.523 19.5179 112.291 20.3768C113.057 21.2288 113.522 22.2579 113.685 23.4644L109.943 23.9055Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-right" data-aos-delay="100" data-aos-easing="ease-in-out">
+      <rect x="5.44434" y="211.434" width="52.121" height="52.121" rx="26.0605" transform="rotate(5.9621 5.44434 211.434)" fill="#EFF1F5"/>
+      <path d="M26.1265 253.572L28.9329 226.699L30.6545 226.879L27.848 253.751L26.1265 253.572ZM33.0002 235.815C32.998 234.888 32.6596 234.131 31.9852 233.544C31.3177 232.958 30.4067 232.604 29.252 232.484C28.4402 232.399 27.7311 232.449 27.1247 232.633C26.5183 232.817 26.0392 233.103 25.6874 233.491C25.3357 233.879 25.1281 234.342 25.0649 234.88C25.0181 235.328 25.079 235.727 25.2476 236.077C25.4232 236.428 25.6774 236.737 26.0102 237.005C26.3437 237.267 26.7193 237.497 27.1371 237.696C27.5549 237.895 27.9788 238.071 28.4087 238.222L30.3715 238.936C31.1636 239.21 31.9172 239.547 32.6324 239.947C33.3545 240.348 33.9875 240.824 34.5311 241.376C35.0818 241.929 35.4959 242.57 35.7735 243.299C36.051 244.028 36.1412 244.858 36.044 245.789C35.9125 247.049 35.4747 248.124 34.7308 249.016C33.9875 249.9 32.979 250.549 31.705 250.96C30.4388 251.366 28.9449 251.478 27.2234 251.299C25.5509 251.124 24.1258 250.713 22.9482 250.067C21.7776 249.421 20.8978 248.565 20.3088 247.499C19.7268 246.434 19.4823 245.184 19.5754 243.751L23.4069 244.151C23.3847 244.906 23.5505 245.553 23.9045 246.092C24.2585 246.631 24.7482 247.057 25.3734 247.37C26.0056 247.684 26.7276 247.883 27.5394 247.968C28.3862 248.056 29.1411 248.008 29.8043 247.822C30.4751 247.631 31.0163 247.326 31.4277 246.909C31.8398 246.486 32.0815 245.966 32.1529 245.351C32.2043 244.79 32.0881 244.311 31.8042 243.914C31.521 243.509 31.1018 243.154 30.5465 242.849C29.999 242.537 29.3506 242.243 28.6013 241.966L26.2212 241.081C24.4982 240.441 23.1706 239.606 22.2383 238.575C21.3138 237.537 20.9319 236.249 21.0927 234.709C21.225 233.442 21.6838 232.369 22.469 231.489C23.2612 230.61 24.2795 229.97 25.524 229.569C26.7692 229.161 28.1441 229.036 29.6487 229.193C31.1743 229.353 32.4832 229.758 33.5753 230.41C34.6752 231.055 35.505 231.881 36.0649 232.888C36.6255 233.887 36.8531 234.993 36.7477 236.206L33.0002 235.815Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-right" data-aos-delay="0" data-aos-easing="ease-in-out">
+      <rect x="104.808" y="334.758" width="52.121" height="52.121" rx="26.0605" transform="rotate(-7.28059 104.808 334.758)" fill="#EFF1F5"/>
+      <path d="M135.923 359.94L124.689 361.376L124.281 358.182L135.431 356.758C136.331 356.643 137.053 356.405 137.595 356.045C138.145 355.684 138.527 355.231 138.741 354.686C138.962 354.14 139.026 353.525 138.931 352.842C138.853 352.171 138.636 351.589 138.282 351.095C137.935 350.593 137.455 350.225 136.843 349.991C136.238 349.75 135.499 349.684 134.626 349.796L130.418 350.334L132.745 368.55L128.872 369.045L126.132 347.604L134.215 346.571C135.876 346.359 137.32 346.48 138.549 346.933C139.776 347.379 140.751 348.073 141.475 349.017C142.204 349.952 142.65 351.051 142.811 352.315C142.979 353.627 142.823 354.821 142.343 355.896C141.863 356.965 141.083 357.855 140.003 358.568C138.923 359.273 137.563 359.731 135.923 359.94ZM136.618 361.469L137.026 364.662L125.3 366.16L124.892 362.967L136.618 361.469Z" fill="#0885DA"/>
+      </g>
+      <g opacity="0.6" data-aos="slide-right" data-aos-delay="200" data-aos-easing="ease-in-out">
+      <rect x="138.119" y="141.348" width="52.1201" height="52.1201" rx="26.0601" transform="rotate(-10.3314 138.119 141.348)" fill="#EFF1F5"/>
+      <path d="M173.138 158.291L172.534 160.686L158.756 163.198L159.173 160.837L173.138 158.291ZM171.999 162.929L171.338 165.367L159.543 167.517L159.955 165.125L171.999 162.929ZM174.723 152.156L173.833 155.515C173.453 155.312 173.029 155.125 172.561 154.953C172.094 154.78 171.589 154.658 171.046 154.585C170.504 154.512 169.928 154.532 169.319 154.643C168.287 154.831 167.427 155.27 166.738 155.961C166.047 156.644 165.578 157.581 165.33 158.77C165.087 159.952 165.12 161.387 165.428 163.076C165.736 164.765 166.211 166.119 166.855 167.139C167.506 168.157 168.274 168.861 169.16 169.25C170.046 169.639 171.005 169.74 172.037 169.552C172.646 169.441 173.192 169.259 173.675 169.007C174.158 168.754 174.582 168.469 174.946 168.153C175.317 167.835 175.63 167.527 175.883 167.231L177.921 170.056C177.298 170.835 176.532 171.475 175.622 171.977C174.719 172.478 173.735 172.825 172.669 173.02C170.897 173.343 169.247 173.197 167.719 172.581C166.196 171.958 164.899 170.903 163.827 169.418C162.754 167.926 162.011 166.044 161.597 163.774C161.182 161.497 161.213 159.471 161.69 157.696C162.168 155.921 163.009 154.473 164.213 153.353C165.423 152.224 166.915 151.498 168.687 151.175C169.794 150.973 170.854 150.962 171.867 151.142C172.885 151.314 173.837 151.652 174.723 152.156Z" fill="#0885DA"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<style>
+  .plan-card {
+    border-radius: 1rem;
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<!-- Main pricing page -->
+  <div class="container mx-auto w-full" style="padding: 70px 8vw 30px 8vw; background-color: #e1f7ff;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <!-- Free Plan -->
+      <div class="plan-card bg-white p-6 rounded-lg shadow-md flex flex-col" data-aos="flip-left">
+        <div class="text-sm text-gray-500 mb-1">Free</div>
+        <div class="text-3xl font-bold mb-4">Free</div>
+        <button class="bg-white text-gray-500 w-full py-2 px-4 rounded-lg mb-6 text-sm border shadow" style="font-weight: bold; broder-color: grey;">Get started for Free</button>
+        <hr class="border-gray-300 mb-4 w-full">
+        <div class="text-sm font-medium mb-3">Free Plan includes:</div>
+        <ul class="space-y-3 flex-grow">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">10K Translated Words</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">2 Languages available</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">5K Translational Request</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">1 Project</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Editing Control</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="6.87824" rx="6.67851" ry="6.67902" fill="#FF0000"/>
+            <path d="M6.24037 8.79425L7.77599 6.97948M9.16276 5.13433L7.77599 6.97948M7.77599 6.97948L5.95215 4.79688L9.16275 8.79425" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Import & Export</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Starter Plan -->
+      <div class="plan-card bg-white p-6 rounded-lg shadow-md flex flex-col" data-aos="flip-left" data-aos-delay="50">
+        <span class="text-sm text-gray-500 mb-1">Starter</span>
+        <div class="mb-4">
+          <span class="text-3xl font-bold">$59</span>
+          <span class="text-gray-500 text-sm">/month</span>
+        </div>
+        <button class="bg-white text-gray-500 w-full py-2 px-4 rounded-lg mb-6 text-sm border shadow" style="font-weight: bold; broder-color: grey;">Get started with Pro</button>
+        <hr class="border-gray-300 mb-4 w-full">
+        <div class="text-sm font-medium mb-3">Starter Plan includes:</div>
+        <ul class="space-y-3 flex-grow">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">3 Lac Translated Words</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">4 Languages available</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">20K Translational Request</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">3 Project</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Editing Control</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="6.87824" rx="6.67851" ry="6.67902" fill="#FF0000"/>
+            <path d="M6.24037 8.79425L7.77599 6.97948M9.16276 5.13433L7.77599 6.97948M7.77599 6.97948L5.95215 4.79688L9.16275 8.79425" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Import & Export</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Business Plan -->
+      <div class="plan-card bg-white p-6 rounded-lg shadow-md flex flex-col" data-aos="flip-left" data-aos-delay="100">
+        <div class="text-sm text-gray-500 mb-1" style="display: flex; gap: 2px;"><span>Business</span>
+          <span class="block text-white text-xs rounded-full text-center" style="font-size: 10px; padding: 2px 5px; margin-left: 5px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); background-color:rgb(63, 178, 255);">
+            Popular
+          </span>
+        </div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold">$119</span>
+          <span class="text-gray-500 text-sm">/month</span>
+        </div>
+        <button class="bg-white text-gray-500 w-full py-2 px-3 rounded-lg mb-6 text-sm border shadow" style="font-weight: bold; broder-color: grey;">Get started with Business</button>
+        <hr class="border-gray-300 mb-4 w-full">
+        <div class="text-sm font-medium mb-3">Starter Plan includes:</div>
+        <ul class="space-y-3 flex-grow">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">8 Lac Translated Words</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">8 Languages available</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">50K Translational Request</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">5 Project</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Editing Control</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Import & Export</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Growth Plan -->
+      <div class="plan-card bg-white p-6 rounded-lg shadow-md flex flex-col" data-aos="flip-left" data-aos-delay="150">
+        <div class="text-sm text-gray-500 mb-1">Growth</div>
+        <div class="mb-4">
+          <span class="text-3xl font-bold">$199</span>
+          <span class="text-gray-500 text-sm">/month</span>
+        </div>
+        <button class="bg-white text-gray-500 w-full py-2 px-4 rounded-lg mb-6 text-sm border shadow" style="font-weight: bold; broder-color: grey;">Get started for Free</button>
+        <hr class="border-gray-300 mb-4 w-full">
+        <div class="text-sm font-medium mb-3">Everything on Business</div>
+        <ul class="space-y-3 flex-grow">
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">20 Lac Translated Words</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">10 Languages available</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">2 Lac Translational Request</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">10 Project</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Editing Control</span>
+          </li>
+          <li class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.55254" cy="7.59113" rx="6.67851" ry="6.67902" fill="#0885DA"/>
+            <path d="M4.63086 7.45946L5.84751 9.28453C6.10823 9.61774 6.76872 10.0842 7.32492 9.28453L9.88867 5.50391" stroke="white" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Import & Export</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="plan-card text-white p-6 rounded-lg shadow-md flex flex-col" style="background-color: #0885DA;" data-aos="flip-left" data-aos-delay="200">
+        <div class="text-sm mb-1">Enterprise</div>
+        <div class="text-3xl font-bold mb-4">Custom</div>
+        <button class="bg-white text-gray-500 w-full py-2 px-4 rounded-lg mb-6 text-sm border shadow" style="font-weight: bold; broder-color: grey;">Start FREE</button>
+        <hr class="border-white mb-4 w-full">
+        <div class="text-sm font-medium mb-3">Everything on Enterprise</div>
+        <ul class="space-y-3 flex-grow">
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">10 Lac Translated Words</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">101 Languages available</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">2 Lac Translational Request</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">10 Project</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Editing Control</span>
+          </li>
+          <li class="flex items-center">
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 5px; margin-top: 2px;">
+            <ellipse cx="7.10527" cy="7.40168" rx="6.67851" ry="6.67902" fill="white"/>
+            <path d="M4.18359 7.27001L5.40024 9.09508C5.66096 9.42828 6.32146 9.89477 6.87766 9.09508L9.4414 5.31445" stroke="#0885DA" stroke-width="0.834878" stroke-linecap="square"/>
+            </svg>
+            <span class="text-sm">Import & Export</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+      <a href="#feature-table" id="toggle-comparison" class="flex items-center text-blue-500 hover:text-blue-700">
+        <span>View features and plan comparison</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+
+    <script>
+      document.getElementById('toggle-comparison').addEventListener('click', function(e) {
+        e.preventDefault();
+        const tableDiv = document.querySelector('.pricing-table-outer-div');
+        if (tableDiv.style.display === 'block') {
+          tableDiv.style.display = 'none';
+        } else {
+          tableDiv.style.display = 'block';
+        }
+      });
+    </script>
+  </div>
+<!-- main pricing page end -->
+
+{% include "testimonials.html" %}
+
+<style>
+  .compare-plan-outer-div{
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .compare-plan-outer-div h1{
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+    color: #21262B;
+  }
+
+  @media (max-width: 768px) {
+    .compare-plan-outer-div{
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .compare-plan-outer-div h1{
+      text-align: center;
+      
+    }
+  }
+</style>
+
+<style>
+  .pricing-table-outer-div {
+      font-family: Arial, sans-serif;
+      /* background-color: #f5f7fa; */
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
+      margin: 0;
+      margin-bottom: 30px;
+  }
+
+  .pricing-table {
+      /* width: 100%; */
+      width: 1400px;
+      border-collapse: collapse;
+      background-color: white;
+      /* border-radius: 8px; */
+      /* overflow-x: scroll; */
+      margin: 0 auto;
+  }
+  .princing-table-price{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px !important;
+    line-height: 30px !important; 
+    text-align: center;
+    color: rgba(61, 134, 207, 0.86);
+  }
+  .pricing-table thead td:not(.highlight-column){
+    background-color: white !important;
+  }
+  .pricing-table thead th, .pricing-table thead td {
+      padding: 15px;
+      text-align: center;
+      background-color: white;
+      /* border: 1px solid #e0e0e0; */
+  }
+
+  .pricing-table tbody th:not(:first-child),
+  .pricing-table tbody td:not(:first-child) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(61, 134, 207, 0.86);
+    text-align: center;
+  }
+
+  .pricing-table tbody th, .pricing-table tbody td {
+      padding: 15px;
+      background-color: white;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: #434649;
+  }
+
+  .pricing-table tbody th {
+      /* background-color: #f0f2f5; */
+      font-weight: bold;
+      color: #333;
+      border: 0;
+  }
+  .pricing-table thead th{
+      background-color: white;
+  }
+
+  .table-header{
+      background-color: white;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13.8906px;
+      line-height: 18px;
+      text-align: center;
+      color: rgba(61, 134, 207, 0.86);
+  }
+
+  .highlight-column {
+      background-color: #2b9cdd !important; 
+      color: white !important;
+  }
+  .highlight-column .btn {
+      background-color: white !important; 
+      color: #2b9cdd !important;
+  }
+
+  .pricing-table .section-header {
+      text-align: left;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 20px 20px 0;
+      /* background-color: #f7f9fc; */
+      border: none;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 26px;
+      color: #434649;
+  }
+
+  .pricing-table tr:nth-child(even) td {
+      background-color: #f7f9fc;
+  }
+
+  .btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.8906px;
+    line-height: 18px;
+    text-align: center;
+    color: white;
+    text-align: center;
+    background: #1A9FE2;
+    border-radius: 4px;
+    padding: 10px 15px;
+  }
+
+  .btn-contact {
+      background-color: #3399ff;
+  }
+
+  .btn-contact:hover {
+      background-color: #2679bf;
+  }
+
+  .pricing-table-header > h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45.5625px;
+    line-height: 48px;
+    text-align: center;
+
+    color: rgba(61, 134, 207, 0.86);
+    margin-bottom: 15px;
+  }
+
+  .pricing-table-header > p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #434649;
+
+    margin-bottom: 50px;
+  }
+
+  #doc{
+    display: none;
+  }
+
+  #doc td:first-child {
+    width: 24%;
+  }
+
+  #doc td:not(:first-child) {
+    width: 38%;
+  }
+
+  #seo td:first-child {
+    width: 320px;
+  }
+
+  #seo td:not(:first-child) {
+    width: 216px;
+  }
+    
+  .yearly-price{
+    display: none;
+  }
+
+</style>
+
+<div class="pricing-table-outer-div" style="display:block;" id="feature-table">
+  <div class="pricing-table-header">
+    <h1>Features table</h1>
+  </div>
+  <div style="overflow: scroll;
+    width: 100%;">
+    <table id="seo" class="pricing-table">
+        <!-- Header -->
+        <thead>
+            <tr>
+                <th></th>
+                <td class="monthly-price princing-table-price">Free <br> 
+                  <select class="pricing-curr-selector-2">
+                    <option value="0">INR</option>
+                    <option value="0">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-2">0</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Starter <br>
+                  <select class="pricing-curr-selector-3">
+                    <option value="5,000">INR</option>
+                    <option value="59">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-3">3,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Business <br>
+                  <select class="pricing-curr-selector-4">
+                    <option value="10,000">INR</option>
+                    <option value="119">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-4">6,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Growth <br>
+                  <select class="pricing-curr-selector-5">
+                    <option value="16,000">INR</option>
+                    <option value="199">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-5">10,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="yearly-price princing-table-price">Free <br>
+                  <select class="pricing-curr-selector-6">
+                    <option value="0">INR</option>
+                    <option value="0">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-6">0</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="yearly-price princing-table-price">Starter <br>
+                  <select class="pricing-curr-selector-7">
+                    <option value="50,000">INR</option>
+                    <option value="590">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-7">30,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 374.4-->
+                <td class="yearly-price princing-table-price">Business <br>
+                  <select class="pricing-curr-selector-8">
+                    <option value="100,000">INR</option>
+                    <option value="1990">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-8">60,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 758.4 -->
+                <td class="yearly-price princing-table-price">Growth <br>
+                  <select class="pricing-curr-selector-9">
+                    <option value="160,000">INR</option>
+                    <option value="1990">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-9">100,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 1142.4 -->
+                <td class="yearly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            </tr>
+
+        </thead>
+
+        <!-- Usage Section -->
+        <tbody>
+            <tr>
+                <th class="section-header" colspan="4">Usage</th>
+                <td class="section-header" colspan="1"> </td> 
+                <td class="highlight-column" colspan="1"> </td> 
+            </tr>
+            <tr>
+                <td>Translated words</td>
+                <td>10,000</td>
+                <td>300,000</td>
+                <td>600,000</td>
+                <td>1,000,000</td>
+                <td class="highlight-column">Contact us</td>
+            </tr>
+            <tr>
+                <td>Translated languages available</td>
+                <td>2</td>
+                <td>4</td>
+                <td>8</td>
+                <td>10</td>
+                <td class="highlight-column">Contact us</td>
+            </tr>
+            <tr>
+                <td>Translation requests/month</td>
+                <td>2,000</td>
+                <td>20,000</td>
+                <td>50,000</td>
+                <td>200,000</td>
+                <td class="highlight-column">Contact us</td>
+            </tr>
+            <tr>
+                <td>Projects</td>
+                <td>1</td>
+                <td>3</td>
+                <td>5</td>
+                <td>10</td>
+                <td class="highlight-column">Contact us</td>
+            </tr>
+
+            <!-- Features Section -->
+            <tr>
+                <th class="section-header" colspan="4">Features</th>
+                <td class="section-header" colspan="1"> </td> 
+                <td class="highlight-column" colspan="1"> </td> 
+
+            </tr>
+            <tr>
+                <td>AI translation</td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+                <td>Editing control</td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td><i class="fa-solid fa-circle-check"></i></td>
+                <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Glossary rules</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Multilingual SEO</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Team members</td>
+              <td>-</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Translation requests statistics</td>
+              <td>-</td>
+              <td>-</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Page views statistics</td>
+              <td>-</td>
+              <td>-</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Export & import</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <tr>
+              <td>Translation memory</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+            </tr>
+            <!-- More Features Rows as Needed -->
+            <!-- <tr>
+              <td></td>
+              <td class="monthly-price princing-table-price">Free <br>₹0 <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="monthly-price princing-table-price">Starter <br>₹3,000 <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="monthly-price princing-table-price">Business <br>₹6,000 <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="monthly-price princing-table-price">Growth <br>₹10,000 <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="monthly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="yearly-price princing-table-price">Free <br>₹0 <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="yearly-price princing-table-price">Starter <br>₹30,000 <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="yearly-price princing-table-price">Business <br>₹60,000 <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="yearly-price princing-table-price">Growth <br>₹100,000 <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+              <td class="yearly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            </tr> -->
+
+            <tr>
+                <th></th>
+                <td class="monthly-price princing-table-price">Free <br> 
+                  <select class="pricing-curr-selector-2">
+                    <option value="0">INR</option>
+                    <option value="0">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-2">0</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Starter <br>
+                  <select class="pricing-curr-selector-3">
+                    <option value="5,000">INR</option>
+                    <option value="59">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-3">3,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Business <br>
+                  <select class="pricing-curr-selector-4">
+                    <option value="10,000">INR</option>
+                    <option value="119">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-4">6,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price princing-table-price">Growth <br>
+                  <select class="pricing-curr-selector-5">
+                    <option value="16,000">INR</option>
+                    <option value="199">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-5">10,000</span>
+                  <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="monthly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="yearly-price princing-table-price">Free <br>
+                  <select class="pricing-curr-selector-6">
+                    <option value="0">INR</option>
+                    <option value="0">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-6">0</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+                <td class="yearly-price princing-table-price">Starter<br>
+                  <select class="pricing-curr-selector-7">
+                    <option value="50,000">INR</option>
+                    <option value="590">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-7">50,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 374.4-->
+                <td class="yearly-price princing-table-price">Business <br>
+                  <select class="pricing-curr-selector-8">
+                    <option value="100,000">INR</option>
+                    <option value="1,190">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-8">100,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 758.4 -->
+                <td class="yearly-price princing-table-price">Growth <br>
+                  <select class="pricing-curr-selector-9">
+                    <option value="160,000">INR</option>
+                    <option value="1,990">USD</option>
+                  </select>
+                  <span class="pricing-curr-span-9">160,000</span>
+                  <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td><!-- 1142.4 -->
+                <td class="yearly-price highlight-column princing-table-price">Enterprise <br>Contact Us <span style="font-size: 12px;"></span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table id="doc" class="pricing-table">
+      <!-- Header -->
+      <thead>
+          {% comment %} <tr>
+              <th class="table-header"></th>
+              <th class="table-header">Starter</th>
+              <th class="highlight-column table-header">Custom</th>
+          </tr> {% endcomment %}
+          <tr>
+              <th></th>
+              <td class="monthly-price princing-table-price">Starter <br>
+                <select class="pricing-curr-selector-1">
+                  <option value="8,400">INR</option>
+                  <option value="99">USD</option>
+                </select>
+                <span class="pricing-curr-span-1">8,400</span>
+                <span style="font-size: 12px;">/month</span> <br>  <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            <td class="yearly-price princing-table-price">Starter <br>
+              <select class="pricing-curr-selector-1">
+                <option value="84,000">INR</option>
+                <option value="990">USD</option>
+              </select>
+              <span class="pricing-curr-span-1">84,000</span>
+              <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            <td class="highlight-column princing-table-price">Custom <br>Contact Us <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+          </tr>
+      </thead>
+
+      <!-- Usage Section -->
+      <tbody>
+          <tr>
+              <th class="section-header" colspan="2">Usage</th>
+              <td class="highlight-column" colspan="1"> </td> 
+          </tr>
+          <tr>
+              <td>Translated words</td>
+              <td>25,000</td>
+              <td class="highlight-column">Contact us</td>
+          </tr>
+          <tr>
+              <td>Translated languages available</td>
+              <td>1</td>
+              <td class="highlight-column">Contact us</td>
+          </tr>
+          <tr>
+              <td>Translation requests/month</td>
+              <td>2,000</td>
+              <td class="highlight-column">Contact us</td>
+          </tr>
+          <tr>
+              <td>Projects</td>
+              <td>1</td>
+              <td class="highlight-column">Contact us</td>
+          </tr>
+
+          <!-- Features Section -->
+          <tr>
+              <th class="section-header" colspan="2">Features</th>
+              <td class="highlight-column" colspan="1"> </td> 
+
+          </tr>
+          <tr>
+              <td>Multlipi words</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+              <td>Editing control</td>
+              <td><i class="fa-solid fa-circle-check"></i></td>
+              <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Number of languages</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+
+          
+          <tr>
+            <td>Number of projects</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Team members</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Automated OCR to translate PDFs and images
+            </td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Glossary rules</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Translation memory</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <tr>
+            <td>Export & import</td>
+            <td><i class="fa-solid fa-circle-check"></i></td>
+            <td class="highlight-column"><i class="fa-solid fa-circle-check"></i></td>
+          </tr>
+          <!-- More Features Rows as Needed -->
+          <!-- <tr>
+            <td>
+            <td class="monthly-price princing-table-price">Starter <br>₹8,400 <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            <td class="yearly-price princing-table-price">Starter <br>₹84,000 <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+            <td class="highlight-column princing-table-price">Custom <br>Contact Us <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+          </tr> -->
+
+          <tr>
+            <th></th>
+            <td class="monthly-price princing-table-price">Starter <br>
+              <select class="pricing-curr-selector-1">
+                <option value="8,400">INR</option>
+                <option value="99">USD</option>
+              </select>
+              <span class="pricing-curr-span-1">8,400</span>
+              <span style="font-size: 12px;">/month</span> <br>  <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+          <td class="yearly-price princing-table-price">Starter <br>
+            <select class="pricing-curr-selector-1">
+              <option value="84,000">INR</option>
+              <option value="990">USD</option>
+            </select>
+            <span class="pricing-curr-span-1">84,000</span>
+            <span style="font-size: 12px;">/yearly</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+          <td class="highlight-column princing-table-price">Custom <br>Contact Us <span style="font-size: 12px;">/month</span> <br> <a href="https://dashboard.multilipi.com/" class="btn">Start Free</a></td>
+        </tr>
+      </tbody>
+  </table>
+  </div>
+</div>
+
+{% include "frequently_asked.html" %}
+{% include "banner.html" %}
+
+<script>
+  var seo = document.getElementById("seo");
+  var doc = document.getElementById("doc");
+  var heading_para = document.getElementById("pricing-table-heading-para");
+  var monthly_price = document.getElementsByClassName("monthly-price");
+  var yearly_price = document.getElementsByClassName("yearly-price");
+
+  // function timeswitch(time){
+  //   if(time == 'month'){
+  //     for (var i = 0; i < yearly.length; i++) {
+  //       yearly[i].style.display = "none";
+  //       monthly[i].style.display = "block";
+  //     }
+  //   }
+  //   if(time == 'year'){
+  //     for (var i = 0; i < monthly.length; i++) {
+  //       monthly[i].style.display = "none";
+  //       yearly[i].style.display = "block";
+  //     }
+  //   }
+  // }
+  function switchTab(tab) {
+    const overlay = document.getElementById('overlay');
+    const seoTab = document.getElementById('seoTab');
+    const translationTab = document.getElementById('translationTab');
+
+    if (tab === 'seo') {
+        seo.style.display = "block";
+        doc.style.display = "none";
+        overlay.style.left = '0'; // Move overlay to the left
+        seoTab.classList.add('selected');
+        translationTab.classList.remove('selected');
+    } else {
+        seo.style.display = "none";
+        doc.style.display = "block";
+        overlay.style.left = '50%'; // Move overlay to the right
+        seoTab.classList.remove('selected');
+        translationTab.classList.add('selected');
+    }
+  }
+
+  function switchTime(timeDuration) {
+    const monthly = document.getElementById('monthly-pricing');
+    const yearly = document.getElementById('yearly-pricing');
+
+    if (timeDuration === 'monthly') {
+      monthly.classList.add('time-selected');
+      yearly.classList.remove('time-selected');
+      for (var i = 0; i < yearly_price.length; i++) {
+        yearly_price[i].style.display = "none";
+        monthly_price[i].style.display = "table-cell";
+      }
+    } else {
+      monthly.classList.remove('time-selected');
+      yearly.classList.add('time-selected');
+      for (var i = 0; i < monthly_price.length; i++) {
+        monthly_price[i].style.display = "none";
+        yearly_price[i].style.display = "table-cell";
+      }
+    }
+  }
+</script>
+
+
+<script>
+  function updateAllSelects(selectedIndex) {
+    const selectElements = document.querySelectorAll('select[class^="pricing-curr-selector"]');
+
+    selectElements.forEach(select => {
+      if (select.options[selectedIndex]) {
+        select.selectedIndex = selectedIndex;
+
+        const span = select.nextElementSibling;
+        if (span && span.tagName === 'SPAN') {
+          const selectedOption = select.options[selectedIndex];
+          span.innerText = selectedOption.value;
+        }
+      }
+    });
+  }
+
+  document.querySelectorAll('select[class^="pricing-curr-selector"]').forEach(select => {
+    select.addEventListener('change', function() {
+      const selectedIndex = select.selectedIndex; 
+      updateAllSelects(selectedIndex); 
+    });
+  });
+
+  {% if curr == 'USD' %}
+    updateAllSelects(1)
+  {% endif %}
+
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock content %}
