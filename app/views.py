@@ -22,20 +22,17 @@ def home(request):
     return render(request, 'app/allblog.html')
 
 
-# def detailBlog(request,pk):
-#     # print('detail me aaya')
-#     post = Post.objects.get(pk=pk)  
-#     if request.method == 'POST':
-#         # print('detail ke comment')
-#         name= request.POST['name']
-#         email = request.POST['email']
-#         comment = request.POST['comment']
-#         blogobj, created = BlogComment.objects.get_or_create(name=name,email=email,comment=comment,blog=post) 
+def detailBlog(request,pk):
+    # print('detail me aaya')
+    post = Post.objects.get(pk=pk)  
+    if request.method == 'POST':
+        # print('detail ke comment')
+        name= request.POST['name']
+        email = request.POST['email']
+        comment = request.POST['comment']
+        blogobj, created = BlogComment.objects.get_or_create(name=name,email=email,comment=comment,blog=post) 
 
-#     context = {
-#         "post":post 
-#     }
-#     return render(request,'app/detailarticle.html',context)  
+    return render(request,'app/detailarticle.html')  
 
 
         

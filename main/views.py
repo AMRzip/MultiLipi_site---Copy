@@ -35,7 +35,7 @@ def demo_msg_save(request):
             pass
     return HttpResponse(status=200)
 
-# def document_trans(request):
+def document_trans(request):
     posts = Post.objects.filter(is_draft=False)
     langs = ['Assamese',
             'Bengali',
@@ -73,16 +73,14 @@ def demo_msg_save(request):
         'Japanese': 0.35,
         'German': 0.3
     }
-    
-    context = {"posts":posts,"langs": langs, 'lang_dict': lang_dict} 
-    return render(request, "main/doc_trans.html",context)
+    return render(request, "main/doc_trans.html")
 
 def contact_us(request):
     return render(request, "main/contact_us.html")
 
 def seo(request):
     # posts = Post.objects.filter(is_draft=False)
-    return render(request, "main/seo.html", {"posts":posts, 'curr': CURR})
+    return render(request, "main/seo.html")
 
 def temp(request):
     return render(request, "main/temp.html")
