@@ -14,8 +14,8 @@ CURR = os.getenv('CURR','USD')
 # Create your views here.
 def index(request):
     posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "main/home.html", context)
+    # context = {"posts":posts} 
+    return render(request, "main/home.html")
 
 @csrf_exempt
 def demo_msg_save(request):
@@ -35,7 +35,7 @@ def demo_msg_save(request):
             pass
     return HttpResponse(status=200)
 
-def document_trans(request):
+# def document_trans(request):
     posts = Post.objects.filter(is_draft=False)
     langs = ['Assamese',
             'Bengali',
@@ -81,7 +81,7 @@ def contact_us(request):
     return render(request, "main/contact_us.html")
 
 def seo(request):
-    posts = Post.objects.filter(is_draft=False)
+    # posts = Post.objects.filter(is_draft=False)
     return render(request, "main/seo.html", {"posts":posts, 'curr': CURR})
 
 def temp(request):
@@ -123,49 +123,49 @@ def custom_404_view(request, exception):
     return redirect('/')
 
 def wordpress(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "integrations/integration-wordpress.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts} 
+    return render(request, "integrations/integration-wordpress.html")
 
 def wix(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "integrations/integration-wix.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts} 
+    return render(request, "integrations/integration-wix.html")
 
 def shopify(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "integrations/integration-shopify.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts} 
+    return render(request, "integrations/integration-shopify.html")
 
 def webflow(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "integrations/integration-webflow.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts} 
+    return render(request, "integrations/integration-webflow.html")
 
 def ecommerce(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts} 
-    return render(request, "solutions/solution-ecommerce.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts} 
+    return render(request, "solutions/solution-ecommerce.html")
 
 def goverment(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts}
-    return render(request, "solutions/solution-goverment.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts}
+    return render(request, "solutions/solution-goverment.html")
 
 def marketing(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts}
-    return render(request, "solutions/solution-marketing.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts}
+    return render(request, "solutions/solution-marketing.html")
 
 def web_agency(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts}
-    return render(request, "solutions/solution-web-agency.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts}
+    return render(request, "solutions/solution-web-agency.html")
 
 def referral(request):
-    posts = Post.objects.filter(is_draft=False)
-    context = {"posts":posts}
-    return render(request, "main/referral.html", context)
+    # posts = Post.objects.filter(is_draft=False)
+    # context = {"posts":posts}
+    return render(request, "main/referral.html")
 
 def wordcount(request):
     return render(request, "main/wordcount-url.html")

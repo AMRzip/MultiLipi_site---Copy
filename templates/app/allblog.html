@@ -461,7 +461,7 @@
       <h1>Read Our Blogs</h1>
     </div>
     <div class="blog-cards">
-        {% for post in posts %}
+        {% comment %} {% for post in posts %}
             <div class="blog-card-outer-div">
                 <div class="blog-card-img-div">
                     {% with post.body|first_img as img_src %}
@@ -519,7 +519,7 @@
             <span class="disabled">Next &raquo;</span>
         {% endif %}
     </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
 </div>
 
 <script>
