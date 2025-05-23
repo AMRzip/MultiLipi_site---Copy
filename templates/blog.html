@@ -271,7 +271,7 @@
     <div class="blog-cards-outerdiv" data-aos="fade-in">
       <i class="fa-solid fa-chevron-left scroll-btn-left" style="width: 30px; height: 30px; padding-left: 10px;" onclick="scrollDiv('left')"></i>
       <div id="blog-cards" class="blog-cards" >
-          {% comment %} {% for post in posts %}
+          {% for post in posts %}
             <a href="{% url 'Detail-Article' post.pk %}">
               <div class="blog-card-outer-div">
                   <div class="blog-card-img-div">
@@ -305,7 +305,7 @@
                 </div>
               </div>
             </a>
-          {% endfor %} {% endcomment %}
+          {% endfor %}
       </div>
       <i class="fa-solid fa-chevron-right scroll-btn-right" style="width: 30px; height: 30px; padding-right: 10px;" onclick="scrollDiv('right')" ></i>
     </div>

@@ -34,9 +34,6 @@ def detailBlog(request,pk):
 
     return render(request,'app/detailarticle.html')  
 
-
-        
-
 # class DetailArticle(DetailView):
 #     model= Post 
 #     template_name = "detailarticle.html"
