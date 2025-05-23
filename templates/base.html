@@ -1,5 +1,4 @@
 {% load static %}
-{% load static tailwind_tags %} 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Unlock global reach with MultiLipi, the top multilingual SEO platform in India. Seamlessly translate your website content using our advanced AI. Enhance your multilingual site with our website language translator and online translators, ensuring top search engine rankings and improved user engagement in under 5 minutes.">
     <meta name="keywords" content="website page translator, online free translate, website translation services, wordpress translation plugin, website localization, website language translator, online translators, multilingual site">
-    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <title>MultiLipi{% block title %}{% endblock title %}</title>
     <link rel="shortcut icon" href="{% static "files/img-7.webp" %}" />
     <link rel="stylesheet" href="{% static "css/base.css" %}">
