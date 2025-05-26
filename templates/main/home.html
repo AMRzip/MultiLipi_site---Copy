@@ -29,7 +29,7 @@
 
 <div class="main-front-outerdiv">
   <div class="main-front-innerdiv">
-    <div data-aos="fade-up">
+    <div class="main-inner-div-div" data-aos="fade-up">
       <div>
         <h1 class="main-front-header-text">Translate Your Website<br>in 5 Mins with multilingual<br>SEO optimization</h1>
       </div>
@@ -125,7 +125,7 @@
   </div>
 
     <!-- feature-card 2 -->
-  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px;">
     <!-- Left side Text -->
     <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
       <h3 class="text-3xl font-bold text-gray-800 mb-4">Translate your website in minutes, not days</h3>
@@ -144,7 +144,7 @@
   </div>
 
   <!-- feature-card 3 -->
-  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px;">
     <!-- Left side image -->
     <div class="flex items-center justify-center p-4 md:col-span-5" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
       <img src="{% static "cards_imgs/dashboard.svg" %}" alt="Geographic traffic heatmap and browser language analytics report from MultiLipi showing top regions and languages driving international growth" class="w-full h-auto rounded-lg" loading="lazy">
@@ -164,7 +164,7 @@
   </div>
 
     <!-- feature-card 4 -->
-    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px;">
       <!-- Left side Text (30%) -->
       <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Reach global users with Multilingual SEO that ranks</h2>
@@ -185,21 +185,23 @@
 <!-- End of features cards -->
 
 <!-- Integration -->
-<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8 integration-section" style="margin-top: 50px;">
   <!-- Left side Image -->
   <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
     <img src="{% static "cards_imgs/integration.svg" %}" alt="Translate any website built on WordPress, Shopify, Webflow, Wix, or WooCommerce with MultiLipi" class="h-auto" style="width: 35rem" loading="lazy">
   </div>
   <!-- Right side Text -->
-  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+  <div class="flex flex-col justify-center p-4 integration-section-text" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%;">
     <h2 class="text-5xl font-bold text-gray-800 mb-4">Seamless integrations with every website technology</h2>
     <p class="text-gray-600 mb-6">MultiLipi works perfectly with platforms like WordPress, Shopify, WooCommerce, Webflow, and Wix. Whether you’re running a CMS or a custom tech stack, you can translate any website effortlessly and launch your multilingual site without changing how your site works.</p>
-    <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
-      Explore all Integrations
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-      </svg>
-    </a>
+    <div>
+      <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
+        Explore all Integrations
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
 <!-- End of Integration -->
@@ -339,60 +341,6 @@
 </div>
  {% endcomment %}
 {% include "blog.html" %}
-
-<style>
-    .font-family {
-        font-family: Inter, sans-serif;
-        font-feature-settings: "liga" 1, "calt" 1;
-    }
-    .faq-section-outer-div {
-        padding: 30px 0 40px;
-        background-color: white;
-    }
-    .faq-section {
-        width: 80%;
-        margin: auto;
-        padding: 10px;
-    }
-    .faq-title {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 52px;
-        text-align: center;
-        color: #212121;
-        margin: 40px auto;
-    }
-    .faq-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
-        border-bottom: 1px solid grey;
-        gap: 40px;
-    }
-    .faq-question {
-        flex: 0 0 35%;
-        align-self: center;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 34px;
-        color: #212121;
-        text-align: left;
-    }
-    .faq-answer {
-        flex: 0 0 55%;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 27px;
-        text-align: left;
-        color: #212121;
-    }
-</style>
 
 <div id="FAQs" class="faq-section-outer-div" id="FAQs">
     <h2 class="faq-title font-family">Frequently Asked Questions</h2>

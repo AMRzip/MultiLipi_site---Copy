@@ -1,4 +1,5 @@
 {% load static %}
+{% comment %} {% load static tailwind_tags %}  {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Unlock global reach with MultiLipi, the top multilingual SEO platform in India. Seamlessly translate your website content using our advanced AI. Enhance your multilingual site with our website language translator and online translators, ensuring top search engine rankings and improved user engagement in under 5 minutes.">
     <meta name="keywords" content="website page translator, online free translate, website translation services, wordpress translation plugin, website localization, website language translator, online translators, multilingual site">
+    {% comment %} {% tailwind_css %} {% endcomment %}
     <link rel="stylesheet" href="{% static "css/styles.css" %}">
     <title>MultiLipi{% block title %}{% endblock title %}</title>
     <link rel="shortcut icon" href="{% static "files/img-7.webp" %}" />
@@ -49,6 +51,7 @@
   </head>
   <body>
       <header class="header">
+        <!-- desktop menu -->
         <div class="container-navbar">
           <nav class="navbar">
             <div>
@@ -194,92 +197,108 @@
 
       {% comment %} <link rel="stylesheet" href="{% static "css/style.css" %}" /> {% endcomment %}
       {% comment %} <link rel="stylesheet" href="{% static "css/animation.css" %}" /> {% endcomment %}
-      <footer class="footer-container py-12 w-full" style="background-color: #eff1f5; width: 100%; margin: 0;">
-        <div class="mb-8">
-          <div class="flex flex-nowrap justify-evenly items-center-safe mb-8 gap-2">
-            <!-- Logo and Social Links -->
-            <div class="w-full mb-8 md:mb-0" style="width: 35%;">
-              <div class="mb-4">
-                <a href="/">
-                  <img
-                    src="{% static "files/image.webp" %}"
-                    style=" width: 150px;"
-                    alt="speak local scale global"
-                  />
-                </a>
-              </div>
-              
-              <div class="flex mb-6 gap-4">
-                <a href="#" class="social-links-icons text-white rounded p-2">
-                  <i class="fa-brands fa-youtube" style="color: white;"></i>
-                </a>
-                <a href="#" class="social-links-icons text-white rounded p-2">
-                  <i class="fa-brands fa-facebook" style="color: white;"></i>
-                </a>
-                <a href="#" class="social-links-icons text-white rounded p-2">
-                  <i class="fa-brands fa-instagram" style="color: white;"></i>
-                </a>
-                <a href="#" class="social-links-icons text-white rounded p-2">
-                  <i class="fa-brands fa-x-twitter" style="color: white;"></i>
-                </a>
-              </div>
-              
-              <blockquote class="text-gray-600 text-sm italic mb-6">
-                "We spent countless hours building this so you can spend countless hours not manually messaging people on LinkedIn"
-              </blockquote>
-              
-              <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <div class="flex item-centre">
-                  <div class="w-12 h-12 bg-blue-500 rounded-md mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Dewang Bharadwaj</p>
-                    <p class="text-sm text-gray-600">Founder @Multilipi</p>
-                  </div>
+      <footer class="py-12 w-full" style="background-color: #eff1f5; width: 100%; margin: 0;">
+        <div class="footer-container">
+          <!-- Header Section -->
+          <div>
+            <div class="mb-8">
+              <div class="flex items-center mb-5">
+                <div class="logo mb-2">
+                  <img src="{% static "files/image.webp" %}" alt="MultiLipi Logo" class="h-auto" style="width: 150px;">
                 </div>
-                <div class="flex item-centre">
-                  <div class="w-12 h-12 bg-blue-500 rounded-md mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Kunal Singh Shekhawat</p>
-                    <p class="text-sm text-gray-600">Founder @Multilipi</p>
-                  </div>
+              </div>
+              
+              <h2 class="text-l font-bold text-gray-800 mb-3">AI-Powered Website Translation & Multilingual SEO Platform</h2>
+              
+              <p class="text-gray-700">
+                "MultiLipi was designed to save you time, so you can scale globally without the hassle of manual localization."
+              </p>
+            </div>
+            
+            <!-- Founders Section -->
+            <div class="mb-8 space-y-4">
+              <div class="flex items-center">
+                <div class="co-founder-img mr-4">
+                  <img src="{% static 'imgs/dewang-pfp.jpg' %}" alt="Dewang Bharadwaj" class="w-16 h-full object-cover rounded border-blue-500 border-2">
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">Dewang Bharadwaj</h3>
+                  <p class="text-gray-600">Co-Founder @Multilipi</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center">
+                <div class="co-founder-img mr-4">
+                  <img src="{% static 'imgs/kunal-pfp.jpeg' %}" alt="Kunal Singh Shekhawat" class="w-16 h-full object-cover rounded border-blue-500 border-2">
+                </div>
+                <div>
+                  <h3 class="font-bold text-gray-800">Kunal Singh Shekhawat</h3>
+                  <p class="text-gray-600">Co-Founder @Multilipi</p>
                 </div>
               </div>
             </div>
-            
-            <!-- Links Columns -->
-            <div class="md:w-2/3 grid grid-cols-2" style="width:40%;">
-              <div style="width: 180px;">
-                <ul class="space-y-3">
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For Agencies</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For Sales</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">For growth & rev ops</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Pricing</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Affiliate (30%)</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Integrations</a></li>
-                  <li><a href="{% url 'wordcount' %}" class="footer-text text-gray-700 hover:text-blue-500">Word Count</a></li>
-                </ul>
+          </div>
+          
+          <div>
+            <!-- Navigation Section -->
+            <div class="main-navigation-container grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="navigation-container grid grid-cols-1 gap-10">
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Solutions</h3>
+                  <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">For eCommerce</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">For Government</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">For Marketing</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">For Web Agencies</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Integrations</h3>
+                  <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">WordPress</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Wix</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Webflow</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Shopify</a></li>
+                  </ul>
+                </div>
               </div>
-              <div style="witdh: 180px;">
-                <ul class="space-y-3">
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Reviews</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Outbound</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Blog</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Help Center</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Videos</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Webinars</a></li>
-                  <li><a href="#" class="footer-text text-gray-700 hover:text-blue-500">Terms of Service</a></li>
-                </ul>
+              <div class="navigation-container grid grid-cols-1 gap-8">
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Platform</h3>
+                  <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Pricing</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Affiliate (30%)</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Word Count Tool</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Languages Supported</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg mb-4">Resources</h3>
+                  <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Blog</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Reviews</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Help Center</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-blue-600">Terms of Service</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Divider -->
+        <hr class="my-8 border-gray-300">
         
         <!-- Copyright -->
-        <div class="text-center pt-8 border-t border-gray-200 text-gray-600 text-sm">
-          <p>© 2025 Multilipi. A multilingual SEO platform for agencies, sales teams & GTM operators. All rights reserved.
-          </p>
+        <div class="copyright-strip flex items-center justify-center">
+          <a href="https://linkedin.com" class="mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <p class="text-gray-700">© 2025 MultiLipi – The complete solution for AI-powered website translation, multilingual SEO, and global content delivery.</p>
         </div>
       </footer>
+
       {% comment %} <script>
         var TxtType = function (el, toRotate, period, loopdur) {
           this.toRotate = toRotate;
@@ -359,7 +378,6 @@
         gtag('js', new Date());
 
         gtag('config', 'G-3LLSTZJTF8');
-      </script>
-
+      </script>    
   </body>
 </html>

@@ -18,7 +18,6 @@
 
     .scroll-container {
         display: flex;
-        overflow: hidden;
         width: 100%;
         position: relative;
     }
@@ -77,6 +76,30 @@
         /* Optionally, set a max-height if needed, but line-clamp is usually sufficient */
         /* max-height: 140px; /* Example: 7 lines * 20px line-height */
     }
+
+    .logo-div {
+        margin-top: -15px;
+    }
+
+    @media (max-width: 1250px) {
+        .logo-section {
+            width: 80vw;
+        }
+        .logo-section img {
+            height: 50px; /* Adjust logo size for smaller screens */
+        }
+        .logo-section div {
+            margin-bottom: 10px;
+            margin-top: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-div {
+            margin-top: 0;
+            display: none;
+        }
+    }
 </style>
 <div class="container mx-auto px-4 py-16 flex" style="margin-top: 50px; flex-direction: column; align-items: center;">
     <!-- Header Section -->
@@ -88,7 +111,7 @@
     </div>
     
     <!-- Logo Section -->
-    <div class="mb-10" style="width: 70%;">
+    <div class="mb-10 logo-section" style="width: 70%;">
         <!-- First row of logos -->
         <div class="mb-8 flex flex-wrap justify-between">
             <div class="flex items-center justify-center">
@@ -128,7 +151,7 @@
         </div>
 
         <!-- Third row of logos -->
-        <div class="flex flex-wrap justify-between" style="margin-top: -15px;">
+        <div class="flex flex-wrap justify-between logo-div">
             <div class="flex items-center justify-center">
                 <img src="{% static 'testimonial/19 1.svg' %}" alt="Estudio Perenne Logo" class="h-16 w-auto p-4">
             </div>
@@ -147,7 +170,7 @@
         </div>
 
         <!-- Fourth row of logos -->
-        <div class="flex flex-wrap justify-between" style="margin-top: -15px;">
+        <div class="flex flex-wrap justify-between logo-div">
             <div class="flex items-center justify-center">
                 <img src="{% static 'testimonial/20 1.svg' %}" alt="AXA Engineers Logo" class="h-16 w-auto p-1">
             </div>

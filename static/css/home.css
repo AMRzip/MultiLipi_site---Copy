@@ -125,14 +125,31 @@
   align-content: center;
 }
 
-.video-container iframe {
-  width: 100%;
-  height: 100%;
+.integration-section-text {
+  margin-left: 30px;
 }
 
 @media screen and (max-width: 768px) {
-  .video-container {
-    max-width: 90%;
+
+  .integration-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+  }
+
+  .integration-section-text {
+    align-items: center;
+  }
+
+  .integration-section h2,
+  .integration-section p {
+    text-align: center;
+  }
+
+  .integration-section div {
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -402,5 +419,85 @@
 
   .test-name {
     text-align: center;
+  }
+}
+
+.font-family {
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+.faq-section-outer-div {
+  padding: 30px 0 40px;
+  background-color: white;
+}
+
+.faq-section {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.faq-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 52px;
+  text-align: center;
+  color: #212121;
+  margin: 40px auto;
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  border-bottom: 1px solid grey;
+  gap: 40px;
+}
+
+.faq-question {
+  flex: 0 0 35%;
+  align-self: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: #212121;
+  text-align: left;
+}
+
+.faq-answer {
+  flex: 0 0 55%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  text-align: left;
+  color: #212121;
+}
+
+@media (max-width: 768px) {
+  .faq-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-question,
+  .faq-answer {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .faq-question {
+    margin-bottom: 20px;
+  }
+
+  .main-front-img {
+    display: none;
   }
 }

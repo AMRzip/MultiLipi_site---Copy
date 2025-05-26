@@ -456,6 +456,26 @@ br {
   font-size: 17px;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+}
+
+.navigation-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-navigation-container {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .testimonial-text-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 7;
@@ -466,4 +486,21 @@ br {
   text-overflow: ellipsis;
   /* Optionally, set a max-height if needed, but line-clamp is usually sufficient */
   /* max-height: 140px; /* Example: 7 lines * 20px line-height */
+}
+
+@media (max-width: 768px) {
+  .main-navigation-container {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .copyright-strip {
+    padding: 20px;
+    text-align: center;
+  }
 }

@@ -25,6 +25,15 @@
     margin: 30px 20px;
   }
 
+  .form-div-text {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .multi-input-div{
     gap: 10px;
     display: flex;
@@ -150,11 +159,11 @@
   }  
 </style>
 
-<div id="contact_us" class="form-section" id="contact_us">
+<div id="contact_us" class="form-section" style="margin: 50px auto;">
   <h1>Connect With Us In A Flash</h1>
   <form id="contact_us_form">
   <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-    <div class="form-div" style="border-right: 1px solid grey; padding-right: 40px;">
+    <div class="form-div" style="border-right: 1px solid grey;">
       <div class="multi-input-div">
         <input 
             id="full_name_input"
@@ -204,8 +213,8 @@
           placeholder="Type Message*" 
           required></textarea>
     </div>
-    <div class="form-div" style="margin: 50px 0;">
-      <div class="small-para-outher-div">
+    <div class="form-div-text">
+      <div class="small-para-outher-div" style="text-align: center;">
         As we understand your business is
         mostly about words, we not only
         translate language we transform
