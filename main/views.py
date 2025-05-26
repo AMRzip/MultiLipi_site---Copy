@@ -170,3 +170,6 @@ def wordcount(request):
 
 def wordcount_analytics(request):
     return render(request, "main/wordcount-main.html")
+
+def avilable_langs(request):
+    return render(request, "main/avilable_langs.html")

@@ -25,6 +25,7 @@ urlpatterns = [
 
     path("pricing", views.pricing, name="pricing"),
     path("referral", views.referral, name="referral"),
+    path("languages", views.avilable_langs, name="avilable_langs"),
 
     path('wordcount', views.wordcount, name='wordcount'),
     path('wordcount_analytics', views.wordcount_analytics, name='wordcount_analytics'),
