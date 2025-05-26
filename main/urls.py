@@ -24,25 +24,25 @@ urlpatterns = [
     # path("government", views.government, name="government"),
 
     path("pricing", views.pricing, name="pricing"),
-    path("referral", views.referral, name="referral"),
+    path("affiliate", views.referral, name="referral"),
     path("languages", views.avilable_langs, name="avilable_langs"),
 
-    path('wordcount', views.wordcount, name='wordcount'),
-    path('wordcount_analytics', views.wordcount_analytics, name='wordcount_analytics'),
+    path('word-count', views.wordcount, name='wordcount'),
+    path('word-count-analytics', views.wordcount_analytics, name='wordcount_analytics'),
 
     path("contact_us", views.contact_us),
     path("demo_msg_save", views.demo_msg_save, name="demo_msg_save"),
 
     path("temp", views.temp),
-    path('wordpress', views.wordpress, name="wordpress"),
-    path('wix', views.wix, name="wix"),
-    path('shopify', views.shopify, name="shopify"),
-    path('webflow', views.webflow, name="webflow"),
+    path('integrations/wordpress', views.wordpress, name="wordpress"),
+    path('/integrations/wix', views.wix, name="wix"),
+    path('/integrations/shopify', views.shopify, name="shopify"),
+    path('/integrations/webflow', views.webflow, name="webflow"),
 
-    path('ecommerce', views.ecommerce, name="ecommerce"),
-    path('goverment', views.goverment, name="government"),
-    path('marketing', views.marketing, name="marketing"),
-    path('webagency', views.web_agency, name="web_agency"),
+    path('/solutions/ecommerce', views.ecommerce, name="ecommerce"),
+    path('/solutions/government', views.goverment, name="government"),
+    path('/solutions/marketing', views.marketing, name="marketing"),
+    path('/solutions/agencies', views.web_agency, name="web_agency"),
 
     # path("home", views.home),
     
