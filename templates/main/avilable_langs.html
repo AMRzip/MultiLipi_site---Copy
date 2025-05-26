@@ -1,0 +1,339 @@
+{% extends "base.html" %} {% load static %} 
+{% load custom_filters %}
+
+{% block title %} | Referral{% endblock title %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+<!-- Meta tags for SEO -->
+<meta charset="UTF-8">
+<meta name="title" content=" Available Languages | Translate Your Website into 110+ Global Languages with MultiLipi">
+<meta name="description" content="Explore all supported languages on MultiLipi. Translate your website into 110+ languages with AI-powered accuracy, human editing, and multilingual SEO—no coding required.">
+{% endblock css %}
+
+{% block content %}
+
+<style>
+  body {
+    background-color: white;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+</style>
+{% comment %} main front start  {% endcomment %}
+
+<div class="main-front-outerdiv" style="width: 100vw; height: fit-content; display: flex; justify-content: center; align-item: center; padding: 0px 30px; padding-top: 10px;">
+  <div class="main-front-innerdiv" style="padding: 0 80px; text-align: center;">
+    <svg width="184" height="351" viewBox="0 0 184 351" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 50px;">
+        <g opacity="0.6">
+        <rect x="132.169" y="242.383" width="52.121" height="52.121" rx="26.0605" transform="rotate(8.95763 132.169 242.383)" fill="#EFF1F5"/>
+        <path d="M146.711 282.826L148.122 278.836C149.512 279.055 150.66 279.216 151.566 279.318C152.496 279.405 153.235 279.421 153.785 279.367C154.355 279.317 154.766 279.191 155.018 278.99C155.293 278.773 155.46 278.478 155.519 278.106C155.556 277.871 155.487 277.479 155.313 276.93C155.161 276.365 154.743 275.647 154.058 274.777C153.689 274.317 153.284 273.832 152.843 273.322C152.424 272.794 152.021 272.299 151.633 271.837C151.247 271.355 150.932 270.934 150.688 270.575C150.444 270.215 150.333 269.967 150.354 269.83C150.4 269.537 150.471 269.217 150.566 268.871C150.66 268.525 150.77 268.211 150.894 267.93C151.039 267.651 151.2 267.456 151.378 267.344C151.76 267.083 152.306 266.798 153.017 266.489C153.75 266.163 154.616 265.828 155.613 265.484C156.613 265.12 157.724 264.754 158.945 264.385C160.189 263.999 161.512 263.626 162.913 263.265L164.021 267.11C162.871 267.41 161.781 267.71 160.751 268.009C159.724 268.288 158.756 268.577 157.846 268.875C156.959 269.156 156.131 269.447 155.362 269.747C154.615 270.03 153.947 270.326 153.357 270.634L154.081 268.522C155.544 270.057 156.684 271.41 157.503 272.582C158.34 273.757 158.941 274.784 159.303 275.664C159.669 276.524 159.881 277.279 159.939 277.93C160 278.562 159.993 279.112 159.919 279.582C159.799 280.345 159.507 280.991 159.042 281.52C158.6 282.032 157.995 282.438 157.226 282.738C156.479 283.021 155.586 283.212 154.548 283.309C153.51 283.406 152.335 283.411 151.025 283.325C149.715 283.239 148.277 283.072 146.711 282.826ZM146.711 282.826C144.597 282.492 142.833 282.044 141.417 281.48C140.018 280.938 138.905 280.301 138.078 279.569C137.273 278.82 136.729 278.013 136.444 277.145C136.159 276.278 136.093 275.365 136.244 274.406C136.343 273.78 136.49 273.161 136.687 272.55C136.906 271.923 137.142 271.318 137.394 270.736C137.666 270.157 137.909 269.634 138.123 269.166L141.659 270.596C141.525 270.936 141.376 271.304 141.214 271.699C141.051 272.095 140.91 272.484 140.789 272.866C140.672 273.228 140.589 273.566 140.539 273.879C140.425 274.604 140.578 275.29 140.997 275.937C141.439 276.569 142.232 277.135 143.377 277.636C144.525 278.118 146.106 278.518 148.122 278.836L148.21 282.099L146.711 282.826ZM163.401 284.824L166.172 263.237L170.282 263.885L167.511 285.472L163.401 284.824Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="0.405273" y="298.318" width="52.121" height="52.121" rx="26.0605" transform="rotate(-5.27743 0.405273 298.318)" fill="#EFF1F5"/>
+        <path d="M37.4454 316.892L27.7975 317.784L28.1802 321.927C28.9865 321.285 29.9627 320.867 31.2944 320.744C34.3723 320.46 36.5032 322.203 36.7957 325.369C36.9734 327.293 36.4946 329.218 35.0313 331.472L31.2672 329.82C32.2178 328.479 32.816 327.2 32.6875 325.809C32.5727 324.566 31.8938 324.002 30.8284 324.1C29.8518 324.19 28.9622 324.899 28.5356 325.774L29.1917 332.877L25.0484 333.26L24.7013 329.501C23.6423 330.315 22.2841 330.799 20.7748 330.938C17.1346 331.275 14.4441 329.613 14.1243 326.15C13.8154 322.806 15.9784 320.696 20.0329 320.322C21.0391 320.229 22.0535 320.224 22.9578 320.32L22.9061 323.638C22.3005 323.545 21.582 323.521 20.8422 323.59C19.0665 323.754 18.1582 324.584 18.2785 325.886C18.396 327.159 19.4032 327.722 20.7942 327.594C22.3331 327.451 23.6124 326.438 24.3158 325.328L23.6543 318.166L12.4379 319.202L12.1317 315.888L37.1392 313.578L37.4454 316.892ZM36.6976 313.619L43.5636 312.984L43.8697 316.299L37.0038 316.933L36.6976 313.619ZM38.3203 321.169C38.2028 319.897 39.0837 318.771 40.4155 318.648C41.7176 318.527 42.7899 319.473 42.9075 320.746C43.0278 322.048 42.1441 323.144 40.8419 323.265C39.5102 323.388 38.4406 322.472 38.3203 321.169ZM38.9819 328.331C38.8616 327.029 39.7453 325.933 41.077 325.81C42.3792 325.689 43.4488 326.605 43.569 327.908C43.6893 329.21 42.8056 330.306 41.5035 330.426C40.1717 330.549 39.1021 329.633 38.9819 328.331Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="30.6582" y="154.266" width="52.121" height="52.121" rx="26.0605" transform="rotate(8.60925 30.6582 154.266)" fill="#EFF1F5"/>
+        <path d="M44.8536 193.897L40.7212 193.272L51.4807 173.039L56.2601 173.763L60.5587 196.275L56.4263 195.649L53.2903 177.796L53.1234 177.771L44.8536 193.897ZM46.2579 185.538L57.5281 187.245L57.0572 190.354L45.7871 188.648L46.2579 185.538Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="131.508" y="83" width="52.121" height="52.121" rx="26.0605" fill="#EFF1F5"/>
+        <path d="M149.832 105.438V102.644H164.514V105.438H149.832ZM149.832 120.061V111.828C149.832 108.678 152.388 106.865 157.173 106.865C161.988 106.865 164.514 108.678 164.514 111.828V120.061H160.175V111.828C160.175 110.55 159.105 109.658 157.173 109.658C155.242 109.658 154.172 110.55 154.172 111.828V120.061H149.832Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="59.9717" y="6.27148" width="52.1201" height="52.1201" rx="26.0601" transform="rotate(-6.45519 59.9717 6.27148)" fill="#F5F7F9"/>
+        <path d="M87.2565 18.9794C87.2189 19.2038 87.1814 19.4281 87.1439 19.6525C87.1202 19.8596 87.0956 20.0589 87.0701 20.2504C87.0129 20.9959 86.9758 21.8491 86.9588 22.81C86.94 23.7555 86.9497 24.7449 86.988 25.7783C87.0246 26.7961 87.0982 27.794 87.2088 28.772C87.3458 29.9828 87.5344 31.0935 87.7745 32.104C88.0128 33.099 88.2899 34.0188 88.6056 34.8636C88.935 35.691 89.2756 36.4779 89.6273 37.2242L87.0417 38.3422C86.7298 37.67 86.4108 36.8649 86.0845 35.927C85.7738 34.9874 85.4863 33.9744 85.2219 32.888C84.9557 31.7862 84.7585 30.6686 84.6303 29.5354C84.5424 28.7592 84.4779 27.9804 84.4367 27.1989C84.4092 26.4002 84.3835 25.617 84.3595 24.8493C84.3338 24.0661 84.3202 23.3208 84.3188 22.6135C84.3311 21.8889 84.3358 21.2359 84.333 20.6545C84.3239 20.4354 84.3131 20.2008 84.3005 19.9506C84.2862 19.685 84.2598 19.4521 84.2215 19.2521L87.2565 18.9794ZM83.4041 22.0331C84.8788 21.8662 86.2569 21.6788 87.5384 21.471C88.8353 21.2613 90.0727 21.0113 91.2504 20.7208C92.4437 20.4286 93.6213 20.0674 94.7833 19.6372L95.1121 22.3356C94.3207 22.5667 93.4431 22.7996 92.4791 23.0345C91.5289 23.252 90.5305 23.4593 89.4836 23.6564C88.4523 23.8517 87.4348 24.0297 86.431 24.1904C85.4255 24.3356 84.4803 24.4583 83.5955 24.5584C83.1919 24.6041 82.7331 24.6481 82.219 24.6906C81.7205 24.7313 81.222 24.7719 80.7235 24.8126C80.2387 24.836 79.817 24.8602 79.4582 24.885L79.0827 22.1918C79.3501 22.193 79.7357 22.1966 80.2395 22.2025C80.7415 22.1928 81.2746 22.1797 81.8387 22.163C82.4166 22.1291 82.9384 22.0858 83.4041 22.0331ZM93.8247 24.2972C93.794 24.4422 93.7461 24.6442 93.681 24.9031C93.616 25.162 93.5518 25.4287 93.4886 25.7031C93.4408 25.9758 93.4024 26.1924 93.3734 26.3529C93.0813 27.8009 92.6751 29.144 92.1549 30.382C91.6484 31.6028 91.0717 32.69 90.425 33.6436C89.7764 34.5817 89.1181 35.3637 88.45 35.9896C87.7543 36.65 86.942 37.2529 86.0132 37.7982C85.0827 38.328 84.1206 38.6491 83.1271 38.7615C82.5683 38.8247 82.0351 38.7671 81.5275 38.5887C81.0199 38.4103 80.5905 38.0894 80.2394 37.6261C79.902 37.1454 79.6894 36.517 79.6016 35.7408C79.5067 34.9025 79.5844 34.0604 79.8346 33.2146C80.0848 32.3687 80.4713 31.5467 80.9942 30.7486C81.5171 29.9505 82.1505 29.2264 82.8945 28.5762C83.6367 27.9105 84.4551 27.3619 85.3496 26.9306C86.0787 26.5651 86.8837 26.246 87.7648 25.9734C88.6613 25.699 89.5521 25.5117 90.4369 25.4116C91.8806 25.2483 93.1989 25.3664 94.3918 25.766C95.6003 26.1638 96.5824 26.7838 97.338 27.6259C98.0936 28.468 98.5408 29.5023 98.6795 30.7286C98.7726 31.5514 98.732 32.3736 98.5577 33.1951C98.3816 34.0012 98.0286 34.7722 97.4987 35.5082C96.9843 36.2424 96.2654 36.9055 95.3418 37.4974C94.4183 38.0893 93.2547 38.5747 91.8512 38.9536L90.0377 36.6825C91.5086 36.3432 92.6817 35.8724 93.5569 35.2703C94.4304 34.6526 95.0363 33.963 95.3746 33.2015C95.7285 32.4382 95.8624 31.6763 95.7763 30.9156C95.6991 30.2326 95.4434 29.6405 95.0094 29.1393C94.5908 28.6364 93.9983 28.2632 93.2318 28.0197C92.4791 27.759 91.5749 27.6884 90.5193 27.8078C89.4637 27.9272 88.53 28.1508 87.718 28.4785C86.9216 28.8045 86.2589 29.131 85.73 29.4581C84.9959 29.9185 84.3587 30.4701 83.8183 31.113C83.2761 31.7404 82.8693 32.3838 82.5981 33.0434C82.3268 33.703 82.221 34.2967 82.2808 34.8245C82.3229 35.1971 82.4408 35.4746 82.6344 35.6571C82.8262 35.824 83.1084 35.8864 83.481 35.8443C84.0398 35.7811 84.6639 35.5296 85.3531 35.09C86.0405 34.6349 86.7035 34.0332 87.3421 33.2849C88.0926 32.4139 88.7789 31.3929 89.4011 30.2219C90.0232 29.051 90.4836 27.631 90.7822 25.9621C90.8112 25.8016 90.8349 25.5946 90.8534 25.3409C90.8719 25.0873 90.8826 24.8345 90.8855 24.5826C90.9022 24.3134 90.9096 24.1004 90.9075 23.9434L93.8247 24.2972Z" fill="#0885DA"/>
+        </g>
+        </svg>
+
+    <div data-aos="fade-up" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 50px;">
+      <div>
+        <h2 class="main-front-header-text" style="font-size: 60px;">Avilable Languages</h2>
+      </div>
+      <div class="main-front-para" data-aos="fade-up" data-aos-delay="100" data-aos-offset="10" data-aos-duration="600" style="font-size:20px; max-width: 40vw;">
+        <p>
+            With MultiLipi, you can translate your website into 110+ languages in just minutes and we’re constantly expanding our language coverage to serve you better.
+        </p>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" data-aos-offset="10" data-aos-duration="600">
+        <div class="main-front-div-btn" data-aos-ancher-placement="center-center" style="
+        margin: 30px 0; display-flex; justify-content: center;">
+          <a class="main-front-btn" style="background: linear-gradient(225deg, #13c3e8 0%, #0688E5 100%);
+          color: white;
+          border-radius: 10px;
+          font-size: 20px;
+          font-weight: 500;
+          cursor: pointer;
+          width: 200px;
+          " href="#contact_us">Start for FREE</a>
+        </div>
+      </div>
+    </div>
+    <svg width="172" height="316" viewBox="0 0 172 316" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: 50px;">
+        <g opacity="0.6">
+        <rect x="50.7061" y="6.23633" width="52.121" height="52.121" rx="26.0605" transform="rotate(-6.72338 50.7061 6.23633)" fill="#EFF1F5"/>
+        <path d="M72.1615 36.8996L72.3429 34.166C73.1327 34.0729 73.8812 33.9589 74.5885 33.8238C75.2958 33.6888 75.9443 33.5478 76.534 33.4008C77.1364 33.2522 77.6553 33.1071 78.0906 32.9654C78.5387 32.8222 78.8792 32.6981 79.1122 32.5931C79.5288 32.402 79.8779 32.1864 80.1596 31.9466C80.4413 31.7067 80.6499 31.4497 80.7855 31.1754C80.9211 30.9011 80.9738 30.6366 80.9438 30.3818C80.9228 30.2035 80.8699 30.0289 80.7852 29.8581C80.7005 29.6873 80.5918 29.5322 80.4591 29.3928C80.3392 29.252 80.1976 29.146 80.0342 29.0749C79.8821 28.9895 79.7296 28.9558 79.5767 28.9738C79.3729 28.9978 79.1781 29.0983 78.9923 29.2752C78.8193 29.4506 78.6841 29.6731 78.5867 29.9429C78.5006 30.1985 78.4756 30.4791 78.5116 30.7848C78.5371 31.0013 78.6279 31.2231 78.7838 31.4501C78.9397 31.6771 79.1458 31.8918 79.4021 32.094C79.6697 32.282 79.9661 32.4408 80.2913 32.5704L77.8649 33.8444C77.5531 33.6099 77.2534 33.3676 76.9656 33.1174C76.689 32.853 76.4469 32.5522 76.2393 32.215C76.0444 31.8764 75.9206 31.4841 75.8681 31.0383C75.799 30.4524 75.8498 29.8975 76.0205 29.3737C76.2025 28.8356 76.462 28.353 76.7991 27.9258C77.1489 27.4971 77.5411 27.1538 77.9757 26.896C78.4215 26.6238 78.8736 26.4608 79.3322 26.4067C80.071 26.3196 80.7439 26.4405 81.351 26.7693C81.9565 27.0853 82.4545 27.5303 82.845 28.1042C83.2483 28.6766 83.4897 29.3003 83.5693 29.9755C83.6399 30.5741 83.5883 31.1227 83.4146 31.621C83.2409 32.1193 82.9776 32.5701 82.6248 32.9733C82.2832 33.3623 81.8925 33.7183 81.4527 34.0414C81.0257 34.3629 80.5878 34.647 80.139 34.8937C79.8243 35.0728 79.3815 35.2606 78.8106 35.4571C78.2524 35.652 77.6028 35.8384 76.8617 36.0162C76.1349 36.2052 75.3669 36.3732 74.5577 36.5203C73.75 36.6801 72.9512 36.8065 72.1615 36.8996ZM85.3093 35.0397C84.5705 35.1268 83.8399 35.1742 83.1176 35.1818C82.3952 35.1895 81.7193 35.1529 81.0899 35.0722C80.4732 34.9899 79.9292 34.8667 79.4578 34.7028L80.5329 32.4838C80.9271 32.5406 81.3827 32.5709 81.8997 32.5745C82.428 32.5639 82.9738 32.5383 83.5373 32.4977C84.1135 32.4556 84.6628 32.4037 85.185 32.3422C85.6691 32.2851 86.028 32.3719 86.2619 32.6027C86.5069 32.8192 86.6513 33.1121 86.6948 33.4815C86.7414 33.8764 86.6466 34.2234 86.4107 34.5224C86.1732 34.8087 85.8061 34.9811 85.3093 35.0397ZM72.1615 36.8996C70.7857 37.0618 69.6075 37.0909 68.6266 36.987C67.6599 36.8943 66.8547 36.6922 66.211 36.3806C65.5785 36.0548 65.0977 35.6465 64.7686 35.1558C64.4396 34.6651 64.2383 34.1076 64.1647 33.4835C64.1166 33.0759 64.1004 32.6645 64.1161 32.2494C64.1429 31.82 64.184 31.4019 64.2394 30.995C64.3075 30.5866 64.3673 30.2179 64.419 29.8889L66.8727 30.1615C66.8488 30.3968 66.8207 30.6519 66.7886 30.9269C66.7564 31.2019 66.7362 31.4691 66.7281 31.7283C66.7184 31.9749 66.7255 32.2 66.7496 32.4038C66.8051 32.8752 67.0203 33.276 67.395 33.6064C67.781 33.9225 68.3745 34.1366 69.1755 34.2488C69.9751 34.3483 71.0309 34.3207 72.3429 34.166L72.9683 36.1846L72.1615 36.8996ZM79.1418 24.6275C78.7469 24.674 78.3936 24.5801 78.0819 24.3456C77.7828 24.1097 77.61 23.7942 77.5635 23.3994C77.5169 23.0045 77.6109 22.6512 77.8453 22.3394C78.0925 22.0261 78.4136 21.8462 78.8085 21.7996C79.1906 21.7546 79.5319 21.8564 79.8325 22.1051C80.1458 22.3523 80.3257 22.6734 80.3722 23.0682C80.4188 23.4631 80.3177 23.8108 80.069 24.1114C79.833 24.4104 79.524 24.5824 79.1418 24.6275ZM85.3329 35.0369L85.2086 32.3394C85.7946 32.2703 86.2082 32.1634 86.4494 32.0188C86.6892 31.8613 86.815 31.614 86.8269 31.2768C86.8373 30.9269 86.7915 30.4286 86.6894 29.782L85.2778 20.7658L87.9719 20.4482L89.4443 29.651C89.5568 30.3868 89.6038 31.0593 89.5852 31.6685C89.5779 32.2634 89.4397 32.7899 89.1709 33.2477C88.9147 33.7041 88.4753 34.0853 87.8527 34.3911C87.2428 34.6955 86.4029 34.9108 85.3329 35.0369ZM92.5226 34.0925L90.4726 20.1534L93.1475 19.838L95.1976 33.7771L92.5226 34.0925Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="5.44434" y="169.434" width="52.121" height="52.121" rx="26.0605" transform="rotate(5.9621 5.44434 169.434)" fill="#EFF1F5"/>
+        <path d="M26.4249 202.312C26.0915 205.504 23.7096 207.138 20.2215 206.774C16.2901 206.363 13.8162 204.013 11.944 197.333L15.3 196.1C16.5687 200.834 17.8866 203.094 20.074 203.322C21.4929 203.47 22.4242 202.85 22.5662 201.491C22.6527 200.663 22.3456 199.884 21.7632 199.166C20.8812 199.313 19.923 199.332 18.8791 199.313L18.6355 196.209C21.7141 196.202 22.6392 195.641 22.7565 194.518C22.8584 193.543 22.2015 192.966 21.0486 192.846C19.8662 192.722 18.6499 192.924 17.3965 193.48L16.6004 190.23C18.1587 189.615 19.9226 189.321 21.9031 189.528C25.6867 189.923 27.0435 192.097 26.7687 194.728C26.6236 196.117 25.9681 197.244 24.8704 198.026C25.5115 198.182 26.2148 198.316 27.0129 198.399C28.0475 198.507 29.0353 198.491 30.0121 198.294L30.4535 194.067L28.5913 193.872L28.937 190.562L46.3478 192.38L46.002 195.691L43.2825 195.407L41.7081 210.482L37.5697 210.05L39.1441 194.974L34.5624 194.496L32.9879 209.571L28.8791 209.142L29.6632 201.634C28.9679 201.711 28.2492 201.726 27.5398 201.651C27.1851 201.614 26.8039 201.545 26.4522 201.478C26.454 201.747 26.4558 202.016 26.4249 202.312Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="77.8076" y="263.758" width="52.121" height="52.121" rx="26.0605" transform="rotate(-7.28059 77.8076 263.758)" fill="#EFF1F5"/>
+        <path d="M115.348 281.043L112.93 281.352L113.427 285.243C113.823 288.339 112.766 289.912 109.672 291.026L107.378 288.083C109.061 287.419 109.435 286.592 109.224 284.941L108.832 281.875L103.143 282.602L103.805 287.791C104.065 289.825 104.51 290.487 106.705 291.256L110.328 292.411C113.549 293.467 114.496 294.545 114.733 296.402C114.873 297.493 114.592 298.578 113.909 299.803L109.804 298.86C110.2 298.21 110.335 297.623 110.267 297.093C110.147 296.149 109.644 295.734 107.766 295.105L104.77 294.169C101.431 293.128 100.182 292.029 99.7566 288.698L99.0447 283.126L97.0105 283.386L96.5887 280.084L114.926 277.741L115.348 281.043Z" fill="#0885DA"/>
+        </g>
+        <g opacity="0.6">
+        <rect x="111.119" y="102.348" width="52.1201" height="52.1201" rx="26.0601" transform="rotate(-10.3314 111.119 102.348)" fill="#EFF1F5"/>
+        <path d="M137.999 135.421C137.063 135.592 135.705 135.598 134.655 135.306L134.776 132.323C135.089 132.387 135.456 132.411 135.807 132.347C136.421 132.235 136.695 131.913 136.572 131.241L135.538 125.568C135.16 123.493 134.338 122.464 132.878 121.582L135.306 118.663C136.088 118.973 137.245 119.85 137.646 120.562L137.734 120.546C138.661 118.837 140.218 117.767 142.382 117.373C146.124 116.691 148.265 118.657 148.899 122.136L150.839 132.778L146.424 133.583L144.57 123.409C144.239 121.596 143.409 120.69 141.831 120.978C140.544 121.212 139.468 122.103 139.836 124.12L141.046 130.757C141.509 133.301 140.338 134.995 137.999 135.421Z" fill="#0885DA"/>
+        </g>
+        </svg>
+
+  </div>
+</div>
+
+<div class="max-w-6xl mx-auto p-6 mt-10">
+  <div class="flex justify-between gap-2">
+    <h2 class="text-4xl font-bold mb-6 text-gray-800">Language Codes</h2>
+
+    <input
+      type="text"
+      id="searchBar"
+      placeholder="Search for a language…"
+      class="mb-6 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+    />
+  </div>
+
+  <div id="languagesContainer" class="border p-8 rounded"></div>
+</div>
+
+<script>
+  // ---- your full static list here ----
+  const allLanguages = [
+    { code: 'af',     name: 'Afrikaans' },
+    { code: 'ak',     name: 'Akan' },
+    { code: 'sq',     name: 'Albanian' },
+    { code: 'am',     name: 'Amharic' },
+    { code: 'ar',     name: 'Arabic' },
+    { code: 'hy',     name: 'Armenian' },
+    { code: 'as',     name: 'Assamese' },
+    { code: 'ay',     name: 'Aymara' },
+    { code: 'az',     name: 'Azerbaijani' },
+    { code: 'bm',     name: 'Bambara' },
+    { code: 'ba',     name: 'Bashkir' },
+    { code: 'eu',     name: 'Basque' },
+    { code: 'be',     name: 'Belarusian' },
+    { code: 'bn',     name: 'Bengali' },
+    { code: 'bs',     name: 'Bosnian' },
+    { code: 'pt-br',  name: 'Brazilian Portuguese' },
+    { code: 'bg',     name: 'Bulgarian' },
+    { code: 'my',     name: 'Burmese' },
+    { code: 'yue',    name: 'Cantonese' },
+    { code: 'ca',     name: 'Catalan' },
+    { code: 'ceb',    name: 'Cebuano' },
+    { code: 'km',     name: 'Central Khmer' },
+    { code: 'ny',     name: 'Chichewa' },
+    { code: 'chk',    name: 'Chuukese' },
+    { code: 'co',     name: 'Corsican' },
+    { code: 'hr',     name: 'Croatian' },
+    { code: 'cs',     name: 'Czech' },
+    { code: 'da',     name: 'Danish' },
+    { code: 'dv',     name: 'Divehi' },
+    { code: 'nl',     name: 'Dutch' },
+    { code: 'en',     name: 'English' },
+    { code: 'eo',     name: 'Esperanto' },
+    { code: 'et',     name: 'Estonian' },
+    { code: 'ee',     name: 'Ewe' },
+    { code: 'fo',     name: 'Faroese' },
+    { code: 'fj',     name: 'Fijian' },
+    { code: 'fl',     name: 'Filipino' },
+    { code: 'fi',     name: 'Finnish' },
+    { code: 'fr',     name: 'French' },
+    { code: 'fr-ca',  name: 'French (Canada)' },
+    { code: 'gl',     name: 'Galician' },
+    { code: 'ka',     name: 'Georgian' },
+    { code: 'de',     name: 'German' },
+    { code: 'el',     name: 'Greek' },
+    { code: 'gn',     name: 'Guarani' },
+    { code: 'gu',     name: 'Gujarati' },
+    { code: 'ht',     name: 'Haitian Creole' },
+    { code: 'ha',     name: 'Hausa' },
+    { code: 'hw',     name: 'Hawaiian' },
+    { code: 'he',     name: 'Hebrew' },
+    { code: 'hi',     name: 'Hindi' },
+    { code: 'hmn',    name: 'Hmong' },
+    { code: 'hu',     name: 'Hungarian' },
+    { code: 'is',     name: 'Icelandic' },
+    { code: 'ig',     name: 'Igbo' },
+    { code: 'il',     name: 'Ilocano' },
+    { code: 'id',     name: 'Indonesian' },
+    { code: 'iu',     name: 'Inuktitut' },
+    { code: 'ga',     name: 'Irish' },
+    { code: 'it',     name: 'Italian' },
+    { code: 'ja',     name: 'Japanese' },
+    { code: 'jv',     name: 'Javanese' },
+    { code: 'kn',     name: 'Kannada' },
+    { code: 'kk',     name: 'Kazakh' },
+    { code: 'rw',     name: 'Kinyarwanda' },
+    { code: 'ko',     name: 'Korean' },
+    { code: 'ku',     name: 'Kurdish' },
+    { code: 'kb',     name: 'Kurdish (Sorani)' },
+    { code: 'ky',     name: 'Kyrgyz' },
+    { code: 'lo',     name: 'Lao' },
+    { code: 'la',     name: 'Latin' },
+    { code: 'lv',     name: 'Latvian' },
+    { code: 'ln',     name: 'Lingala' },
+    { code: 'lt',     name: 'Lithuanian' },
+    { code: 'lg',     name: 'Luganda' },
+    { code: 'lb',     name: 'Luxembourgish' },
+    { code: 'mk',     name: 'Macedonian' },
+    { code: 'mg',     name: 'Malagasy' },
+    { code: 'ms',     name: 'Malay' },
+    { code: 'ml',     name: 'Malayalam' },
+    { code: 'mt',     name: 'Maltese' },
+    { code: 'mr',     name: 'Marathi' },
+    { code: 'mh',     name: 'Marshallese' },
+    { code: 'mn',     name: 'Mongolian' },
+    { code: 'mi',     name: 'Māori' },
+    { code: 'ne',     name: 'Nepali' },
+    { code: 'no',     name: 'Norwegian' },
+    { code: 'nb',     name: 'Norwegian Bokmål' },
+    { code: 'oc',     name: 'Occitan' },
+    { code: 'or',     name: 'Odia' },
+    { code: 'om',     name: 'Oromo' },
+    { code: 'ps',     name: 'Pashto' },
+    { code: 'fa',     name: 'Persian' },
+    { code: 'pl',     name: 'Polish' },
+    { code: 'pt',     name: 'Portuguese' },
+    { code: 'pa',     name: 'Punjabi' },
+    { code: 'qu',     name: 'Quechua' },
+    { code: 'ro',     name: 'Romanian' },
+    { code: 'ru',     name: 'Russian' },
+    { code: 'sm',     name: 'Samoan' },
+    { code: 'gd',     name: 'Scottish Gaelic' },
+    { code: 'sr',     name: 'Serbian (Cyrillic)' },
+    { code: 'sr-latn',name: 'Serbian (Latin)' },
+    { code: 'sn',     name: 'Shona' },
+    { code: 'zh',     name: 'Simplified Chinese' },
+    { code: 'sd',     name: 'Sindhi' },
+    { code: 'si',     name: 'Sinhalese' },
+    { code: 'sk',     name: 'Slovak' },
+    { code: 'sl',     name: 'Slovenian' },
+    { code: 'so',     name: 'Somali' },
+    { code: 'st',     name: 'Southern Sotho' },
+    { code: 'es',     name: 'Spanish' },
+    { code: 'su',     name: 'Sundanese' },
+    { code: 'sw',     name: 'Swahili' },
+    { code: 'sv',     name: 'Swedish' },
+    { code: 'tl',     name: 'Tagalog' },
+    { code: 'ty',     name: 'Tahitian' },
+    { code: 'tg',     name: 'Tajik' },
+    { code: 'ta',     name: 'Tamil' },
+    { code: 'tt',     name: 'Tatar' },
+    { code: 'te',     name: 'Telugu' },
+    { code: 'th',     name: 'Thai' },
+    { code: 'bo',     name: 'Tibetan' },
+    { code: 'ti',     name: 'Tigrinya' },
+    { code: 'to',     name: 'Tongan' },
+    { code: 'zh-tw',  name: 'Traditional Chinese' },
+    { code: 'ts',     name: 'Tsonga' },
+    { code: 'tr',     name: 'Turkish' },
+    { code: 'tk',     name: 'Turkmen' },
+    { code: 'uk',     name: 'Ukrainian' },
+    { code: 'ur',     name: 'Urdu' },
+    { code: 'ug',     name: 'Uyghur' },
+    { code: 'uz',     name: 'Uzbek' },
+    { code: 'vi',     name: 'Vietnamese' },
+    { code: 'cy',     name: 'Welsh' },
+    { code: 'fy',     name: 'Western Frisian' },
+    { code: 'xh',     name: 'Xhosa' },
+    { code: 'yi',     name: 'Yiddish' },
+    { code: 'yo',     name: 'Yoruba' },
+    { code: 'zu',     name: 'Zulu' }
+  ];
+
+  // render into 3 columns
+  function renderLanguages(list) {
+    const container = document.getElementById('languagesContainer');
+    container.innerHTML = '';
+    const chunk = Math.ceil(list.length / 3);
+    const cols = [list.slice(0,chunk), list.slice(chunk,chunk*2), list.slice(chunk*2)];
+
+    const grid = document.createElement('div');
+    grid.className = 'grid grid-cols-1 md:grid-cols-3 gap-4';
+
+    cols.forEach(col => {
+      const div = document.createElement('div');
+      col.forEach(({code,name}) => {
+        const item = document.createElement('div');
+        item.className = 'flex justify-around align-center py-3 border-b last:border-0';
+        item.innerHTML = `<div class="w-full flex items-center justify-evenly gap-2">
+          <span class="font-medium text-gray-500">${code}&nbsp;&nbsp;&nbsp;</span>
+          <span class="text-gray-500">${name}</span>
+        </div>`;
+        div.appendChild(item);
+        const hr = document.createElement('hr');
+        div.appendChild(hr);
+      });
+      grid.appendChild(div);
+    });
+
+    container.appendChild(grid);
+  }
+
+  // live search
+  document.getElementById('searchBar')
+    .addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      const filtered = allLanguages.filter(
+        l => l.code.includes(q) || l.name.toLowerCase().includes(q)
+      );
+      renderLanguages(filtered);
+    });
+
+  // initial render
+  renderLanguages(allLanguages);
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  const aosTypeDefaults = {
+    // animation-type : { offset, duration, easing, ... }
+    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 2. Loop through every element that has data-aos
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      const type = el.getAttribute('data-aos');
+      const defaults = aosTypeDefaults[type] || {};
+
+      // 3. For each default key (offset, duration, easing…), 
+      //    only set it if the element didn’t already override it.
+      Object.entries(defaults).forEach(([key, val]) => {
+        const attr = `data-aos-${key}`;
+        if (!el.hasAttribute(attr)) {
+          el.setAttribute(attr, val);
+        }
+      });
+    });
+
+    // 4. Finally init AOS with *your* global fallback settings
+    AOS.init({
+      once: true,            // still animate only once
+      // any other global you like...
+    });
+  });
+</script>
+
+{% endblock %}
