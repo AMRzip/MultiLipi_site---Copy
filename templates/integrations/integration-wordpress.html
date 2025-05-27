@@ -4,28 +4,18 @@
 {% block title %} | WordPress{% endblock title %} 
 
 {% block css %}
-<link rel="stylesheet" href="{% static "css/home_main.css" %}">
 <link rel="stylesheet" href="{% static "css/home.css" %}">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <meta name="description" content="MultiLipi is a powerful, easy-to-use WordPress translation plugin. Translate your wordpress website into 120+ languages with AI and human editing. Enjoy fast, accurate, and SEO-optimized translations with full control.">
 <meta name="title" content="Website Translation with AI | Best WordPress Translation Plugin">
 {% endblock css %}
 
 {% block content %}
-
-<style>
-    body {
-        background-color: white;
-    }
-</style>
 {% comment %} main front start  {% endcomment %}
 
 <div class="main-front-outerdiv">
-  <div class="main-front-innerdiv" style="padding: 0 80px;">
-    <div data-aos="fade-up">
+  <div class="main-front-innerdiv">
+    <div class="main-inner-div-div" data-aos="fade-up">
       <div class="main-integration-badge"> 
         <p>Wordpress x MultiLipi</p>
       </div>
@@ -46,7 +36,8 @@
             <span>Translate my Wordpress site</span>
           </button>
         </div>
-        <div class="main-integration-review">
+        <div class="main-main-front-div-review">
+          <div class="main-integration-review">
             <p>4.8</p>
             <div class="review-stars">
                 <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
@@ -57,7 +48,9 @@
             </div>
             <h4>G2</h4>
             <img src="{% static "cards_imgs/G2Logo.svg" %}" alt="G2" style="width: 20px; margin-left: 1px; cursor: pointer;" onclick="window.open('https://www.g2.com/products/multilipi/reviews')">
-            <h4>|</h4>
+          </div>
+          <h5>|</h5>
+          <div class="main-integration-review">
             <p>4.7</p>
             <div class="review-stars">
                 <i class="fa-solid fa-star" style="color:#fcd10a;"></i>
@@ -68,6 +61,7 @@
             </div>
             <h4>Wordpress Directory</h4>
             <i class="fa-brands fa-wordpress-simple" alt="Wordpress plugin directory" style="width: 22px; height: auto; margin-left: 1px; cursor: pointer;" onclick="window.open('https://wordpress.org/plugins/multilipi-multilingual-seo/')"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -88,7 +82,7 @@
   </div>
 
   <!-- feature-card 1 -->
-  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px;">
     <!-- Left side image -->
     <div class="flex items-center justify-center p-4 md:col-span-6" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
       <img src="{% static "cards_imgs/feature3.svg" %}" alt="Start translating your WordPress website in minutes using MultiLipi plugin" class="w-full h-auto rounded-lg" loading="lazy">
@@ -115,7 +109,7 @@
   </div>
 
     <!-- feature-card 2 -->
-    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px;">
       <!-- Left side Text (30%) -->
       <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
         <h3 class="text-3xl font-bold text-gray-800 mb-4">Optimize your translated WordPress website to rank on Google</h3>
@@ -137,13 +131,13 @@
 <!-- End of features cards -->
 
 <!-- Integration -->
-<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8 integration-section" style="margin-top: 50px;">
   <!-- Left side Image -->
   <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
     <img src="{% static "cards_imgs/integration.svg" %}" alt="Translate websites built on Wix, Webflow, and Shopify using MultiLipi" class="h-auto" style="width: 35rem" loading="lazy">
   </div>
   <!-- Right side Text -->
-  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+  <div class="flex flex-col justify-center p-4 integration-section-text" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%;">
     <h2 class="text-5xl font-bold text-gray-800 mb-4">MultiLipi works with Wix, Webflow, Shopify, and more</h2>
     <p class="text-gray-600 mb-6">While MultiLipi is a powerful WordPress translation plugin, it's also fully compatible with other platforms like Wix, Webflow, Shopify, and WooCommerce. Whether your website is built on a CMS or a custom stack, MultiLipi makes it easy to translate any website into 120+ languages — with full multilingual SEO support and zero code changes.</p>
     <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
@@ -158,60 +152,6 @@
 
 {% include "multilipi_features.html" %}
 {% include "testimonials.html" %}
-
-<style>
-    .font-family {
-        font-family: Inter, sans-serif;
-        font-feature-settings: "liga" 1, "calt" 1;
-    }
-    .faq-section-outer-div {
-        padding: 30px 0 40px;
-        background-color: white;
-    }
-    .faq-section {
-        width: 80%;
-        margin: auto;
-        padding: 10px;
-    }
-    .faq-title {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 52px;
-        text-align: center;
-        color: #212121;
-        margin: 40px auto;
-    }
-    .faq-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
-        border-bottom: 1px solid grey;
-        gap: 40px;
-    }
-    .faq-question {
-        flex: 0 0 35%;
-        align-self: center;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 34px;
-        color: #212121;
-        text-align: left;
-    }
-    .faq-answer {
-        flex: 0 0 55%;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 27px;
-        text-align: left;
-        color: #212121;
-    }
-</style>
 
 <div id="FAQs" class="faq-section-outer-div" id="FAQs">
     <h2 class="faq-title font-family">Frequently Asked Questions</h2>
@@ -368,44 +308,7 @@
 </div>
  {% endcomment %}
 {% include "blog.html" %}
-{% include "frequently_asked.html" %}
 {% include "contact_form.html" %}
 {% include "banner.html" %}
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  const aosTypeDefaults = {
-    // animation-type : { offset, duration, easing, ... }
-    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
-    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
-    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
-    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
-    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
-    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // 2. Loop through every element that has data-aos
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      const type = el.getAttribute('data-aos');
-      const defaults = aosTypeDefaults[type] || {};
-
-      // 3. For each default key (offset, duration, easing…), 
-      //    only set it if the element didn’t already override it.
-      Object.entries(defaults).forEach(([key, val]) => {
-        const attr = `data-aos-${key}`;
-        if (!el.hasAttribute(attr)) {
-          el.setAttribute(attr, val);
-        }
-      });
-    });
-
-    // 4. Finally init AOS with *your* global fallback settings
-    AOS.init({
-      once: true,            // still animate only once
-      // any other global you like...
-    });
-  });
-</script>
 
 {% endblock content %}

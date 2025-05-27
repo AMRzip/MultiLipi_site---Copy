@@ -458,18 +458,6 @@ br {
   justify-content: space-between;
 }
 
-.testimonial-text-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  line-clamp: 7;
-  /* Adjust this number to control the number of lines shown */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* Optionally, set a max-height if needed, but line-clamp is usually sufficient */
-  /* max-height: 140px; /* Example: 7 lines * 20px line-height */
-}
-
 @media (max-width: 768px) {
   .main-navigation-container {
     flex-direction: column;

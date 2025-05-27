@@ -4,11 +4,8 @@
 {% block title %} | Home{% endblock title %} 
 
 {% block css %}
-<link rel="stylesheet" href="{% static "css/home_main.css" %}">
+{% comment %} <link rel="stylesheet" href="{% static "css/home_main.css" %}"> {% endcomment %}
 <link rel="stylesheet" href="{% static "css/home.css" %}">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
 <!-- Meta tags for SEO -->
 <meta charset="UTF-8">
@@ -226,7 +223,7 @@
     </h1>
   </div>
   <div class="flex items-center justify-center">
-    <img src="{% static "cards_imgs/global-languages.svg" %}" alt="World map with flags showing that MultiLipi supports 120+ languages to translate website worldwide " class="h-auto w-full" style=" margin: 20px 200px;" data-aos="fade-up">
+    <img src="{% static "cards_imgs/global-languages.svg" %}" loading="lazy" alt="World map with flags showing that MultiLipi supports 120+ languages to translate website worldwide " class="h-auto w-full" style=" margin: 20px 200px;" data-aos="fade-up">
   </div>
 </div>
 <!-- End of Global Languages -->
@@ -443,41 +440,5 @@ Use our Word Count Tool to calculate your needs, and we'll suggest the right Mul
 
 {% include "contact_form.html" %}
 {% include "banner.html" %}
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  const aosTypeDefaults = {
-    // animation-type : { offset, duration, easing, ... }
-    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
-    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
-    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
-    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
-    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
-    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // 2. Loop through every element that has data-aos
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      const type = el.getAttribute('data-aos');
-      const defaults = aosTypeDefaults[type] || {};
-
-      // 3. For each default key (offset, duration, easing…), 
-      //    only set it if the element didn’t already override it.
-      Object.entries(defaults).forEach(([key, val]) => {
-        const attr = `data-aos-${key}`;
-        if (!el.hasAttribute(attr)) {
-          el.setAttribute(attr, val);
-        }
-      });
-    });
-
-    // 4. Finally init AOS with *your* global fallback settings
-    AOS.init({
-      once: true,            // still animate only once
-      // any other global you like...
-    });
-  });
-</script>
 
 {% endblock content %}

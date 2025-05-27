@@ -21,16 +21,18 @@
         src="https://kit.fontawesome.com/5482c79e6d.js"
         crossorigin="anonymous"
     ></script> {% endcomment %}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link async media="print" onload="this.media='all'"
+    {% comment %} <link async media="print" onload="this.media='all'"
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
-    <link async media="print" onload="this.media='all'"
+    /> {% endcomment %}
+    {% comment %} <link async media="print" onload="this.media='all'"
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    /> {% endcomment %}
     <!-- <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script> -->
     {% block css %}
     
@@ -222,10 +224,10 @@
                             <span class="mobile-menu-arrow">▼</span>
                         </div>
                         <div class="mobile-submenu">
-                            <a href="{% url 'ecommerce' %}'" class="mobile-submenu-item">E-commerce</a>
-                            <a href="{% url 'government' %}'" class="mobile-submenu-item">Government</a>
-                            <a href="{% url 'marketing' %}'" class="mobile-submenu-item">Marketing</a>
-                            <a href="{% url 'web_agency' %}'" class="mobile-submenu-item">Web Agency</a>
+                            <a href="{% url 'ecommerce' %}" class="mobile-submenu-item">E-commerce</a>
+                            <a href="{% url 'government' %}" class="mobile-submenu-item">Government</a>
+                            <a href="{% url 'marketing' %}" class="mobile-submenu-item">Marketing</a>
+                            <a href="{% url 'web_agency' %}" class="mobile-submenu-item">Web Agency</a>
                         </div>
                     </div>
                     
@@ -504,6 +506,41 @@
       </script> {% endcomment %}
 
       <script async src="{% static "js/scripts.min.js" %}" media="print" onload="this.media='all'"></script>
+
+      <script>
+        const aosTypeDefaults = {
+          // animation-type : { offset, duration, easing, ... }
+          'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
+          'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
+          'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
+          'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
+          'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
+          'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+          // 2. Loop through every element that has data-aos
+          document.querySelectorAll('[data-aos]').forEach(el => {
+            const type = el.getAttribute('data-aos');
+            const defaults = aosTypeDefaults[type] || {};
+
+            // 3. For each default key (offset, duration, easing…), 
+            //    only set it if the element didn’t already override it.
+            Object.entries(defaults).forEach(([key, val]) => {
+              const attr = `data-aos-${key}`;
+              if (!el.hasAttribute(attr)) {
+                el.setAttribute(attr, val);
+              }
+            });
+          });
+
+          // 4. Finally init AOS with *your* global fallback settings
+          AOS.init({
+            once: true,            // still animate only once
+            // any other global you like...
+          });
+        });
+      </script>
 
       <!-- Google tag (gtag.js) -->
       <script async media="print" onload="this.media='all'" src="https://www.googletagmanager.com/gtag/js?id=G-3LLSTZJTF8"></script>

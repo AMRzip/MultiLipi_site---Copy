@@ -32,10 +32,27 @@
         font-weight: 400;
         font-size: 1rem;
         line-height: 1.5rem;
-    }
+   }
     .icon {
         width: 24px;
         height: 24px;
+    }
+
+    @media (max-width: 768px) {
+        .feature-card {
+            width: 80%;
+        }
+        .feature-text {
+            font-size: 1.2rem;
+        }
+        .feature-para {
+            font-size: 0.9rem;
+        }
+        .features-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+       }
     }
 </style>
 
@@ -49,7 +66,7 @@
     </div>
 
     <!-- Features Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 flex-wrap justify-center features-grid">
         <!-- No code install -->
         <div class="feature-card bg-white p-4 rounded" data-aos="fade-right" data-aos-delay="0">
             <div class="flex items-center mb-2">

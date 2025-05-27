@@ -4,11 +4,7 @@
 {% block title %} | WordPress{% endblock title %} 
 
 {% block css %}
-<link rel="stylesheet" href="{% static "css/home_main.css" %}">
 <link rel="stylesheet" href="{% static "css/home.css" %}">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <!-- Meta tags for SEO -->
 <meta charset="UTF-8">
@@ -26,8 +22,8 @@
 {% comment %} main front start  {% endcomment %}
 
 <div class="main-front-outerdiv">
-  <div class="main-front-innerdiv" style="padding: 0 80px;">
-    <div data-aos="fade-up">
+  <div class="main-front-innerdiv">
+    <div class="main-inner-div-div" data-aos="fade-up">
       <div class="main-integration-badge"> 
         <p>Wix x MultiLipi</p>
       </div>
@@ -76,7 +72,7 @@
   </div>
 
   <!-- feature-card 1 -->
-  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px; height: 600px;">
+  <div class="grid grid-cols-1 md:grid-cols-10 gap-8 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #f0f1f5; margin-top: 50px;">
     <!-- Left side image -->
     <div class="flex items-center justify-center p-4 md:col-span-6" data-aos="zoom-in-left" data-aos-duration="600" data-aos-offset="10" data-aos-easing="ease-in-out">
       <img src="{% static "cards_imgs/feature3.svg" %}" alt="Translate your Wix site instantly with MultiLipi’s plugin for Website Page Translator" class="w-full h-auto rounded-lg" loading="lazy">
@@ -103,7 +99,7 @@
   </div>
 
     <!-- feature-card 2 -->
-    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px; height: 600px;">
+    <div class="grid grid-cols-1 md:grid-cols-10 max-w-7xl mx-auto p-8 rounded-lg shadow-lg" style="background-color: #d6f3ff; margin-top: 50px;">
       <!-- Left side Text (30%) -->
       <div class="flex flex-col justify-center p-4 md:col-span-4" data-aos="fade-up">
         <h3 class="text-3xl font-bold text-gray-800 mb-4">Improve search visibility for every translated Wix page</h3>
@@ -128,13 +124,13 @@
 {% include "testimonials.html" %}
 
 <!-- Integration -->
-<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8" style="margin-top: 50px; height: 600px;">
+<div class="grid grid-cols-1 md:grid-cols-2 max-w-7xl gap-8 mx-auto p-8 integration-section" style="margin-top: 50px;">
   <!-- Left side Image -->
   <div class="flex items-center justify-center ml-8" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
     <img src="{% static "cards_imgs/integration.svg" %}" alt="Translate websites built on Wix, WordPress, Shopify, and other platforms with MultiLipi" class="h-auto" style="width: 35rem" loading="lazy">
   </div>
   <!-- Right side Text -->
-  <div class="flex flex-col justify-center p-4" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%; margin-left:50px;">
+  <div class="flex flex-col justify-center p-4 integration-section-text" data-aos="fade-right" data-aos-delay="300" data-aos-anchor-placement="top-bottom" style="width: 80%;">
     <h2 class="text-5xl font-bold text-gray-800 mb-4" style="line-height: 60px;">MultiLipi is compatible with Wix, WordPress, Shopify, and more</h2>
     <p class="text-gray-600 mb-6">MultiLipi isn’t just for Wix. Our translation solution works seamlessly across platforms like WordPress, Shopify, Webflow, and WooCommerce. No matter your CMS, you can translate any website into 120+ languages with zero development changes and full SEO support.</p>
     <a href="#" class="text-blue-500 hover:text-blue-600 flex items-center font-medium" style="border: 1px solid #0885DA; padding: 10px 15px; border-radius: 20px; width: fit-content;">
@@ -244,61 +240,6 @@
  {% endcomment %}
 {% include "blog.html" %}
 
-
-<style>
-    .font-family {
-        font-family: Inter, sans-serif;
-        font-feature-settings: "liga" 1, "calt" 1;
-    }
-    .faq-section-outer-div {
-        padding: 30px 0 40px;
-        background-color: white;
-    }
-    .faq-section {
-        width: 80%;
-        margin: auto;
-        padding: 10px;
-    }
-    .faq-title {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 35px;
-        line-height: 52px;
-        text-align: center;
-        color: #212121;
-        margin: 40px auto;
-    }
-    .faq-item {
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
-        border-bottom: 1px solid grey;
-        gap: 40px;
-    }
-    .faq-question {
-        flex: 0 0 35%;
-        align-self: center;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 34px;
-        color: #212121;
-        text-align: left;
-    }
-    .faq-answer {
-        flex: 0 0 55%;
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        line-height: 27px;
-        text-align: left;
-        color: #212121;
-    }
-</style>
-
 <div id="FAQs" class="faq-section-outer-div" id="FAQs">
     <h2 class="faq-title font-family">Frequently Asked Questions</h2>
     <div class="faq-section">
@@ -360,41 +301,5 @@
 
 {% include "contact_form.html" %}
 {% include "banner.html" %}
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  const aosTypeDefaults = {
-    // animation-type : { offset, duration, easing, ... }
-    'fade-up':    { offset: 50, duration: 600, easing: 'ease-out-quart' },
-    'fade-down':  { offset: 30, duration: 600, easing: 'ease-in-out' },
-    'slide-up':   { offset: 200, duration: 700, easing: 'ease-out-back'},
-    'slide-down': { offset: 120, duration: 500, easing: 'ease-out-back'},
-    'fade-left':  { offset: 100, duration: 600, easing: 'ease-in-out' },
-    'fade-right': { offset: 100, duration: 600, easing: 'ease-in-out' },
-  };
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // 2. Loop through every element that has data-aos
-    document.querySelectorAll('[data-aos]').forEach(el => {
-      const type = el.getAttribute('data-aos');
-      const defaults = aosTypeDefaults[type] || {};
-
-      // 3. For each default key (offset, duration, easing…), 
-      //    only set it if the element didn’t already override it.
-      Object.entries(defaults).forEach(([key, val]) => {
-        const attr = `data-aos-${key}`;
-        if (!el.hasAttribute(attr)) {
-          el.setAttribute(attr, val);
-        }
-      });
-    });
-
-    // 4. Finally init AOS with *your* global fallback settings
-    AOS.init({
-      once: true,            // still animate only once
-      // any other global you like...
-    });
-  });
-</script>
 
 {% endblock content %}
