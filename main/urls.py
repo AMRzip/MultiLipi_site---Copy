@@ -35,14 +35,14 @@ urlpatterns = [
 
     path("temp", views.temp),
     path('integrations/wordpress', views.wordpress, name="wordpress"),
-    path('/integrations/wix', views.wix, name="wix"),
-    path('/integrations/shopify', views.shopify, name="shopify"),
-    path('/integrations/webflow', views.webflow, name="webflow"),
+    path('integrations/wix', views.wix, name="wix"),
+    path('integrations/shopify', views.shopify, name="shopify"),
+    path('integrations/webflow', views.webflow, name="webflow"),
 
-    path('/solutions/ecommerce', views.ecommerce, name="ecommerce"),
-    path('/solutions/government', views.goverment, name="government"),
-    path('/solutions/marketing', views.marketing, name="marketing"),
-    path('/solutions/agencies', views.web_agency, name="web_agency"),
+    path('solutions/ecommerce', views.ecommerce, name="ecommerce"),
+    path('solutions/government', views.goverment, name="government"),
+    path('solutions/marketing', views.marketing, name="marketing"),
+    path('solutions/agencies', views.web_agency, name="web_agency"),
 
     # path("home", views.home),
     
